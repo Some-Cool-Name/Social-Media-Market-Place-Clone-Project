@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount2();
+                createAccount();
             }
         });
     }
 
-    public void createAccount2(){
-        Intent intent = new Intent(this, CreateAccount2.class);
+    public void createAccount(){
+        Intent intent = new Intent(this, CreateAccount.class);
         startActivity(intent);
     }
 }
