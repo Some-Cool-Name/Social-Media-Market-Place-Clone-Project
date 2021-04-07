@@ -20,3 +20,5 @@ before_install:
 #   - yes | sdkmanager --licenses
 script:
    - ./gradlew build
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
