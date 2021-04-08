@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d27c73e-3411-4db8-aefa-2d3081dd3216" name="Default Changelist" comment="Reitumetse Android Studio" />
+    <list default="true" id="1ec23da3-4e8f-4c80-9066-eec9fd143046" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,51 +19,18 @@
     </projectState>
   </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="SDProject/Datumza" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectId" id="1qsTLqEzqpBMA12FRn98iwBzTUE" />
+  <component name="ProjectId" id="1qsvqWqLHndL4vYn7sT9esUlLCH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-  </component>
-  <component name="RecentsManager">
-    <key name="android.template.1857254008">
-      <recent name="com.example.social_media_market_place_clone_project" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\reitu\AndroidStudioProjects\0000\Social-Media-Market-Place-Clone-Project\app\src\main\res\drawable-v24" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -136,62 +103,22 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4d27c73e-3411-4db8-aefa-2d3081dd3216" name="Default Changelist" comment="" />
-      <created>1617867244651</created>
+      <changelist id="1ec23da3-4e8f-4c80-9066-eec9fd143046" name="Default Changelist" comment="" />
+      <created>1617881302587</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617867244651</updated>
+      <updated>1617881302587</updated>
     </task>
-    <task id="LOCAL-00001" summary="Reitumetse Android Studio">
-      <created>1617873916581</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1617873916581</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reitumetse Android Studio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reitumetse Android Studio" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="2397" y="286" key="#PSD" timestamp="1617872980563">
+    <state x="2472" y="272" key="Vcs.Push.Dialog.v2" timestamp="1617881849642">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2397" y="286" key="#PSD/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617872980563" />
-    <state x="2012" y="92" width="1736" height="896" key="AVDManager" timestamp="1617873671119">
+    <state x="2472" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617881849642" />
+    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1617881537317">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2012" y="92" width="1736" height="896" key="AVDManager/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617873671119" />
-    <state x="2104" y="89" key="DiffContextDialog" timestamp="1617873768721">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2104" y="89" key="DiffContextDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617873768721" />
-    <state x="2460" y="282" key="IDE.errors.dialog" timestamp="1617873162737">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2460" y="282" key="IDE.errors.dialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617873162737" />
-    <state x="2518" y="301" key="MultipleFileMergeDialog" timestamp="1617873985775">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2518" y="301" key="MultipleFileMergeDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617873985775" />
-    <state x="2472" y="272" key="Vcs.Push.Dialog.v2" timestamp="1617874014872">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2472" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617874014872" />
-    <state x="2456" y="252" key="git4idea.branch.GitSmartOperationDialog" timestamp="1617873769624">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2456" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617873769624" />
-    <state x="2582" y="401" key="git4idea.rebase.GitRebaseDialog" timestamp="1617871860734">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2582" y="401" key="git4idea.rebase.GitRebaseDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617871860734" />
-    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1617871782517">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617871782517" />
+    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1617881537317" />
   </component>
 </project>
