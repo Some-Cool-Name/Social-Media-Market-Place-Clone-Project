@@ -1,0 +1,4 @@
+-pass:78714377
+-ssh s1851427@lamp.ms.wits.ac.za
+-s1851427
+-https://lamp.ms.wits.ac.za/home/s1851427/WDAGet.php?username=12563323@students.wits.ac.za&password=123
