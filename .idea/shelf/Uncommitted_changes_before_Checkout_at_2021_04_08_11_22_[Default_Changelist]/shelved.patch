@@ -1,0 +1,1955 @@
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values-night/themes.xml	(date 1617868005134)
++++ app/src/main/res/values-night/themes.xml	(date 1617868005134)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.SocialMediaMarketPlaceCloneProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple</item>
++        <item name="colorPrimaryVariant">@color/purple2</item>
++        <item name="colorOnPrimary">@color/white</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/blue</item>
++        <item name="colorSecondaryVariant">@color/blue2</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1617867247414)
++++ app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1617867247414)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1617867248721)
++++ app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1617867248721)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(date 1617867250352)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1617867250352)
+@@ -0,0 +1,6 @@
++#Thu Apr 08 09:34:10 CAT 2021
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(date 1617870696193)
++++ app/src/main/AndroidManifest.xml	(date 1617870696193)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.example.social_media_market_place_clone_project">
++
++    <application
++        android:allowBackup="true"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
++        <activity android:name=".Profile"></activity>
++        <activity android:name=".SignUp2" />
++        <activity android:name=".SignUp" />
++        <activity android:name=".SignIn" />
++        <activity android:name=".MainActivity">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java	(date 1617871256681)
++++ app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java	(date 1617871256681)
+@@ -0,0 +1,49 @@
++package com.example.social_media_market_place_clone_project;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++
++public class MainActivity extends AppCompatActivity {
++    Button signIn, signUp;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++
++        // Buttons
++        signIn = (Button) findViewById(R.id.sign_in_button);
++        signUp = (Button) findViewById(R.id.sign_up_button);
++        // **************************************************************
++
++        // Switch activities when buttons are pressed
++        signIn.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                doSignIn();
++            }
++        });
++
++        signUp.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                doSignUp();
++            }
++        });
++        // **************************************************************
++    }
++
++        public void doSignUp(){
++            Intent intentSignUp = new Intent(this, SignUp.class);
++            startActivity(intentSignUp);
++        }
++
++        public void doSignIn(){
++            Intent intentSignIn = new Intent(this, SignIn.class);
++            startActivity(intentSignIn);
++        }
++}
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(date 1617867246022)
++++ .gitignore	(date 1617867246022)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java	(date 1617871287137)
++++ app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java	(date 1617871287137)
+@@ -0,0 +1,43 @@
++package com.example.social_media_market_place_clone_project;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.Button;
++import android.widget.EditText;
++
++import org.w3c.dom.Text;
++
++public class SignUp extends AppCompatActivity {
++    Button next;
++    EditText email, password, confirmPassword;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_sign_up);
++
++        // Buttons and Edit Texts
++        next = (Button) findViewById(R.id.sign_up_next_button);
++        email = (EditText) findViewById(R.id.editTextSignUpEmail);
++        password = (EditText) findViewById(R.id.editTextSignUpPassword);
++        confirmPassword = (EditText) findViewById(R.id.editTextSignUpConfirmPassword);
++        // **************************************************************
++
++        // Switch activities when buttons are pressed
++        next.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                doNext();
++            }
++        });
++        // **************************************************************
++    }
++
++    public void doNext(){
++        Intent intentNext = new Intent(SignUp.this, SignUp2.class);
++        startActivity(intentNext);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java	(date 1617871600338)
++++ app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java	(date 1617871600338)
+@@ -0,0 +1,86 @@
++package com.example.social_media_market_place_clone_project;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.app.DatePickerDialog;
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.ArrayAdapter;
++import android.widget.Button;
++import android.widget.DatePicker;
++import android.widget.EditText;
++import android.widget.Spinner;
++import android.widget.TextView;
++
++import java.util.Calendar;
++
++public class SignUp2 extends AppCompatActivity {
++    TextView birthday;
++    Button register;
++    EditText name, bio;
++    Spinner gender;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_sign_up2);
++
++        // Buttons, Edit Texts, Text Views and Spinners
++        birthday = (TextView) findViewById(R.id.sign_up_birthday_text2);
++        register = (Button) findViewById(R.id.sign_up_register_button);
++        name = (EditText) findViewById(R.id.editTextSignUpName);
++        bio = (EditText) findViewById(R.id.editTextSignUpBio);
++        gender = (Spinner) findViewById(R.id.sign_up_gender_spinner);
++        // **************************************************************
++
++        // Switch activities when buttons are pressed
++        register.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                doRegister();
++            }
++        });
++        // **************************************************************
++
++        // Spinner Code
++        Spinner mySpinner = (Spinner) findViewById(R.id.sign_up_gender_spinner);
++
++        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(com.example.social_media_market_place_clone_project.SignUp2.this,
++                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.genders));
++
++        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
++        mySpinner.setAdapter(myAdapter);
++        // **************************************************************
++
++        // Calendar for Birthday
++        Calendar calendar = Calendar.getInstance();
++        final int year = calendar.get(Calendar.YEAR);
++        final int month = calendar.get(Calendar.MONTH);
++        final int day = calendar.get(Calendar.DAY_OF_MONTH);
++
++        birthday.setOnClickListener(new View.OnClickListener(){
++            @Override
++            public void onClick(View v) {
++                DatePickerDialog datePickerDialog = new DatePickerDialog(
++                        com.example.social_media_market_place_clone_project.SignUp2.this, new DatePickerDialog.OnDateSetListener() {
++                    @Override
++                    public void onDateSet(DatePicker view, int year, int month, int day) {
++                        month = month + 1;
++                        String date = day + "/" + month + "/" + year;
++                        birthday.setText(date);
++                    }
++                }, year, month, day);
++
++                datePickerDialog.show();
++            }
++        });
++        // **************************************************************
++    }
++
++    public void doRegister(){
++        Intent intentRegister = new Intent(SignUp2.this, Profile.class);
++        startActivity(intentRegister);
++    }
++
++}
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(date 1617867246228)
++++ build.gradle	(date 1617867246228)
+@@ -0,0 +1,24 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++buildscript {
++    repositories {
++        google()
++        jcenter()
++    }
++    dependencies {
++        classpath "com.android.tools.build:gradle:4.1.3"
++
++        // NOTE: Do not place your application dependencies here; they belong
++        // in the individual module build.gradle files
++    }
++}
++
++allprojects {
++    repositories {
++        google()
++        jcenter()
++    }
++}
++
++task clean(type: Delete) {
++    delete rootProject.buildDir
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java	(date 1617870696286)
++++ app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java	(date 1617870696286)
+@@ -0,0 +1,14 @@
++package com.example.social_media_market_place_clone_project;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class Profile extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_profile);
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java	(date 1617868342882)
++++ app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java	(date 1617868342882)
+@@ -0,0 +1,14 @@
++package com.example.social_media_market_place_clone_project;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class SignIn extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_sign_in);
++    }
++}
+\ No newline at end of file
+Index: gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gradlew	(date 1617867246141)
++++ gradlew	(date 1617867246141)
+@@ -0,0 +1,172 @@
++#!/usr/bin/env sh
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS=""
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin, switch paths to Windows format before running java
++if $cygwin ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=$((i+1))
++    done
++    case $i in
++        (0) set -- ;;
++        (1) set -- "$args0" ;;
++        (2) set -- "$args0" "$args1" ;;
++        (3) set -- "$args0" "$args1" "$args2" ;;
++        (4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=$(save "$@")
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++# by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong
++if [ "$(uname)" = "Darwin" ] && [ "$HOME" = "$PWD" ]; then
++  cd "$(dirname "$0")"
++fi
++
++exec "$JAVACMD" "$@"
+Index: gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- gradlew.bat	(date 1617867246146)
++++ gradlew.bat	(date 1617867246146)
+@@ -0,0 +1,84 @@
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS=
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto init
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto init
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:init
++@rem Get command-line arguments, handling Windows variants
++
++if not "%OS%" == "Windows_NT" goto win9xME_args
++
++:win9xME_args
++@rem Slurp the command line arguments.
++set CMD_LINE_ARGS=
++set _SKIP=2
++
++:win9xME_args_slurp
++if "x%~1" == "x" goto execute
++
++set CMD_LINE_ARGS=%*
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: app/src/test/java/com/example/social_media_market_place_clone_project/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/test/java/com/example/social_media_market_place_clone_project/ExampleUnitTest.java	(date 1617867247374)
++++ app/src/test/java/com/example/social_media_market_place_clone_project/ExampleUnitTest.java	(date 1617867247374)
+@@ -0,0 +1,17 @@
++package com.example.social_media_market_place_clone_project;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- gradle.properties	(date 1617867246241)
++++ gradle.properties	(date 1617867246241)
+@@ -0,0 +1,19 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. More details, visit
++# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app"s APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Automatically convert third-party libraries to use AndroidX
++android.enableJetifier=true
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/social_media_market_place_clone_project/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/androidTest/java/com/example/social_media_market_place_clone_project/ExampleInstrumentedTest.java	(date 1617867247296)
++++ app/src/androidTest/java/com/example/social_media_market_place_clone_project/ExampleInstrumentedTest.java	(date 1617867247296)
+@@ -0,0 +1,26 @@
++package com.example.social_media_market_place_clone_project;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("com.example.social_media_market_place_clone_project", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/.gitignore	(date 1617867246366)
++++ app/.gitignore	(date 1617867246366)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- settings.gradle	(date 1617867246945)
++++ settings.gradle	(date 1617867246945)
+@@ -0,0 +1,2 @@
++include ':app'
++rootProject.name = "Social-Media-Market-Place-Clone-Project"
+\ No newline at end of file
+Index: app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/proguard-rules.pro	(date 1617867246465)
++++ app/proguard-rules.pro	(date 1617867246465)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(date 1617867249080)
++++ app/build.gradle	(date 1617867249080)
+@@ -0,0 +1,39 @@
++plugins {
++    id 'com.android.application'
++}
++
++android {
++    compileSdkVersion 30
++    buildToolsVersion "30.0.3"
++
++    defaultConfig {
++        applicationId "com.example.social_media_market_place_clone_project"
++        minSdkVersion 16
++        targetSdkVersion 30
++        versionCode 1
++        versionName "1.0"
++
++        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
++        }
++    }
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8
++        targetCompatibility JavaVersion.VERSION_1_8
++    }
++}
++
++dependencies {
++
++    implementation 'androidx.appcompat:appcompat:1.2.0'
++    implementation 'com.google.android.material:material:1.3.0'
++    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
++    testImplementation 'junit:junit:4.+'
++    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
++    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(date 1617873668171)
++++ app/src/main/res/layout/activity_main.xml	(date 1617873668171)
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@drawable/gradient"
++    tools:context=".MainActivity">
++
++    // Icon /Logo
++    <ImageView
++        android:id="@+id/sign_in_logo"
++        android:layout_width="100dp"
++        android:layout_height="100dp"
++
++        android:layout_marginTop="220dp"
++
++        android:layout_centerHorizontal="true"
++
++        app:srcCompat="@drawable/ic_launcher_foreground"
++        tools:ignore="VectorDrawableCompat" />
++    // **************************************************************
++
++    // Register Button
++    <Button
++        android:id="@+id/sign_in_button"
++        android:layout_width="120dp"
++        android:layout_height="50dp"
++
++        android:layout_marginTop="350dp"
++        android:layout_centerHorizontal="true"
++
++        android:background="@color/blue"
++
++        android:text="Sign In"
++        android:textAllCaps="false"
++        android:textColor="@color/white" />
++    // **************************************************************
++
++    // Register Button
++    <Button
++        android:id="@+id/sign_up_button"
++        android:layout_width="120dp"
++        android:layout_height="50dp"
++
++        android:layout_marginTop="410dp"
++        android:layout_centerHorizontal="true"
++
++        android:background="@color/blue"
++
++        android:text="Sign Up"
++        android:textAllCaps="false"
++        android:textColor="@color/white" />
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_profile.xml	(date 1617870804005)
++++ app/src/main/res/layout/activity_profile.xml	(date 1617870804005)
+@@ -0,0 +1,21 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"
++    tools:context=".Profile">
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++
++        android:layout_centerHorizontal="true"
++        android:layout_centerVertical="true"
++
++        android:text="Welcome to APP NAME"
++        android:textSize="20dp"
++        android:textColor="@color/black"
++        />
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_sign_up2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_sign_up2.xml	(date 1617870696478)
++++ app/src/main/res/layout/activity_sign_up2.xml	(date 1617870696478)
+@@ -0,0 +1,190 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"
++    tools:context=".SignUp2">
++
++    // Profile Picture Text
++    <TextView
++        android:id="@+id/sign_up_profile_picture_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="30dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Profile Picture"
++        />
++
++    // **************************************************************
++
++    // Name Text
++    <TextView
++        android:id="@+id/sign_up_name_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="200dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Name"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignUpName"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="240dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="text"
++        />
++    // **************************************************************
++
++    // Birthday Text
++    <TextView
++        android:id="@+id/sign_up_birthday_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="300dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Birthday"
++        />
++
++    <TextView
++        android:id="@+id/sign_up_birthday_text2"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="340dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Select Date"
++        android:gravity="center"
++        />
++    // **************************************************************
++
++    // Gender Text
++    <TextView
++        android:id="@+id/sign_up_gender_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="400dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Gender"
++        />
++
++    <Spinner
++        android:id="@+id/sign_up_gender_spinner"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="440dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/spinner_style"
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++        />
++
++    // **************************************************************
++
++    // Bio Text
++    <TextView
++        android:id="@+id/sign_up_bio_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="500dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Bio"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignUpBio"
++        android:layout_width="match_parent"
++        android:layout_height="90dp"
++
++        android:layout_centerHorizontal="true"
++        android:layout_marginLeft="50dp"
++        android:layout_marginTop="540dp"
++
++        android:background="@drawable/textfield_style"
++        android:ems="10"
++
++        android:inputType="text"
++        android:paddingLeft="15dp"
++
++        android:paddingRight="15dp"
++        android:textColor="@color/grey" />
++    // **************************************************************
++
++    // Register Button
++    <Button
++        android:id="@+id/sign_up_register_button"
++        android:layout_width="100dp"
++        android:layout_height="40dp"
++
++        android:layout_alignParentBottom="true"
++        android:layout_marginBottom="30dp"
++
++        android:layout_alignParentRight="true"
++        android:layout_marginRight="25dp"
++
++        android:background="@color/blue"
++
++        android:textColor="@color/white"
++        android:textAllCaps="false"
++        android:text="Register"
++        />
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(date 1617867802240)
++++ app/src/main/res/values/colors.xml	(date 1617867802240)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="purple_200">#FFBB86FC</color>
++    <color name="purple_500">#FF6200EE</color>
++    <color name="purple_700">#FF3700B3</color>
++    <color name="teal_200">#FF03DAC5</color>
++    <color name="teal_700">#FF018786</color>
++    <color name="black">#FF000000</color>
++
++    <color name="white">#fff</color>
++    <color name="lightgrey">#e1e1e1</color>
++    <color name="grey">#707070</color>
++
++    <color name="purple">#9561ee</color>
++    <color name="blue">#1db6ef</color>
++    <color name="purple2">#5013B9</color>
++    <color name="blue2">#1482BF</color>
++</resources>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(date 1617867261504)
++++ .idea/compiler.xml	(date 1617867261504)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="1.8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_sign_in.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_sign_in.xml	(date 1617873668182)
++++ app/src/main/res/layout/activity_sign_in.xml	(date 1617873668182)
+@@ -0,0 +1,141 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"
++    tools:context=".SignIn">
++
++    // Gradient Background
++    <ImageView
++        android:id="@+id/sign_in_background"
++        android:layout_width="match_parent"
++        android:layout_height="250dp"
++
++        android:contentDescription="TODO"
++
++        android:background="@drawable/gradient"
++        />
++
++    // Icon /Logo
++    <ImageView
++        android:id="@+id/sign_in_logo"
++        android:layout_width="100dp"
++        android:layout_height="100dp"
++
++        android:layout_marginTop="100dp"
++
++        android:layout_centerHorizontal="true"
++
++        app:srcCompat="@drawable/ic_launcher_foreground"
++        tools:ignore="VectorDrawableCompat" />
++
++    // Create an Account Text
++
++    <TextView
++        android:id="@+id/sign_in_text"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++
++        android:layout_centerHorizontal="true"
++
++        android:layout_marginTop="200dp"
++        android:text="Sign Into Account"
++
++        android:textColor="@color/white"
++
++        android:textSize="20dp" />
++    // **************************************************************
++
++    // Email Text
++    <TextView
++        android:id="@+id/sign_in_email_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="280dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Email"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignInEmailAddress"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="320dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="textEmailAddress"
++        />
++    // **************************************************************
++
++    // Password Text
++    <TextView
++        android:id="@+id/sign_in_password_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="380dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Password"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignInPassword"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="420dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="textPassword"
++        />
++    // **************************************************************
++
++    // Register Button
++    <Button
++        android:id="@+id/sign_in_button"
++        android:layout_width="100dp"
++        android:layout_height="40dp"
++
++        android:layout_alignParentRight="true"
++        android:layout_alignParentBottom="true"
++
++        android:layout_marginRight="25dp"
++        android:layout_marginBottom="55dp"
++
++        android:background="@color/blue"
++
++        android:text="Sign In"
++        android:textAllCaps="false"
++        android:textColor="@color/white" />
++
++</RelativeLayout>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(date 1617867258622)
++++ .idea/.gitignore	(date 1617867258622)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: app/src/main/res/layout/activity_sign_up.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_sign_up.xml	(date 1617873668156)
++++ app/src/main/res/layout/activity_sign_up.xml	(date 1617873668156)
+@@ -0,0 +1,178 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"
++    tools:context=".SignUp">
++
++    // Gradient Background
++    <ImageView
++        android:id="@+id/create_acc_background"
++        android:layout_width="match_parent"
++        android:layout_height="250dp"
++
++        android:contentDescription="TODO"
++
++        android:background="@drawable/gradient"
++        />
++
++    // Icon /Logo
++    <ImageView
++        android:id="@+id/create_acc_logo"
++        android:layout_width="100dp"
++        android:layout_height="100dp"
++
++        android:layout_marginTop="100dp"
++
++        android:layout_centerHorizontal="true"
++
++        app:srcCompat="@drawable/ic_launcher_foreground"
++        tools:ignore="VectorDrawableCompat" />
++
++    // Create an Account Text
++    <TextView
++        android:id="@+id/create_acc_text"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="200dp"
++
++        android:textColor="@color/white"
++        android:textSize="20dp"
++
++        android:layout_centerHorizontal="true"
++
++        android:text="Create an Account"
++        />
++    // **************************************************************
++
++    // Email Text
++    <TextView
++        android:id="@+id/sign_up_email_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="280dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Email"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignUpEmail"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="320dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="textEmailAddress"
++        />
++    // **************************************************************
++
++    // Password Text
++    <TextView
++        android:id="@+id/sign_up_password_text"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="380dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Password"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignUpPassword"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="420dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="textPassword"
++        />
++    // **************************************************************
++
++    // Confirm Password Text
++    <TextView
++        android:id="@+id/sign_up_password_text2"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++
++        android:layout_marginTop="480dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:textColor="@color/grey"
++        android:textSize="20dp"
++
++        android:text="Confirm Password"
++        />
++
++    <EditText
++        android:id="@+id/editTextSignUpConfirmPassword"
++        android:layout_width="match_parent"
++        android:layout_height="35dp"
++
++        android:layout_marginTop="520dp"
++        android:layout_marginLeft="50dp"
++        android:layout_centerHorizontal="true"
++
++        android:paddingLeft="15dp"
++        android:paddingRight="15dp"
++
++        android:background="@drawable/textfield_style"
++        android:textColor="@color/grey"
++
++        android:ems="10"
++        android:inputType="textPassword"
++        />
++    // **************************************************************
++
++    // Register Button
++    <Button
++        android:id="@+id/sign_up_next_button"
++        android:layout_width="100dp"
++        android:layout_height="40dp"
++
++        android:layout_alignParentBottom="true"
++        android:layout_marginBottom="55dp"
++
++        android:layout_alignParentRight="true"
++        android:layout_marginRight="25dp"
++
++        android:background="@color/blue"
++
++        android:textColor="@color/white"
++        android:textAllCaps="false"
++        android:text="Next"
++        />
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/ic_launcher_background.xml	(date 1617867248616)
++++ app/src/main/res/drawable/ic_launcher_background.xml	(date 1617867248616)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1617867261462)
++++ .idea/misc.xml	(date 1617867261462)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/gradle.xml	(date 1617867261537)
++++ .idea/gradle.xml	(date 1617867261537)
+@@ -0,0 +1,21 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="testRunner" value="PLATFORM" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="1.8" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveModulePerSourceSet" value="false" />
++        <option name="useQualifiedModuleNames" value="true" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(date 1617869595789)
++++ app/src/main/res/values/strings.xml	(date 1617869595789)
+@@ -0,0 +1,9 @@
++<resources>
++    <string name="app_name">Social-Media-Market-Place-Clone-Project</string>
++
++    <string-array name="genders">
++        <item>Male</item>
++        <item>Female</item>
++        <item>Other</item>
++    </string-array>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/themes.xml	(date 1617868019715)
++++ app/src/main/res/values/themes.xml	(date 1617868019715)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.SocialMediaMarketPlaceCloneProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple</item>
++        <item name="colorPrimaryVariant">@color/purple2</item>
++        <item name="colorOnPrimary">@color/white</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/blue</item>
++        <item name="colorSecondaryVariant">@color/blue2</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jarRepositories.xml	(date 1617867272392)
++++ .idea/jarRepositories.xml	(date 1617867272392)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1617872036388)
++++ .idea/vcs.xml	(date 1617872036388)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/gradient.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-v24/gradient.xml	(date 1617811367000)
++++ app/src/main/res/drawable-v24/gradient.xml	(date 1617811367000)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<selector xmlns:android="http://schemas.android.com/apk/res/android">
++    <item>
++        <shape>
++            <gradient android:angle="45" android:startColor="@color/blue2"  android:endColor="@color/purple2" android:type="linear"/>
++        </shape>
++    </item>
++</selector>
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/textfield_style.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-v24/textfield_style.xml	(date 1617811367000)
++++ app/src/main/res/drawable-v24/textfield_style.xml	(date 1617811367000)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <corners android:radius="12dp" />
++
++    <stroke android:width="4px" android:color="@color/grey" />
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1617867248661)
++++ app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1617867248661)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/spinner_style.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable-v24/spinner_style.xml	(date 1617811367000)
++++ app/src/main/res/drawable-v24/spinner_style.xml	(date 1617811367000)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android">
++    <corners android:radius="12dp" />
++
++    <stroke android:width="4px" android:color="@color/grey" />
++</shape>
+\ No newline at end of file
