@@ -1,6 +1,12 @@
 language: android
 sudo: required
 jdk: oraclejdk8
+
+env:
+  global:
+    - ANDROID_TARGET=android-29
+    - ANDROID_ABI=armeabi-v7a
+
 android: 
    components:
       - tools
@@ -9,6 +15,8 @@ android:
       - build-tools-29.0.1
       - android-29
       - extra-android-m2repository
+      - $ANDROID_TARGET #added
+      - sys-img-${ANDROID_ABI}-${ANDROID_TARGET} #added
 #optional, use it if only you haven't give permission yet.
 before_install:
   - chmod +x gradlew
@@ -18,7 +26,14 @@ before_install:
 #   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 #   - yes | sdkmanager --update
 #   - yes | sdkmanager --licenses
+
+
 script:
-   - ./gradlew build
+   - ./gradlew build jacocoTestReport assembleAndroidTest
+   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+   - emulator -avd test -no-skin -no-audio -no-window &
+   - android-wait-for-emulator
+   - adb shell setprop dalvik.vm.dexopt-flags v=n,o=v
+   - ./gradlew connectedCheck
 after_success:
    - bash <(curl -s https://codecov.io/bash)
