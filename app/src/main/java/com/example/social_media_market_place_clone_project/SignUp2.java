@@ -38,6 +38,12 @@ public class SignUp2 extends AppCompatActivity {
     Uri uri;
     String date; // DD MONTH YYYY
 
+    // Disable back button
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
