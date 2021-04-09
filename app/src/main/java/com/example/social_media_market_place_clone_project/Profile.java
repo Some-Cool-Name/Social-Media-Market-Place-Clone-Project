@@ -6,6 +6,12 @@ import android.os.Bundle;
 
 public class Profile extends AppCompatActivity {
 
+    // Disable back button
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
