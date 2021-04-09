@@ -11,11 +11,4 @@ public class CalculatorTester {
         int sum = calculator.addTwo(3, 4);
         assertEquals(sum , 7);
     }
-
-    @Test
-    public void calculatorMultiply(){
-        Calculator calculator = new Calculator();
-        int product = calculator.multiply(3, 2);
-        assertEquals(product, 6);
-    }
 }

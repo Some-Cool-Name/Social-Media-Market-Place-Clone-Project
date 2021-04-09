@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-apply plugin: 'jacoco' //added
+apply plugin: 'jacoco'
 
 android {
     compileSdkVersion 29
@@ -22,7 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-        debug { // added
+        debug {
             testCoverageEnabled true
         }
     }
