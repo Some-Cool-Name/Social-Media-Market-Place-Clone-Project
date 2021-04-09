@@ -25,6 +25,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 
+import okhttp3.HttpUrl;
+
 public class SignUp2 extends AppCompatActivity {
     TextView birthday;
     Button register;
@@ -53,6 +55,25 @@ public class SignUp2 extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SessionManager sessionManager = new SessionManager(SignUp2.this);
+                SignUp signUp = new SignUp();
+                AsyncNetwork request  = new AsyncNetwork();
+                String email= signUp.emailExport;
+                String password = signUp.passwordExport;
+                String link ="https://lamp.ms.wits.ac.za/home/s1851427/WDAReg.php";
+                HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+                urlBuilder.addQueryParameter("username",email);
+                urlBuilder.addQueryParameter("password",password);
+                urlBuilder.addQueryParameter("name", name.getText().toString());
+                urlBuilder.addQueryParameter("gender","Male");
+                urlBuilder.addQueryParameter("birthday","13-01-1999");
+                urlBuilder.addQueryParameter("sexuality","Straight");
+                urlBuilder.addQueryParameter("location","Braamfontein");
+                String url = urlBuilder.build().toString();
+                request.execute(url);
+                sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+
+                // if done change ui'
                 doRegister();
             }
         });
@@ -107,6 +128,7 @@ public class SignUp2 extends AppCompatActivity {
 
     public void doRegister(){
         Intent intentRegister = new Intent(SignUp2.this, Profile.class);
+        intentRegister.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentRegister);
     }
 

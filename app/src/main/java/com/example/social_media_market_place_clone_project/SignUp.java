@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 public class SignUp extends AppCompatActivity {
     Button next;
     EditText email, password, confirmPassword;
+    public static  String emailExport, passwordExport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,13 @@ public class SignUp extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doNext();
+                if(password.getText().toString().equals(confirmPassword.getText().toString())){
+                    emailExport = email.getText().toString();
+                    passwordExport= password.getText().toString();
+                    doNext();
+                }
+
+
             }
         });
         // **************************************************************
