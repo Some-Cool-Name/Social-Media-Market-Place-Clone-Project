@@ -33,6 +33,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
+    String date; // DD MONTH YYYY
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class SignUp2 extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int day) {
                         month = month + 1;
                         String monthString = getMonth(month);
-                        String date = day + " " + monthString + " " + year;
+                        date = day + " " + monthString + " " + year;
                         birthday.setText(date);
                     }
                 }, year, month, day);
