@@ -1,6 +1,7 @@
 sudo: true
 language: android
 # ignored on non-linux platforms, but bionic is required for nested virtualization
+dist : bionic
 
 stages:
   - install
@@ -31,11 +32,7 @@ env:
     # - API=21 ABI=x86_64 # FIXME - AdapterTest.testSetOccupancyVisibilityAndColor() - java.lang.NoSuchMethodError: No virtual method getColor()Landroid/content/res/ColorStateList; in class Landroid/graphics/drawable/GradientDrawable
     # - API=22 ABI=x86_64 # FIXME - AdapterTest.testSetOccupancyVisibilityAndColor() - java.lang.NoSuchMethodError: No virtual method getColor()Landroid/content/res/ColorStateList; in class Landroid/graphics/drawable/GradientDrawable
     # - API=23 ABI=x86_64 # FIXME - AdapterTest.testSetOccupancyVisibilityAndColor() - java.lang.NoSuchMethodError: No virtual method getColor()Landroid/content/res/ColorStateList; in class Landroid/graphics/drawable/GradientDrawable
-    - API=24 ABI=x86_64 # Works
-    - API=25 ABI=x86_64 # Works
-    - API=26 ABI=x86_64 # Works
-    - API=27 ABI=x86_64 # Works
-    - API=28 ABI=x86_64 # Works
+    
     - API=29 ABI=x86_64 # Works
 
 before_install:
@@ -74,7 +71,7 @@ install:
   - sudo adduser $USER kvm
 
   # Create an Android emulator
-  - echo no | avdmanager create avd --force -n test -k "system-images;android-$API;$EMU_FLAVOR;$ABI" -c 10M
+  - echo no | avdmanager create avd --force -n test -k "system-images;android-$API;$EMU_FLAVOR;$ABI" -c 500M
   - |
     EMU_PARAMS="-verbose -no-snapshot -no-window -gpu swiftshader_indirect -camera-back none -camera-front none -selinux permissive -qemu -m 2048"
     EMU_COMMAND="emulator"
@@ -103,10 +100,3 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-notifications:
-  webhooks:
-    # Integration with Gitter (https://gitter.im/OneBusAway/onebusaway-android)
-    urls:
-      - https://webhooks.gitter.im/e/a579a4e7a21ff6ee51a1
-    on_success: change
-    on_failure: always
