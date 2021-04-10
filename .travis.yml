@@ -7,7 +7,7 @@ env:
  - ANDROID_BUILD_TOOLS=29.0.2 # should match gradle
  - ADB_INSTALL_TIMEOUT=5 # minutes
  - ANDROID_API=29 # api is same as gradle file
- matrix:
+ matrix: # list the android device api you want to test.
  - EMULATOR_API=21
  - EMULATOR_API=22
 android:
@@ -38,17 +38,18 @@ cache:
 before_install:
     #- yes | sdkmanager "platforms;android-$ANDROID_API"
 before_script:
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_TAG
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
-  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a # create an emulator for testing purposes
+  - emulator -avd test -no-audio -no-window & #do not let the emulator have sound or pop up on screen
+  - android-wait-for-emulator # wait for the emulator to turn on fully
+  - adb shell input keyevent 82 & 
+
+#clean your environment if there is anything to clean, then build the project and run the tests and get the report.
 script:
-  - ./gradlew clean
+  - ./gradlew clean 
   - ./gradlew build connectedCheck
 
 
+#if the build is successful, send the generated reports to codecov
 after_success:
    - bash <(curl -s https://codecov.io/bash)
 
