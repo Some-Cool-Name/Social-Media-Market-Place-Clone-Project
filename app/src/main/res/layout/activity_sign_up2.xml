@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SignUp2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            // Profile Picture Text
+            <TextView
+                android:id="@+id/sign_up_profile_picture_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Profile Picture"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                app:cardCornerRadius="12dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                >
+
+                <ImageView
+                    android:id="@+id/sign_up_profile_picture_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+
+
+                    android:background="@drawable/image_style"
+                    />
+            </androidx.cardview.widget.CardView>
+            // **************************************************************
+
+            // Name Text
+            <TextView
+                android:id="@+id/sign_up_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="440dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Name"
+                />
+
+            <EditText
+                android:id="@+id/editTextSignUpName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_marginTop="480dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+
+                android:background="@drawable/textfield_style"
+                android:textColor="@color/grey"
+
+                android:ems="10"
+                android:inputType="text"
+                />
+            // **************************************************************
+
+            // Birthday Text
+            <TextView
+                android:id="@+id/sign_up_birthday_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="540dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Birthday"
+                />
+
+            <TextView
+                android:id="@+id/sign_up_birthday_text2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_marginTop="580dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+
+                android:background="@drawable/textfield_style"
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Select Date"
+                android:gravity="center_vertical"
+                />
+            // **************************************************************
+
+            // Gender Text
+            <TextView
+                android:id="@+id/sign_up_gender_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="640dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Gender"
+                />
+
+            <Spinner
+                android:id="@+id/sign_up_gender_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="680dp"
+
+                android:background="@drawable/textfield_style"
+                android:paddingLeft="7.5dp"
+
+
+                android:paddingRight="7.5dp"
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+                android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject" />
+
+            // **************************************************************
+
+            // Bio Text
+            <TextView
+                android:id="@+id/sign_up_bio_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="740dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:textColor="@color/grey"
+                android:textSize="20dp"
+
+                android:text="Bio"
+                />
+
+            <EditText
+                android:id="@+id/editTextSignUpBio"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="780dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+
+                android:background="@drawable/textfield_style"
+                android:ems="10"
+
+                android:gravity="top"
+                android:maxLines="5"
+                android:inputType="textMultiLine"
+
+
+                android:paddingRight="15dp"
+                android:textColor="@color/grey" />
+            // **************************************************************
+
+            // Register Button
+            <Button
+                android:id="@+id/sign_up_register_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+
+                android:layout_marginTop="900dp"
+                android:layout_marginBottom="30dp"
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+
+                android:background="@drawable/button_style"
+
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Register"
+                />
+            // **************************************************************
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
