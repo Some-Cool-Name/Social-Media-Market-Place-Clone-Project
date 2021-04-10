@@ -4,7 +4,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -29,20 +31,15 @@ import java.util.Calendar;
 import okhttp3.HttpUrl;
 
 public class SignUp2 extends AppCompatActivity {
-    TextView birthday;
+    TextView birthday, gender, preference;
     Button register;
     EditText name, bio;
-    Spinner gender;
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
     String date; // DD MONTH YYYY
-
-    // Disable back button
-    @Override
-    public void onBackPressed() {
-        //super.onBackPressed();
-    }
+    String genderValue, preferenceValue;
+    String[] genderList = new String[] {"Male", "Female"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +51,6 @@ public class SignUp2 extends AppCompatActivity {
         register = (Button) findViewById(R.id.sign_up_register_button);
         name = (EditText) findViewById(R.id.editTextSignUpName);
         bio = (EditText) findViewById(R.id.editTextSignUpBio);
-        gender = (Spinner) findViewById(R.id.sign_up_gender_spinner);
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
         // **************************************************************
 
@@ -93,14 +89,49 @@ public class SignUp2 extends AppCompatActivity {
         });
         // **************************************************************
 
-        // Spinner Code
-        Spinner mySpinner = (Spinner) findViewById(R.id.sign_up_gender_spinner);
+        // Popup Menus
+        // Choose gender popup menu
+        gender = (TextView) findViewById(R.id.sign_up_gender_text2);
+        preference = (TextView) findViewById(R.id.sign_up_preference_text2);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(com.example.social_media_market_place_clone_project.SignUp2.this,
-                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.genders));
+        gender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+                builder.setTitle("Choose Gender");
+                builder.setItems(genderList, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        genderValue = genderList[which];
+                        gender.setText(genderValue);
+                        dialog.dismiss();
+                    }
+                });
 
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        // Choose preference popup menu
+        preference.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+                builder.setTitle("Select Preference");
+                builder.setItems(genderList, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        preferenceValue = genderList[which];
+                        preference.setText(preferenceValue);
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         // **************************************************************
 
         // Calendar for Birthday
