@@ -9,7 +9,7 @@ public class Profile extends AppCompatActivity {
     // Disable back button
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+        super.onBackPressed();
     }
 
     @Override
