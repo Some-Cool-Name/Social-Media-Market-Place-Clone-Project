@@ -11,6 +11,7 @@ public class CalculatorTester {
         int sum = calculator.addTwo(3, 4);
         assertEquals(sum , 7);
     }
+<<<<<<< HEAD
 
     @Test
     public void calculatorMultiply(){
@@ -18,4 +19,6 @@ public class CalculatorTester {
         int product = calculator.multiply(3, 2);
         assertEquals(product, 6);
     }
+=======
+>>>>>>> 7fa9cb371e38b5fd06a5b7a35ea403203319b1c3
 }
