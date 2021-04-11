@@ -75,18 +75,35 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("username",email);
                     urlBuilder.addQueryParameter("password",password);
                     urlBuilder.addQueryParameter("name", name.getText().toString());
-                    urlBuilder.addQueryParameter("gender","Male");
-                    urlBuilder.addQueryParameter("birthday","13-01-1999");
-                    urlBuilder.addQueryParameter("sexuality","Straight");
+                    urlBuilder.addQueryParameter("gender",genderValue);
+                    urlBuilder.addQueryParameter("birthday",date);
+                    urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
                     request.execute(url);
 
                     // if request result is success go ahead and create session and call do register
-                   sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+                   while(request.Result.equals("Waiting")){
+                       Toast.makeText(SignUp2.this,"Loading",Toast.LENGTH_SHORT).show();
+                   }
+                   JSONObject wholeString = null; // Read the whole string
+                   try {
+                       wholeString = new JSONObject(request.Result);
+                       if(wholeString.getString("message").equals("success")){
+                           sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
 
-                   // if done change ui'
-                   doRegister();
+                           // if done change ui'
+                           doRegister();
+                       }
+                       else {
+                           //set ui to signin1
+                           incorrect();
+
+                       }
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
+
 
 
                 }else{
@@ -259,5 +276,10 @@ public class SignUp2 extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+    public void incorrect(){
+        Intent viewProfile = new Intent(this, SignUp.class);
+        viewProfile.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(viewProfile);
     }
 }
