@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         // **************************************************************
 
         // Switch activities when buttons are pressed
+        SessionManager sessionManager = new SessionManager(MainActivity.this);
+        if(sessionManager.checkLogin()){
+            goToProfile();
+        }
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,5 +52,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intentSignIn = new Intent(this, SignIn.class);
             startActivity(intentSignIn);
         }
-
+        public void goToProfile(){
+            Intent viewProfile = new Intent(this, Profile.class);
+            viewProfile.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(viewProfile);
+        }
 }

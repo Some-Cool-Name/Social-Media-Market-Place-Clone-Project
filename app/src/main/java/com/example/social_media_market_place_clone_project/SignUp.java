@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 public class SignUp extends AppCompatActivity {
     Button next;
     EditText email, password, confirmPassword;
+    public static  String emailExport, passwordExport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,18 @@ public class SignUp extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doNext();
+                DataValidation validate = new DataValidation();
+                String isValid = validate.validateSignUp1(email.getText().toString(),password.getText().toString(),
+                        confirmPassword.getText().toString());
+                if(isValid.equals("Valid")){
+                    emailExport = email.getText().toString();
+                    passwordExport= password.getText().toString();
+                    doNext();
+                }else{
+                    Toast.makeText(SignUp.this,isValid,Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
         // **************************************************************

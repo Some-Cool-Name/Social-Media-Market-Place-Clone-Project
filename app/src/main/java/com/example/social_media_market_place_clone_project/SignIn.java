@@ -54,9 +54,11 @@ public class SignIn extends AppCompatActivity {
             Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
         }
 
+
         // Request is finished
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
         JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
+
         JSONObject userCredentials = jsonArray.getJSONObject(0);
 
         if(wholeString.getString("success").equals("0")){
