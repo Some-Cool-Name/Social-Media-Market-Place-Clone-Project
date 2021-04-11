@@ -36,7 +36,7 @@ public class Profile extends AppCompatActivity {
                 sessionManager.logoutUser();
             }
         });
-        Toast.makeText(Profile.this,currentUser.get(sessionManager.EMAIL),Toast.LENGTH_SHORT).show();
+        Toast.makeText(Profile.this,currentUser.get(sessionManager.EMAIL),Toast.LENGTH_LONG).show();
 
         String email = currentUser.get(sessionManager.EMAIL);
         details.setText(email);
