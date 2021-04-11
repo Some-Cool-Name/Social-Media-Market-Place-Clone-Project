@@ -22,6 +22,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
@@ -58,7 +62,7 @@ public class SignUp2 extends AppCompatActivity {
             public void onClick(View v) {
                 DataValidation validate = new DataValidation();
                 String isValid =validate.validateSignuUp2(name.getText().toString());
-                if(isValid.equals("Valid")){
+               if(isValid.equals("Valid")){
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
@@ -75,12 +79,16 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
                     request.execute(url);
-                    sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
 
-                    // if done change ui'
-                    doRegister();
+                    // if request result is success go ahead and create session and call do register
+                   sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+
+                   // if done change ui'
+                   doRegister();
+
+
                 }else{
-                    Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                   Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
                 }
 
             }
