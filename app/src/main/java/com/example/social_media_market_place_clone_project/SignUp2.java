@@ -76,8 +76,8 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("password",password);
                     urlBuilder.addQueryParameter("name", name.getText().toString());
                     urlBuilder.addQueryParameter("gender",genderValue);
-                    urlBuilder.addQueryParameter("birthday",date);
-                    urlBuilder.addQueryParameter("sexuality",preferenceValue);
+                    urlBuilder.addQueryParameter("birthday","19-01-1999");
+                    urlBuilder.addQueryParameter("sexuality","Straight");
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
                     request.execute(url);
@@ -90,7 +90,7 @@ public class SignUp2 extends AppCompatActivity {
                    try {
                        wholeString = new JSONObject(request.Result);
                        if(wholeString.getString("message").equals("success")){
-                           sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+                           sessionManager.createSession(email,name.getText().toString(),"19-01-1999",genderValue,"Straight");
 
                            // if done change ui'
                            doRegister();
