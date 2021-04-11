@@ -27,26 +27,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b38b681-9542-47b7-8439-f94f76fb1e0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+    <list default="true" id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="checking tumza2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ce12171cd5b0230d02]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[JAK02022013479]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -182,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617963618257</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="with logout">
+      <created>1618128925880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618128925880</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,29 +195,50 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="checking tumza2" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking tumza2" />
+    <MESSAGE value="with logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="with logout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617967265354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967265354" />
-    <state width="1859" height="237" key="GridCell.Tab.0.bottom" timestamp="1617967944800">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1618128851178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944800" />
-    <state width="1859" height="237" key="GridCell.Tab.0.center" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1618128851178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
-    <state width="1859" height="237" key="GridCell.Tab.0.left" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1618128851178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
-    <state width="1859" height="237" key="GridCell.Tab.0.right" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1618128851178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1618128851179">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851179" />
+    <state width="1877" height="281" key="GridCell.Tab.1.center" timestamp="1618128851178">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.1.left" timestamp="1618128851178">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state width="1877" height="281" key="GridCell.Tab.1.right" timestamp="1618128851178">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128851178" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1618128835649">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128835649" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1617963640055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,9 +247,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
-    <state x="1843" y="-78" width="896" height="1005" maximized="true" key="dock-window-1" timestamp="1617968641763">
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618128698416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128698416" />
+    <state x="1840" y="-81" width="896" height="717" maximized="true" key="dock-window-1" timestamp="1618129993905">
       <screen x="1920" y="-96" width="768" height="1326" />
     </state>
-    <state x="1843" y="-78" width="896" height="1005" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968641763" />
+    <state x="1840" y="-81" width="896" height="717" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618129993905" />
   </component>
 </project>
