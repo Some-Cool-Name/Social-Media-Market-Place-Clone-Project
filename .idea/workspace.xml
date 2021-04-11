@@ -27,9 +27,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b38b681-9542-47b7-8439-f94f76fb1e0e" name="Default Changelist" comment="with logout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9b38b681-9542-47b7-8439-f94f76fb1e0e" name="Default Changelist" comment="with logout" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618136230020</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="with logout">
+      <created>1618139228256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618139228256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,18 +258,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618131786901" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618131786910">
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618139262858">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618131786910" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618139262858" />
     <state x="461" y="190" key="SettingsEditor" timestamp="1617968312904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
-    <state x="644" y="140" key="Vcs.Push.Dialog.v2" timestamp="1618136443588">
+    <state x="644" y="140" key="Vcs.Push.Dialog.v2" timestamp="1618139237566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="644" y="140" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618136443588" />
+    <state x="644" y="140" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618139237566" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618128698416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
