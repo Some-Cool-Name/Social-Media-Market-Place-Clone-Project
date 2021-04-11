@@ -144,7 +144,18 @@ public class SignUp2 extends AppCompatActivity {
 
     public void doRegister(){
         Intent intentRegister = new Intent(SignUp2.this, Profile.class);
-        startActivity(intentRegister);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+        builder.setTitle("Registration Successful")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(intentRegister);
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public String getMonth(int i){

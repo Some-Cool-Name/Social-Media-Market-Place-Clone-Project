@@ -47,8 +47,8 @@
 
                     android:scaleType="centerCrop"
 
-
                     android:background="@drawable/image_style"
+                    android:src="@drawable/add_dp"
                     />
             </androidx.cardview.widget.CardView>
             // **************************************************************
@@ -84,7 +84,10 @@
                 android:background="@drawable/textfield_style"
                 android:textColor="@color/grey"
 
-                android:ems="10"
+                android:textSize="16dp"
+                android:hint="Enter Name"
+                android:textColorHint="@color/grey2"
+
                 android:inputType="text"
                 />
             // **************************************************************
@@ -119,9 +122,10 @@
 
                 android:background="@drawable/textfield_style"
                 android:textColor="@color/grey"
-                android:textSize="20dp"
+                android:textSize="16dp"
 
-                android:text="Select Date"
+                android:hint="Select Date"
+                android:textColorHint="@color/grey2"
                 android:gravity="center_vertical"
                 />
             // **************************************************************
@@ -155,10 +159,10 @@
             android:paddingRight="15dp"
 
             android:background="@drawable/textfield_style"
-            android:textColor="@color/grey"
-            android:textSize="20dp"
+            android:textColor="@color/grey" android:textSize="16dp"
 
-            android:text="Select Gender"
+            android:hint="Select Gender"
+                android:textColorHint="@color/grey2"
             android:gravity="center_vertical"
             />
             // **************************************************************
@@ -193,9 +197,10 @@
 
                 android:background="@drawable/textfield_style"
                 android:textColor="@color/grey"
-                android:textSize="20dp"
+                android:textSize="16dp"
 
-                android:text="Select Preference"
+                android:hint="Select Preference"
+                android:textColorHint="@color/grey2"
                 android:gravity="center_vertical"
                 />
             // **************************************************************
@@ -229,12 +234,14 @@
                 android:paddingLeft="15dp"
 
                 android:background="@drawable/textfield_style"
-                android:ems="10"
+                android:textSize="16dp"
 
                 android:gravity="top"
                 android:maxLines="5"
                 android:inputType="textMultiLine"
 
+                android:hint="Tell us something about yourself..."
+                android:textColorHint="@color/grey2"
 
                 android:paddingRight="15dp"
                 android:textColor="@color/grey" />
