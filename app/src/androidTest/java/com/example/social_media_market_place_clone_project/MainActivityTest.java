@@ -17,7 +17,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest extends TestCase {
+/*public class MainActivityTest extends TestCase {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =
@@ -31,6 +31,6 @@ public class MainActivityTest extends TestCase {
     @Test
     public void check_if_sign_up_button_is_clickable() {
         onView(withId(R.id.sign_up_button)).check(matches(isClickable()));
-    }*/
+    }
 
-}
+}*/
