@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         // Switch activities when buttons are pressed
         SessionManager sessionManager = new SessionManager(MainActivity.this);
         if(sessionManager.checkLogin()){
-            goToProfile();
+            //goToProfile();
         }
 
         signIn.setOnClickListener(new View.OnClickListener() {

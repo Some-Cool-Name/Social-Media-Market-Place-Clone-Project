@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -18,7 +19,7 @@ public class Profile extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(Profile.this);
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
-
+        Toast.makeText(Profile.this,currentUser.get(sessionManager.EMAIL),Toast.LENGTH_SHORT).show();
 
         String email = currentUser.get(sessionManager.EMAIL);
         details.setText(email);
