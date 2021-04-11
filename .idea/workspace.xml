@@ -28,23 +28,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="checking tumza2">
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_XL_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[JAK02022013479]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -218,6 +215,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="yoo" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="474" y="312" key="#com.google.gct.testrecorder.ui.TestClassNameInputDialog" timestamp="1618179815724">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="474" y="312" key="#com.google.gct.testrecorder.ui.TestClassNameInputDialog/67.27.1299.741@67.27.1299.741" timestamp="1618179815724" />
     <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1618159549032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,22 +231,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967265354" />
-    <state width="1876" height="105" key="GridCell.Tab.0.bottom" timestamp="1618168918866">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1618179496797">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1876" height="105" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1876" height="105" key="GridCell.Tab.0.center" timestamp="1618168918866">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1618179496797" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1618179496795">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1876" height="105" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1876" height="105" key="GridCell.Tab.0.left" timestamp="1618168918866">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1618179496795" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1618179496794">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1876" height="105" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1876" height="105" key="GridCell.Tab.0.right" timestamp="1618168918866">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1618179496794" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1618179496796">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1876" height="105" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1618179496796" />
     <state width="1876" height="105" key="GridCell.Tab.1.bottom" timestamp="1618168918866">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,10 +275,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617963640055" />
-    <state x="461" y="190" key="SettingsEditor" timestamp="1617968312904">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="344" y="38" key="SettingsEditor" timestamp="1618177973623">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
+    <state x="344" y="38" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1618177973623" />
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618128698416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
