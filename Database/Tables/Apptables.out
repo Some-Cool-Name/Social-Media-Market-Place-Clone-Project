@@ -1,0 +1,82 @@
+mysql> show tables;
++--------------------+
+| Tables_in_d1851427 |
++--------------------+
+| Account_Link       |
+| Description        |
+| Images             |
+| Interest           |
+| Location           |
+| User_Accounts      |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> DESC User_Accounts;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| E_mail    | varchar(50) | NO   | PRI | NULL    |       |
+| Full_Name | varchar(50) | NO   |     | NULL    |       |
+| Birthday  | varchar(20) | NO   |     | NULL    |       |
+| Gender    | varchar(6)  | NO   |     | NULL    |       |
+| Password  | text        | NO   |     | NULL    |       |
+| Sexuality | varchar(25) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC Description;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| E_mail | varchar(50)  | NO   | PRI | NULL    |       |
+| Bio    | varchar(300) | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC Location;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| E_mail   | varchar(50) | NO   | PRI | NULL    |       |
+| Location | varchar(50) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC Interest;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| E_mail     | varchar(50) | NO   | PRI | NULL    |       |
+| Interest_1 | varchar(20) | NO   |     | NULL    |       |
+| Interest_2 | varchar(20) | NO   |     | NULL    |       |
+| Interest_3 | varchar(20) | NO   |     | NULL    |       |
+| Interest_4 | varchar(20) | NO   |     | NULL    |       |
+| Interest_5 | varchar(20) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC Images;
++-----------------+-----------------+------+-----+---------+-------+
+| Field           | Type            | Null | Key | Default | Extra |
++-----------------+-----------------+------+-----+---------+-------+
+| E_mail          | varchar(50)     | NO   | PRI | NULL    |       |
+| Profile_Picture | varbinary(8000) | NO   |     | NULL    |       |
+| Image_1         | varbinary(8000) | NO   |     | NULL    |       |
+| Image_2         | varbinary(8000) | NO   |     | NULL    |       |
+| Image_3         | varbinary(8000) | NO   |     | NULL    |       |
+| Image_4         | varbinary(8000) | NO   |     | NULL    |       |
++-----------------+-----------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> DESC Account_Link;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| E_mail         | varchar(50)  | NO   | PRI | NULL    |       |
+| Instagram_Link | varchar(100) | YES  |     | NULL    |       |
+| Facebook_Link  | varchar(100) | YES  |     | NULL    |       |
+| Twitter_Link   | varchar(100) | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> notee

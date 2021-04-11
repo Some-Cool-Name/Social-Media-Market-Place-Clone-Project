@@ -4,7 +4,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -20,6 +22,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,14 +35,15 @@ import java.util.Calendar;
 import okhttp3.HttpUrl;
 
 public class SignUp2 extends AppCompatActivity {
-    TextView birthday;
+    TextView birthday, gender, preference;
     Button register;
     EditText name, bio;
-    Spinner gender;
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
     String date; // DD MONTH YYYY
+    String genderValue, preferenceValue;
+    String[] genderList = new String[] {"Male", "Female"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +55,6 @@ public class SignUp2 extends AppCompatActivity {
         register = (Button) findViewById(R.id.sign_up_register_button);
         name = (EditText) findViewById(R.id.editTextSignUpName);
         bio = (EditText) findViewById(R.id.editTextSignUpBio);
-        gender = (Spinner) findViewById(R.id.sign_up_gender_spinner);
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
         // **************************************************************
 
@@ -55,38 +62,84 @@ public class SignUp2 extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SessionManager sessionManager = new SessionManager(SignUp2.this);
-                SignUp signUp = new SignUp();
-                AsyncNetwork request  = new AsyncNetwork();
-                String email= signUp.emailExport;
-                String password = signUp.passwordExport;
-                String link ="https://lamp.ms.wits.ac.za/home/s1851427/WDAReg.php";
-                HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-                urlBuilder.addQueryParameter("username",email);
-                urlBuilder.addQueryParameter("password",password);
-                urlBuilder.addQueryParameter("name", name.getText().toString());
-                urlBuilder.addQueryParameter("gender","Male");
-                urlBuilder.addQueryParameter("birthday","13-01-1999");
-                urlBuilder.addQueryParameter("sexuality","Straight");
-                urlBuilder.addQueryParameter("location","Braamfontein");
-                String url = urlBuilder.build().toString();
-                request.execute(url);
-                sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+                DataValidation validate = new DataValidation();
+                String isValid =validate.validateSignuUp2(name.getText().toString());
+               if(isValid.equals("Valid")){
+                    SessionManager sessionManager = new SessionManager(SignUp2.this);
+                    SignUp signUp = new SignUp();
+                    AsyncNetwork request  = new AsyncNetwork();
+                    String email= signUp.emailExport;
+                    String password = signUp.passwordExport;
+                    String link ="https://lamp.ms.wits.ac.za/home/s1851427/WDAReg.php";
+                    HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+                    urlBuilder.addQueryParameter("username",email);
+                    urlBuilder.addQueryParameter("password",password);
+                    urlBuilder.addQueryParameter("name", name.getText().toString());
+                    urlBuilder.addQueryParameter("gender","Male");
+                    urlBuilder.addQueryParameter("birthday","13-01-1999");
+                    urlBuilder.addQueryParameter("sexuality","Straight");
+                    urlBuilder.addQueryParameter("location","Braamfontein");
+                    String url = urlBuilder.build().toString();
+                    request.execute(url);
 
-                // if done change ui'
-                doRegister();
+                    // if request result is success go ahead and create session and call do register
+                   sessionManager.createSession(email,name.getText().toString(),"13-01-1999","Male","Straight");
+
+                   // if done change ui'
+                   doRegister();
+
+
+                }else{
+                   Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         // **************************************************************
 
-        // Spinner Code
-        Spinner mySpinner = (Spinner) findViewById(R.id.sign_up_gender_spinner);
+        // Popup Menus
+        // Choose gender popup menu
+        gender = (TextView) findViewById(R.id.sign_up_gender_text2);
+        preference = (TextView) findViewById(R.id.sign_up_preference_text2);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(com.example.social_media_market_place_clone_project.SignUp2.this,
-                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.genders));
+        gender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+                builder.setTitle("Choose Gender");
+                builder.setItems(genderList, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        genderValue = genderList[which];
+                        gender.setText(genderValue);
+                        dialog.dismiss();
+                    }
+                });
 
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        // Choose preference popup menu
+        preference.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+                builder.setTitle("Select Preference");
+                builder.setItems(genderList, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        preferenceValue = genderList[which];
+                        preference.setText(preferenceValue);
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         // **************************************************************
 
         // Calendar for Birthday
