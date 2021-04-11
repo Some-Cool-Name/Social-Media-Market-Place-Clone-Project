@@ -66,7 +66,7 @@
                 android:textColor="@color/grey"
                 android:textSize="20dp"
 
-                android:text="Name"
+                android:text="Full Name"
                 />
 
             <EditText
@@ -142,24 +142,62 @@
                 android:text="Gender"
                 />
 
-            <Spinner
-                android:id="@+id/sign_up_gender_spinner"
+            <TextView
+            android:id="@+id/sign_up_gender_text2"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+
+            android:layout_marginTop="680dp"
+            android:layout_marginLeft="50dp"
+            android:layout_centerHorizontal="true"
+
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+
+            android:background="@drawable/textfield_style"
+            android:textColor="@color/grey"
+            android:textSize="20dp"
+
+            android:text="Select Gender"
+            android:gravity="center_vertical"
+            />
+            // **************************************************************
+
+            // Preference Text
+
+            <TextView
+                android:id="@+id/sign_up_preference_text"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
 
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="680dp"
+                android:layout_marginTop="740dp"
+
+                android:text="Attracted To?"
+                android:textColor="@color/grey"
+
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/sign_up_preference_text2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+
+                android:layout_marginTop="780dp"
+                android:layout_marginLeft="50dp"
+                android:layout_centerHorizontal="true"
+
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
 
                 android:background="@drawable/textfield_style"
-                android:paddingLeft="7.5dp"
-
-
-                android:paddingRight="7.5dp"
                 android:textColor="@color/grey"
                 android:textSize="20dp"
-                android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject" />
 
+                android:text="Select Preference"
+                android:gravity="center_vertical"
+                />
             // **************************************************************
 
             // Bio Text
@@ -168,7 +206,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="740dp"
+                android:layout_marginTop="840dp"
                 android:layout_marginLeft="50dp"
                 android:layout_centerHorizontal="true"
 
@@ -185,7 +223,7 @@
 
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="780dp"
+                android:layout_marginTop="880dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="15dp"
                 android:paddingLeft="15dp"
@@ -208,7 +246,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
 
-                android:layout_marginTop="900dp"
+                android:layout_marginTop="1000dp"
                 android:layout_marginBottom="30dp"
 
                 android:layout_alignParentRight="true"
