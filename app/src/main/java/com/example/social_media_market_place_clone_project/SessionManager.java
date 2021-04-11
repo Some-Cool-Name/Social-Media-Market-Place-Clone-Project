@@ -64,10 +64,10 @@ public class SessionManager {
     public void logoutUser(){
         editor.clear();
         editor.commit();
-        /*Intent i = new Intent(context, SplashScreen.classs);
+        Intent i = new Intent(context, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(i);
-        ((settings) context).finish();*/
+        ((Profile) context).finish();
     }
 
 
