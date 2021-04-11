@@ -32,11 +32,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
@@ -206,22 +208,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967265354" />
-    <state width="1859" height="237" key="GridCell.Tab.0.bottom" timestamp="1617967944800">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1618128139786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944800" />
-    <state width="1859" height="237" key="GridCell.Tab.0.center" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128139786" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1618128139786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
-    <state width="1859" height="237" key="GridCell.Tab.0.left" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128139786" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1618128139785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
-    <state width="1859" height="237" key="GridCell.Tab.0.right" timestamp="1617967944799">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128139785" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1618128139786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1859" height="237" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967944799" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128139786" />
     <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1617963640055">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -230,9 +232,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
-    <state x="1843" y="-78" width="896" height="1005" maximized="true" key="dock-window-1" timestamp="1617968641763">
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1618128698416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128698416" />
+    <state x="1840" y="-81" width="896" height="717" key="dock-window-1" timestamp="1618128698427">
       <screen x="1920" y="-96" width="768" height="1326" />
     </state>
-    <state x="1843" y="-78" width="896" height="1005" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968641763" />
+    <state x="1840" y="-81" width="896" height="717" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618128698427" />
   </component>
 </project>
