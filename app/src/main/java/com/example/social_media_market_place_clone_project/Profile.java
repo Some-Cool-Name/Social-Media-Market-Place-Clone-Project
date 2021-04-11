@@ -8,8 +8,16 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+
 public class Profile extends AppCompatActivity {
     TextView details;
+
+    // Disable back button
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +31,12 @@ public class Profile extends AppCompatActivity {
 
         String email = currentUser.get(sessionManager.EMAIL);
         details.setText(email);
+
+
+       /* SessionManager session = new SessionManager(Profile.this);
+        session.checkLogin();
+        HashMap<String,String> currentUser = session.getUserDetails();
+
+        Toast.makeText(Profile.this,currentUser.get(session.EMAIL),Toast.LENGTH_SHORT).show();*/
     }
 }
