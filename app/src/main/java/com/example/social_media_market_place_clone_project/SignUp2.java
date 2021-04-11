@@ -75,8 +75,8 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("username",email);
                     urlBuilder.addQueryParameter("password",password);
                     urlBuilder.addQueryParameter("name", name.getText().toString());
-                    urlBuilder.addQueryParameter("gender","Male");
-                    urlBuilder.addQueryParameter("birthday","13-01-1999");
+                    urlBuilder.addQueryParameter("gender",genderValue);
+                    urlBuilder.addQueryParameter("birthday",birthday.getText().toString());
                     urlBuilder.addQueryParameter("sexuality","Straight");
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
