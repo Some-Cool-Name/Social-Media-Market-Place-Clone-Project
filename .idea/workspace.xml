@@ -28,8 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="908d42ac-c2ea-4bb0-ab00-5fba0ae4b6e3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SignInTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618163712237</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="MainActivityTest">
+      <created>1618168637075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618168637075</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,10 +283,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="MainActivityTest" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1618163691290">
+    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1618168624834">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618163691290" />
+    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1618168624834" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617967265354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -333,10 +340,10 @@
     </state>
     <state x="328" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1618161007299" />
     <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1618163744418">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1618168649575">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618163744418" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1618168649575" />
     <state x="498" y="142" key="chooseDestDirectoryDialog" timestamp="1618161357083">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
