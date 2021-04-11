@@ -28,15 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="checking tumza2">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/ValidationTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManagerTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

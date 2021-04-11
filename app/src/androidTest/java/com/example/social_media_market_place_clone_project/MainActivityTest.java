@@ -17,20 +17,20 @@ import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-/*public class MainActivityTest extends TestCase {
+public class MainActivityTest {
 
-    @Rule
+    /*@Rule
     public ActivityTestRule<MainActivity> mActivityRule =
-            new ActivityTestRule<>(MainActivity.class);
+            new ActivityTestRule<>(MainActivity.class);*/
 
     /*@Test
     public void check_if_sign_in_button_is_clickable() {
         onView(withId(R.id.sign_in_button)).check(matches(isClickable()));
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void check_if_sign_up_button_is_clickable() {
         onView(withId(R.id.sign_up_button)).check(matches(isClickable()));
-    }
+    }*/
 
-}*/
+}
