@@ -34,7 +34,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7174500d-a4d1-4dc3-b53a-3fd9b54b7115" name="Default Changelist" comment="checking" />
+    <list default="true" id="7174500d-a4d1-4dc3-b53a-3fd9b54b7115" name="Default Changelist" comment="checking">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617963618257</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v">
+      <created>1618201498956</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618201498956</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +209,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="checking tumza2" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking tumza2" />
+    <MESSAGE value="v" />
+    <option name="LAST_COMMIT_MESSAGE" value="v" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618127458767">
@@ -239,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618122740520" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618122740528">
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618201534758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618122740528" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201534758" />
     <state x="461" y="190" key="SettingsEditor" timestamp="1617968312904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -251,6 +265,10 @@
       <screen x="1920" y="-96" width="768" height="1326" />
     </state>
     <state x="1792" y="0" width="896" height="533" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127418625" />
+    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1618201490240">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201490240" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618123023389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
