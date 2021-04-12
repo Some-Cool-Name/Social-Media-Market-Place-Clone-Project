@@ -183,8 +183,9 @@ public class SignUp2 extends AppCompatActivity {
                         com.example.social_media_market_place_clone_project.SignUp2.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
+                        CalendarMonth calendarMonth = new CalendarMonth();
                         month = month + 1;
-                        String monthString = getMonth(month);
+                        String monthString = calendarMonth.getMonth(month);
                         date = day + " " + monthString + " " + year;
                         if(month<10){
                             if(day<10){
@@ -225,7 +226,7 @@ public class SignUp2 extends AppCompatActivity {
         startActivity(intentRegister);
     }
 
-    public String getMonth(int i){
+   /* public String getMonth(int i){
         String m;
 
         switch(i){
@@ -283,6 +284,8 @@ public class SignUp2 extends AppCompatActivity {
 
         return m;
     }
+
+    */
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
