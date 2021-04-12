@@ -9,9 +9,9 @@ public class AgeCalculatorTester {
 
     @Test
     public void calculateAgeTest(){
-        int age = ageCalculator.calculateAge("31-03-2000");
+        String age = ageCalculator.calculateAge("31-03-2000");
 
-        assertEquals(age,21);
+        assertEquals(age,"21");
 
     }
 }
