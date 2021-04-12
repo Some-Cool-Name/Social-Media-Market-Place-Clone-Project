@@ -87,7 +87,10 @@
                 android:background="@drawable/textfield_style"
                 android:textColor="@color/grey"
 
-                android:ems="10"
+                android:textSize="16dp"
+                android:hint="Enter Email Address"
+                android:textColorHint="@color/grey2"
+
                 android:inputType="textEmailAddress"
                 />
             // **************************************************************
@@ -123,7 +126,10 @@
                 android:background="@drawable/textfield_style"
                 android:textColor="@color/grey"
 
-                android:ems="10"
+                android:textSize="16dp"
+                android:hint="Enter Password"
+                android:textColorHint="@color/grey2"
+
                 android:inputType="textPassword"
                 />
             // **************************************************************
