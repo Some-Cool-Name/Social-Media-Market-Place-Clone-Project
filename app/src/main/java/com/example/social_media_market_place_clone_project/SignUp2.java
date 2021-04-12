@@ -198,7 +198,7 @@ public class SignUp2 extends AppCompatActivity {
                             dateURLformat = day+"-"+month+"-"+year;
                         }
                         birthday.setText(date);
-                        Toast.makeText(SignUp2.this,dateURLformat,Toast.LENGTH_SHORT).show();
+                        
                     }
                 }, year, month, day);
 
