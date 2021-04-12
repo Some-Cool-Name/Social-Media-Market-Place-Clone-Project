@@ -41,7 +41,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
-    String date; // DD MONTH YYYY
+    String date, dateURLformat; // DD MONTH YYYY
     String genderValue, preferenceValue;
     String[] genderList = new String[] {"Male", "Female"};
 
@@ -76,7 +76,7 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("password",password);
                     urlBuilder.addQueryParameter("name", name.getText().toString());
                     urlBuilder.addQueryParameter("gender",genderValue);
-                    urlBuilder.addQueryParameter("birthday",date);
+                    urlBuilder.addQueryParameter("birthday",dateURLformat);
                     urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
@@ -90,7 +90,7 @@ public class SignUp2 extends AppCompatActivity {
                    try {
                        wholeString = new JSONObject(request.Result);
                        if(wholeString.getString("message").equals("success")){
-                           sessionManager.createSession(email,name.getText().toString(),date,genderValue,preferenceValue);
+                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue);
 
                            // if done change ui'
                            doRegister();
@@ -186,7 +186,19 @@ public class SignUp2 extends AppCompatActivity {
                         month = month + 1;
                         String monthString = getMonth(month);
                         date = day + " " + monthString + " " + year;
+                        if(month<10){
+                            if(day<10){
+                                dateURLformat = "0"+day+"-"+"0"+month+"-"+year;
+                            }else{
+                                dateURLformat = day+"-"+"0"+month+"-"+year;
+                            }
+                        }else if(day<10){
+                            dateURLformat = "0"+day+"-"+month+"-"+year;
+                        }else{
+                            dateURLformat = day+"-"+month+"-"+year;
+                        }
                         birthday.setText(date);
+                        Toast.makeText(SignUp2.this,dateURLformat,Toast.LENGTH_SHORT).show();
                     }
                 }, year, month, day);
 
