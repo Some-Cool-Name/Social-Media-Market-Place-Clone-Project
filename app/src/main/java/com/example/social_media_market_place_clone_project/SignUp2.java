@@ -187,7 +187,8 @@ public class SignUp2 extends AppCompatActivity {
                         month = month + 1;
                         String monthString = calendarMonth.getMonth(month);
                         date = day + " " + monthString + " " + year;
-                        if(month<10){
+                        dateURLformat = calendarMonth.getDateFormatURL(day, month, year);
+                        /*if(month<10){
                             if(day<10){
                                 dateURLformat = "0"+day+"-"+"0"+month+"-"+year;
                             }else{
@@ -198,6 +199,8 @@ public class SignUp2 extends AppCompatActivity {
                         }else{
                             dateURLformat = day+"-"+month+"-"+year;
                         }
+
+                         */
                         birthday.setText(date);
                         
                     }

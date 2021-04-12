@@ -60,6 +60,22 @@ public class CalendarMonth {
 
         return m;
     }
+    public String getDateFormatURL(int day, int month, int year){
+        String dateURLformat = " ";
+
+        if(month<10){
+            if(day<10){
+                dateURLformat = "0"+day+"-"+"0"+month+"-"+year;
+            }else{
+                dateURLformat = day+"-"+"0"+month+"-"+year;
+            }
+        }else if(day<10){
+            dateURLformat = "0"+day+"-"+month+"-"+year;
+        }else{
+            dateURLformat = day+"-"+month+"-"+year;
+        }
+        return dateURLformat;
+    }
 
 }
 
