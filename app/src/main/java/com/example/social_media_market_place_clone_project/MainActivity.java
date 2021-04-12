@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button signIn, signUp;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,4 +47,5 @@ public class MainActivity extends AppCompatActivity {
             Intent intentSignIn = new Intent(this, SignIn.class);
             startActivity(intentSignIn);
         }
+
 }
