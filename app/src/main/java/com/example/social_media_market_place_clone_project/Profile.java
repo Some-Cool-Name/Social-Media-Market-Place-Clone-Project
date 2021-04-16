@@ -37,7 +37,8 @@ public class Profile extends AppCompatActivity {
         name=findViewById(R.id.txtName);
         name.setText(currentUser.get("FULLNAME"));
         age=findViewById(R.id.txtAge);
-        age.setText(calculateAge(currentUser.get("BIRTHDAY")).toString()); // create function to automatically calculate age
+        AgeCalculator ageCalculator = new AgeCalculator();
+        age.setText(ageCalculator.calculateAge(currentUser.get("BIRTHDAY")).toString()); // create function to automatically calculate age
         location=findViewById(R.id.txtLocation);
         location.setText("Braamfontein");
         bio=findViewById(R.id.EdittxtBio) ;
@@ -61,7 +62,7 @@ public class Profile extends AppCompatActivity {
     }
 
     // a Function to automatically calculate the age given a string with the birthdate. //
-    @RequiresApi(api = Build.VERSION_CODES.O)
+   /* @RequiresApi(api = Build.VERSION_CODES.O)
     public Integer calculateAge(String birthDate){
         // Convert birthdayString to Integers //
         int bYear = Integer.parseInt(String.valueOf(birthDate.charAt(6)))*1000
@@ -78,4 +79,6 @@ public class Profile extends AppCompatActivity {
         Period diff = Period.between(birthday, now);
         return diff.getYears();
     }
+
+    */
 }

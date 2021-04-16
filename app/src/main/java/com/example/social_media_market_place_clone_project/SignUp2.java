@@ -41,7 +41,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
-    String date; // DD MONTH YYYY
+    String date, dateURLformat; // DD MONTH YYYY
     String genderValue, preferenceValue;
     String[] genderList = new String[] {"Male", "Female"};
 
@@ -76,8 +76,8 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("password",password);
                     urlBuilder.addQueryParameter("name", name.getText().toString());
                     urlBuilder.addQueryParameter("gender",genderValue);
-                    urlBuilder.addQueryParameter("birthday","19-01-1999");
-                    urlBuilder.addQueryParameter("sexuality","Straight");
+                    urlBuilder.addQueryParameter("birthday",dateURLformat);
+                    urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
                     String url = urlBuilder.build().toString();
                     request.execute(url);
@@ -90,14 +90,25 @@ public class SignUp2 extends AppCompatActivity {
                    try {
                        wholeString = new JSONObject(request.Result);
                        if(wholeString.getString("message").equals("success")){
-                           sessionManager.createSession(email,name.getText().toString(),"19-01-1999",genderValue,"Straight");
+                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue);
 
                            // if done change ui'
                            doRegister();
                        }
                        else {
                            //set ui to signin1
-                           incorrect();
+                           AlertDialog.Builder builder = new AlertDialog.Builder(SignUp2.this);
+                           builder.setMessage("User already exists change your email")
+                                   .setPositiveButton("Change Email", new DialogInterface.OnClickListener() {
+                                       @Override
+                                       public void onClick(DialogInterface dialog, int which) {
+                                           incorrect();
+                                       }
+                                   });
+
+                           AlertDialog dialog = builder.create();
+                           dialog.show();
+                           //incorrect();
 
                        }
                    } catch (JSONException e) {
@@ -172,10 +183,26 @@ public class SignUp2 extends AppCompatActivity {
                         com.example.social_media_market_place_clone_project.SignUp2.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int day) {
+                        CalendarMonth calendarMonth = new CalendarMonth();
                         month = month + 1;
-                        String monthString = getMonth(month);
+                        String monthString = calendarMonth.getMonth(month);
                         date = day + " " + monthString + " " + year;
+                        dateURLformat = calendarMonth.getDateFormatURL(day, month, year);
+                        /*if(month<10){
+                            if(day<10){
+                                dateURLformat = "0"+day+"-"+"0"+month+"-"+year;
+                            }else{
+                                dateURLformat = day+"-"+"0"+month+"-"+year;
+                            }
+                        }else if(day<10){
+                            dateURLformat = "0"+day+"-"+month+"-"+year;
+                        }else{
+                            dateURLformat = day+"-"+month+"-"+year;
+                        }
+
+                         */
                         birthday.setText(date);
+                        
                     }
                 }, year, month, day);
 
@@ -202,7 +229,7 @@ public class SignUp2 extends AppCompatActivity {
         startActivity(intentRegister);
     }
 
-    public String getMonth(int i){
+   /* public String getMonth(int i){
         String m;
 
         switch(i){
@@ -260,6 +287,8 @@ public class SignUp2 extends AppCompatActivity {
 
         return m;
     }
+
+    */
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
