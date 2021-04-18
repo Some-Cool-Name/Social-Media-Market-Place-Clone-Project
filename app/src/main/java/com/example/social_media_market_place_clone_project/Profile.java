@@ -61,6 +61,7 @@ public class Profile extends AppCompatActivity {
     }
 
     // a Function to automatically calculate the age given a string with the birthdate. //
+//    TODO: needs to be in separate class
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Integer calculateAge(String birthDate){
         // Convert birthdayString to Integers //
