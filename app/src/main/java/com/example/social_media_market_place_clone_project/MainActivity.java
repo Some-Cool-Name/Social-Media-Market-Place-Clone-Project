@@ -7,8 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.cloudinary.android.MediaManager;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
     Button signIn, signUp;
+    Map config = new HashMap();
+
+//    TODO: Vhugala - insert your cloudinary details here
+    //    sets up cloud connection
+    private void configCloudinary() {
+        config.put("cloud_name", "dloc1rnq9");
+        config.put("api_key", "694532135175862");
+        config.put("api_secret", "MOYhU_dEGPZ5xP2CgjgsFr0Ejdg");
+        MediaManager.init(MainActivity.this, config);
+    }
 
 
     @Override
@@ -20,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         signIn = (Button) findViewById(R.id.sign_in_button);
         signUp = (Button) findViewById(R.id.sign_up_button);
         // **************************************************************
+
+        configCloudinary();
 
         // Switch activities when buttons are pressed
         SessionManager sessionManager = new SessionManager(MainActivity.this);
