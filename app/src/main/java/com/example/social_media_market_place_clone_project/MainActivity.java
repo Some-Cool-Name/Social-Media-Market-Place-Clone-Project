@@ -3,7 +3,9 @@ package com.example.social_media_market_place_clone_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 
@@ -35,8 +37,14 @@ public class MainActivity extends AppCompatActivity {
         signIn = (Button) findViewById(R.id.sign_in_button);
         signUp = (Button) findViewById(R.id.sign_up_button);
         // **************************************************************
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if(!prefs.getBoolean("firsttime",false)){
+            configCloudinary();
+            SharedPreferences.Editor editor= prefs.edit();
+            editor.putBoolean("firsttime", true);
+            editor.commit();
+        }
 
-        configCloudinary();
 
         // Switch activities when buttons are pressed
         SessionManager sessionManager = new SessionManager(MainActivity.this);

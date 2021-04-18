@@ -57,6 +57,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
+    String imageUrl;
     String date, dateURLformat; // DD MONTH YYYY
     String genderValue, preferenceValue;
     String[] genderList = new String[] {"Male", "Female"};
@@ -97,6 +98,7 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
                    urlBuilder.addQueryParameter("bio",bio.getText().toString());
+                   urlBuilder.addQueryParameter("profile_picture",imageUrl);
 
                     String url = urlBuilder.build().toString();
                     request.execute(url);
@@ -388,6 +390,7 @@ public class SignUp2 extends AppCompatActivity {
 //                TODO: save this string url in database and use it in imageViews (Vhugala already knows how to do this)
                 String url = resultData.get("url").toString();
                 System.out.println(url);
+                imageUrl = url;
                 Toast.makeText(SignUp2.this,url,Toast.LENGTH_LONG).show();
             }
 
