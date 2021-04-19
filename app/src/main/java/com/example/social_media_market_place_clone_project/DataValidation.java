@@ -12,14 +12,18 @@ public class DataValidation {
         }
     }
 
-    public String validateSignuUp2(String username){
+    public String validateSignUp2(String username,String birthday){
         if(username.contains("0") || username.contains("1") || username.contains("2") ||
                 username.contains("3") || username.contains("4") || username.contains("5") ||
                 username.contains("6") || username.contains("7") || username.contains("8") ||
                 username.contains("9")){
-            return "Username Cannot Contain Numbers";
+                return "Username Cannot Contain Numbers";
         }else{
-            return "Valid";
+           if(Integer.parseInt(birthday)<=17){
+               return "Only Users Over 18 May Register";
+           }else{
+               return "Valid";
+           }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.example.social_media_market_place_clone_project;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -78,11 +79,13 @@ public class SignUp2 extends AppCompatActivity {
 
         // Switch activities when buttons are pressed
         register.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
                 DataValidation validate = new DataValidation();
-                String isValid =validate.validateSignuUp2(name.getText().toString());
-               if(isValid.equals("Valid")){
+                AgeCalculator calculator = new AgeCalculator();
+                String isValid =validate.validateSignUp2(name.getText().toString(),calculator.calculateAge(dateURLformat));
+                if(isValid.equals("Valid")){
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
@@ -97,8 +100,8 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("birthday",dateURLformat);
                     urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
-                   urlBuilder.addQueryParameter("bio",bio.getText().toString());
-                   urlBuilder.addQueryParameter("profile_picture",imageUrl);
+                    urlBuilder.addQueryParameter("bio",bio.getText().toString());
+                    urlBuilder.addQueryParameter("profile_picture",imageUrl);
 
                     String url = urlBuilder.build().toString();
                     request.execute(url);
