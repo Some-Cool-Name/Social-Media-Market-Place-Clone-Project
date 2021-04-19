@@ -42,7 +42,7 @@ public class Profile extends AppCompatActivity {
         location=findViewById(R.id.txtLocation);
         location.setText("Braamfontein");
         bio=findViewById(R.id.EdittxtBio) ;
-        bio.setText("Hi, I'm new here");
+        bio.setText(currentUser.get("BIO"));
 
         logout=findViewById(R.id.logout_button);
         logout.setText("Logout");

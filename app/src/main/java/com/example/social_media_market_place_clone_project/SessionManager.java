@@ -19,6 +19,7 @@ public class SessionManager {
     public static final String BIRTHDAY = "BIRTHDAY";
     public static final String SEXUALITY = "SEXUALITY";
     public static final String GENDER = "GENDER";
+    public static final String BIO="BIO";
 
     /*
     everytime a user logs in, we make a request with the email to the database
@@ -35,13 +36,15 @@ public class SessionManager {
     }
 
     //create a login session
-    public void createSession(String email, String fullname, String birthday, String gender, String sexuality){
+    public void createSession(String email, String fullname, String birthday, String gender, String sexuality, String bio){
         editor.putBoolean(IS_LOGGED_IN, true);
         editor.putString(FULLNAME, fullname);
         editor.putString(EMAIL,email);
         editor.putString(BIRTHDAY,birthday);
         editor.putString(GENDER,gender);
         editor.putString(SEXUALITY,sexuality);
+        editor.putString(BIO,bio);
+
         editor.apply();
 
     }
@@ -59,6 +62,8 @@ public class SessionManager {
         user.put(BIRTHDAY, sharedPreferences.getString(BIRTHDAY, null));
         user.put(SEXUALITY, sharedPreferences.getString(SEXUALITY, null));
         user.put(GENDER, sharedPreferences.getString(GENDER, null));
+        user.put(BIO, sharedPreferences.getString(BIO, null));
+
         return user;
     }
     public void logoutUser(){
