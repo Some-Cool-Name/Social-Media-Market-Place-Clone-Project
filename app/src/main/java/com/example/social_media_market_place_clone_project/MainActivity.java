@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 //    TODO: Vhugala - insert your cloudinary details here
     //    sets up cloud connection
     private void configCloudinary() {
-        config.put("cloud_name", "dloc1rnq9");
-        config.put("api_key", "694532135175862");
-        config.put("api_secret", "MOYhU_dEGPZ5xP2CgjgsFr0Ejdg");
+        config.put("cloud_name", "dkctv74ue");
+        config.put("api_key", "421896893816688");
+        config.put("api_secret", "pumaVpw63KKXxpRi-ZfLzwo7eck");
         MediaManager.init(MainActivity.this, config);
     }
 
