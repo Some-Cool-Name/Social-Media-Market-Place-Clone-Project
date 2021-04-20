@@ -64,7 +64,7 @@ public class SignIn extends AppCompatActivity {
         if(wholeString.getString("success").equals("0")){
             Toast.makeText(SignIn.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
         }else{
-            session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"));
+            session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
             Intent intentSignIn = new Intent(SignIn.this, Profile.class);
             intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intentSignIn);

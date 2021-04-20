@@ -98,7 +98,11 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("sexuality",preferenceValue);
                     urlBuilder.addQueryParameter("location","Braamfontein");
                    urlBuilder.addQueryParameter("bio",bio.getText().toString());
-                   urlBuilder.addQueryParameter("profile_picture",imageUrl);
+
+                   String updatedImageUrl=addChar(imageUrl, 's', 4); // should add an s to image url
+
+
+                   urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
 
                     String url = urlBuilder.build().toString();
                     request.execute(url);
@@ -111,7 +115,7 @@ public class SignUp2 extends AppCompatActivity {
                    try {
                        wholeString = new JSONObject(request.Result);
                        if(wholeString.getString("message").equals("success")){
-                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue,bio.getText().toString());
+                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue,bio.getText().toString(),updatedImageUrl);
 
                            // if done change ui'
                            doRegister();
@@ -250,6 +254,14 @@ public class SignUp2 extends AppCompatActivity {
         intentRegister.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentRegister);
     }
+    public String addChar(String str, char ch, int position) {
+        int len = str.length();
+        char[] updatedArr = new char[len + 1];
+        str.getChars(0, position, updatedArr, 0);
+        updatedArr[position] = ch;
+        str.getChars(position, len, updatedArr, position + 1);
+        return new String(updatedArr);
+    }
 
    /* public String getMonth(int i){
         String m;
@@ -370,6 +382,7 @@ public class SignUp2 extends AppCompatActivity {
 //    if you want to do something after successful image upload, do it on onSuccess override
     private void uploadToCloudinary(String filePath) {
         Log.d("A", "sign up uploadToCloudinary- ");
+
         MediaManager.get().upload(filePath).callback(new UploadCallback() {
             @Override
             public void onStart(String requestId) {

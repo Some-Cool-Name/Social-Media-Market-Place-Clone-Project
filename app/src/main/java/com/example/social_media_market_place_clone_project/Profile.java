@@ -7,8 +7,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.time.LocalDate;
@@ -18,6 +21,7 @@ import java.time.Period;
 public class Profile extends AppCompatActivity {
     TextView name,age,location,bio;
     Button logout;
+    ImageView imageView;
 
     // Disable back button
     @Override
@@ -40,9 +44,12 @@ public class Profile extends AppCompatActivity {
         AgeCalculator ageCalculator = new AgeCalculator();
         age.setText(ageCalculator.calculateAge(currentUser.get("BIRTHDAY")).toString()); // create function to automatically calculate age
         location=findViewById(R.id.txtLocation);
-        location.setText("Braamfontein");
+        String url = currentUser.get("PROFILE_PICTURE");
+        location.setText("Braam");
         bio=findViewById(R.id.EdittxtBio) ;
         bio.setText(currentUser.get("BIO"));
+
+        imageView = findViewById(R.id.profile_image);
 
         logout=findViewById(R.id.logout_button);
         logout.setText("Logout");
@@ -53,12 +60,27 @@ public class Profile extends AppCompatActivity {
             }
         });
         Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
-
+        loadImageFromUrl(url);
+        System.out.print(url);
 
        /* SessionManager session = new SessionManager(Profile.this);
         session.checkLogin();
         HashMap<String,String> currentUser = session.getUserDetails();
         Toast.makeText(Profile.this,currentUser.get(session.EMAIL),Toast.LENGTH_SHORT).show();*/
+    }
+
+    private void loadImageFromUrl(String url) {
+        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
     }
 
     // a Function to automatically calculate the age given a string with the birthdate. //
