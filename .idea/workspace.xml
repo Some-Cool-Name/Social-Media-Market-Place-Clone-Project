@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/Mervynn-2" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+
+    <list default="true" id="7174500d-a4d1-4dc3-b53a-3fd9b54b7115" name="Default Changelist" comment="checking">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" afterDir="false" />
+    <list default="true" id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="checking tumza2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManagerTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManagerTester.java" afterDir="false" />
+
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_28]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Mervynn-2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qvcBXLvc667lScHHmFC0AcPPHF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user-pc\Desktop\sd\app\src\main\java\com\example\social_media_market_place_clone_project" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android JUnit.SessionManagerTester.checkLoginTester">
+    <configuration name="SessionManagerTester.checkLoginTester" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
+      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.SessionManagerTester" />
+      <option name="METHOD_NAME" value="checkLoginTester" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationTester.allValid" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
+      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="METHOD_NAME" value="allValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationTester.emptyFields" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
+      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="METHOD_NAME" value="emptyFields" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationTester.passwordDifferent" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
+      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="METHOD_NAME" value="passwordDifferent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationTester.usernameNotContainsNumber" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
+      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="METHOD_NAME" value="usernameNotContainsNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.SessionManagerTester.checkLoginTester" />
+        <item itemvalue="Android JUnit.ValidationTester.allValid" />
+        <item itemvalue="Android JUnit.ValidationTester.passwordDifferent" />
+        <item itemvalue="Android JUnit.ValidationTester.emptyFields" />
+        <item itemvalue="Android JUnit.ValidationTester.usernameNotContainsNumber" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="" />
+      <created>1617963368424</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617963368424</updated>
+    </task>
+    <task id="LOCAL-00001" summary="checking tumza2">
+      <created>1617963618257</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617963618257</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v">
+      <created>1618201498956</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618201498956</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="checking tumza2" />
+    <MESSAGE value="v" />
+    <option name="LAST_COMMIT_MESSAGE" value="v" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618127458767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127458767" />
+    <state width="1860" height="23" key="GridCell.Tab.0.bottom" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.0.center" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+
+    <state width="1860" height="23" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.0.left" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.0.right" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.1.bottom" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.1.center" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.1.left" timestamp="1618127480881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state width="1860" height="23" key="GridCell.Tab.1.right" timestamp="1618127480881">
+
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967265354" />
+    <state width="1253" height="142" key="GridCell.Tab.0.bottom" timestamp="1618204931067">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="142" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1618204931067" />
+    <state width="1253" height="142" key="GridCell.Tab.0.center" timestamp="1618204931065">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="142" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1618204931065" />
+    <state width="1253" height="142" key="GridCell.Tab.0.left" timestamp="1618204931064">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="142" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1618204931064" />
+    <state width="1253" height="142" key="GridCell.Tab.0.right" timestamp="1618204931066">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="142" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1618204931066" />
+    <state width="1253" height="175" key="GridCell.Tab.1.bottom" timestamp="1618182519844">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="175" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1618182519844" />
+    <state width="1253" height="175" key="GridCell.Tab.1.center" timestamp="1618182519843">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="175" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
+    <state width="1253" height="175" key="GridCell.Tab.1.left" timestamp="1618182519843">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="175" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
+    <state width="1253" height="175" key="GridCell.Tab.1.right" timestamp="1618182519843">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1876" height="105" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
+    <state width="1253" height="175" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1618128835649">
+
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="23" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1618122740520">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618122740520" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618201534758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201534758" />
+    <state x="461" y="190" key="SettingsEditor" timestamp="1617968312904">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
+    <state x="1792" y="0" width="896" height="533" maximized="true" key="dock-window-1" timestamp="1618127418625">
+      <screen x="1920" y="-96" width="768" height="1326" />
+    </state>
+    <state x="1792" y="0" width="896" height="533" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127418625" />
+    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1618201490240">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201490240" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618123023389">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618123023389" />
+  </component>
+</project>
