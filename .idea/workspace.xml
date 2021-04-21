@@ -5,89 +5,127 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/Mervynn-2" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
-  </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="7174500d-a4d1-4dc3-b53a-3fd9b54b7115" name="Default Changelist" comment="checking">
+    <list default="true" id="f701d65a-6e51-48f0-b013-0391fae77097" name="Default Changelist" comment="Reitumetse Android Studio (Sprint 2)">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" afterDir="false" />
-    <list default="true" id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="checking tumza2">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManagerTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/SessionManagerTester.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/AgeCalculatorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/AgeCalculatorTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalculatorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalculatorTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalendarMonthTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalendarMonthTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/MainActivityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ProfileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ProfileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignInTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignInTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignUp2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignUp2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ValidationTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ValidationTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/AgeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/AgeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/AsyncNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/AsyncNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/CalendarMonth.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/CalendarMonth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/DataValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/DataValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SignUp2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/color/button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/color/button.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/gradient.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/gradient.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/textfield_style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/textfield_style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_style2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_style2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_style3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_style3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_addimage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_addimage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image_style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/log_out.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/log_out.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/rounded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewprofile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_viewprofile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/ValidationTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/social_media_market_place_clone_project/ValidationTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_28]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Mervynn-2" />
+        <entry key="$PROJECT_DIR$" value="Vhugala" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1qvcBXLvc667lScHHmFC0AcPPHF" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1rUDFk06zJZw6D6fNzqJjTFpLHs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -96,102 +134,15 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user-pc\Desktop\sd\app\src\main\java\com\example\social_media_market_place_clone_project" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\reitu\AndroidStudioProjects\Social-Media-Market-Place-Clone-Project\app\src\main\java\com\example\social_media_market_place_clone_project" />
     </key>
   </component>
-  <component name="RunManager" selected="Android JUnit.SessionManagerTester.checkLoginTester">
-    <configuration name="SessionManagerTester.checkLoginTester" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Social-Media-Market-Place-Clone-Project.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
-      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.SessionManagerTester" />
-      <option name="METHOD_NAME" value="checkLoginTester" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationTester.allValid" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Social-Media-Market-Place-Clone-Project.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
-      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
-      <option name="METHOD_NAME" value="allValid" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationTester.emptyFields" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Social-Media-Market-Place-Clone-Project.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
-      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
-      <option name="METHOD_NAME" value="emptyFields" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationTester.passwordDifferent" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Social-Media-Market-Place-Clone-Project.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
-      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
-      <option name="METHOD_NAME" value="passwordDifferent" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationTester.usernameNotContainsNumber" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Social-Media-Market-Place-Clone-Project.app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.social_media_market_place_clone_project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.social_media_market_place_clone_project" />
-      <option name="MAIN_CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
-      <option name="METHOD_NAME" value="usernameNotContainsNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -256,166 +207,56 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Android JUnit.SessionManagerTester.checkLoginTester" />
-        <item itemvalue="Android JUnit.ValidationTester.allValid" />
-        <item itemvalue="Android JUnit.ValidationTester.passwordDifferent" />
-        <item itemvalue="Android JUnit.ValidationTester.emptyFields" />
-        <item itemvalue="Android JUnit.ValidationTester.usernameNotContainsNumber" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6e4c5ee-8081-4835-9202-f01c03fae3a9" name="Default Changelist" comment="" />
-      <created>1617963368424</created>
+      <changelist id="f701d65a-6e51-48f0-b013-0391fae77097" name="Default Changelist" comment="" />
+      <created>1619021672939</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617963368424</updated>
+      <updated>1619021672939</updated>
     </task>
-    <task id="LOCAL-00001" summary="checking tumza2">
-      <created>1617963618257</created>
+    <task id="LOCAL-00001" summary="Reitumetse Android Studio (Sprint 2)">
+      <created>1619023550190</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1617963618257</updated>
+      <updated>1619023550190</updated>
     </task>
-    <task id="LOCAL-00002" summary="v">
-      <created>1618201498956</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618201498956</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="checking tumza2" />
-    <MESSAGE value="v" />
-    <option name="LAST_COMMIT_MESSAGE" value="v" />
+    <MESSAGE value="Reitumetse Android Studio (Sprint 2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reitumetse Android Studio (Sprint 2)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1618127458767">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619023771529">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127458767" />
-    <state width="1860" height="23" key="GridCell.Tab.0.bottom" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619023771529" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1619024293858">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="23" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.0.center" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024293858" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1619024293858">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-
-    <state width="1860" height="23" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.0.left" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024293858" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1619024293858">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="23" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.0.right" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024293858" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1619024293858">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="23" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.1.bottom" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024293858" />
+    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1619021913333">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="23" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.1.center" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="23" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.1.left" timestamp="1618127480881">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="23" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state width="1860" height="23" key="GridCell.Tab.1.right" timestamp="1618127480881">
-
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617967265354" />
-    <state width="1253" height="142" key="GridCell.Tab.0.bottom" timestamp="1618204931067">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="142" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1618204931067" />
-    <state width="1253" height="142" key="GridCell.Tab.0.center" timestamp="1618204931065">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="142" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1618204931065" />
-    <state width="1253" height="142" key="GridCell.Tab.0.left" timestamp="1618204931064">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="142" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1618204931064" />
-    <state width="1253" height="142" key="GridCell.Tab.0.right" timestamp="1618204931066">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="142" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1618204931066" />
-    <state width="1253" height="175" key="GridCell.Tab.1.bottom" timestamp="1618182519844">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="175" key="GridCell.Tab.1.bottom/67.27.1299.741@67.27.1299.741" timestamp="1618182519844" />
-    <state width="1253" height="175" key="GridCell.Tab.1.center" timestamp="1618182519843">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="175" key="GridCell.Tab.1.center/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
-    <state width="1253" height="175" key="GridCell.Tab.1.left" timestamp="1618182519843">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="175" key="GridCell.Tab.1.left/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
-    <state width="1253" height="175" key="GridCell.Tab.1.right" timestamp="1618182519843">
-      <screen x="67" y="27" width="1299" height="741" />
-    </state>
-    <state width="1876" height="105" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618168918866" />
-    <state width="1253" height="175" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1618182519843" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1618128835649">
-
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1860" height="23" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127480881" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1618122740520">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618122740520" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1618201534758">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201534758" />
-    <state x="461" y="190" key="SettingsEditor" timestamp="1617968312904">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="190" key="SettingsEditor/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1617968312904" />
-    <state x="1792" y="0" width="896" height="533" maximized="true" key="dock-window-1" timestamp="1618127418625">
-      <screen x="1920" y="-96" width="768" height="1326" />
-    </state>
-    <state x="1792" y="0" width="896" height="533" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618127418625" />
-    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1618201490240">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="704" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618201490240" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618123023389">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1618123023389" />
+    <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619021913333" />
   </component>
 </project>
