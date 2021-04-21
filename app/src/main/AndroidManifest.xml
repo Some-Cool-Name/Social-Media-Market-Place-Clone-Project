@@ -3,10 +3,9 @@
     package="com.example.social_media_market_place_clone_project">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,12 +13,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
-
         <activity
             android:name=".Profile"
-            android:screenOrientation="portrait" ></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignUp2"
             android:screenOrientation="portrait" />
@@ -29,17 +26,25 @@
         <activity
             android:name=".SignIn"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".EditProfile"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Settings"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
