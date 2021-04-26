@@ -14,6 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
+        <activity android:name=".NavigationBar"></activity>
+        <activity
+            android:name=".FeedActivity"
+            android:label="@string/title_activity_feed" />
         <activity
             android:name=".Profile"
             android:screenOrientation="portrait" />
@@ -26,15 +30,12 @@
         <activity
             android:name=".SignIn"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".EditProfile"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Settings"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -44,7 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
