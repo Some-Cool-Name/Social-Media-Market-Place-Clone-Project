@@ -41,9 +41,11 @@ public class NavigationBar extends AppCompatActivity {
                             selectedFragment = new ChatFragment();
                             break;
                         case R.id.nav_profile:
-                            Intent intentSignIn = new Intent(NavigationBar.this, Profile.class);
+
+                            selectedFragment = new ProfileFragment();
+                           // Intent intentSignIn = new Intent(NavigationBar.this, Profile.class);
                             //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intentSignIn);
+                            //startActivity(intentSignIn);
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
