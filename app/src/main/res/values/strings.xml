@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Social-Media-Market-Place-Clone-Project</string>
+    <string name="title_activity_feed">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="match">Match</string>
+    <string name="feed">Feed</string>
+</resources>
