@@ -3,6 +3,7 @@ package com.example.social_media_market_place_clone_project;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.time.LocalDate;
 import java.time.Period;
@@ -20,8 +22,9 @@ import java.time.Period;
 
 public class Profile extends AppCompatActivity {
     TextView name,age,location,bio;
-    Button logout;
+    Button logout, toFeed;
     ImageView imageView;
+
 
     // Disable back button
     @Override
@@ -37,7 +40,7 @@ public class Profile extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(Profile.this);
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
-
+        toFeed = findViewById(R.id.toFeed);
         name=findViewById(R.id.txtName);
         name.setText(currentUser.get("FULLNAME"));
         age=findViewById(R.id.txtAge);
@@ -57,6 +60,14 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sessionManager.logoutUser();
+            }
+        });
+        toFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSignIn = new Intent(Profile.this, MyFeed.class);
+
+                startActivity(intentSignIn);
             }
         });
         Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();

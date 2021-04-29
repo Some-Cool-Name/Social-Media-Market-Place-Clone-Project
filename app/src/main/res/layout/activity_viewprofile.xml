@@ -336,5 +336,17 @@
             android:layout_marginTop="5dp"></Button>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/toFeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="feeed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
