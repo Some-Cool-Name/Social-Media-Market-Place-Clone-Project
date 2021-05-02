@@ -188,6 +188,7 @@
                 android:layout_marginRight="25dp"
 
                 android:background="@drawable/button_style"
+                style="@style/Widget.AppCompat.Button"
 
                 android:textColor="@color/white"
                 android:textAllCaps="false"

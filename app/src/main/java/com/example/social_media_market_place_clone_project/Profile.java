@@ -22,8 +22,7 @@ import java.time.Period;
 
 
 public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-    TextView name,age,location,bio;
-    Button logout;
+    TextView name, location, bio;
     ImageView imageView;
 
     // Disable back button
@@ -42,33 +41,30 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
-        name=findViewById(R.id.txtNameAge);
+        name = findViewById(R.id.txtNameAge);
 
         AgeCalculator ageCalculator = new AgeCalculator();
 
-        //age=findViewById(R.id.txtAge);
-        //name.setText(currentUser.get("FULLNAME"));
-        //age.setText(ageCalculator.calculateAge(currentUser.get("BIRTHDAY")).toString()); // create function to automatically calculate age
-
+        // Display Name and Age
         String n = currentUser.get("FULLNAME");
         String a = ageCalculator.calculateAge(currentUser.get("BIRTHDAY")).toString();
 
         name.setText(n + ", " + a);
 
 
-        location=findViewById(R.id.txtLocation);
-        String url = currentUser.get("PROFILE_PICTURE");
+        location = findViewById(R.id.txtLocation);
         location.setText("Location");
-        bio=findViewById(R.id.EdittxtBio) ;
+
+        bio = findViewById(R.id.EdittxtBio) ;
         bio.setText(currentUser.get("BIO"));
 
+        String url = currentUser.get("PROFILE_PICTURE");
         imageView = findViewById(R.id.profile_image);
 
-        Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
         loadImageFromUrl(url);
         System.out.print(url);
 
-
+        Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
         /*
         logout=findViewById(R.id.logout_button);
         logout.setText("Logout");

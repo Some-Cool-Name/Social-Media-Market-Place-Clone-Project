@@ -147,6 +147,7 @@
                 android:layout_marginRight="25dp"
 
                 android:background="@drawable/button_style"
+                style="@style/Widget.AppCompat.Button"
 
                 android:text="Sign In"
                 android:textAllCaps="false"
