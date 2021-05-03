@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
-        <activity android:name=".NavigationBar"></activity>
+        <activity android:name=".HomeView"></activity>
+        <activity android:name=".NavigationBar" />
         <activity
             android:name=".FeedActivity"
             android:label="@string/title_activity_feed" />

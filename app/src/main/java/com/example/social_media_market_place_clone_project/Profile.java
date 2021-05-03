@@ -1,7 +1,9 @@
 package com.example.social_media_market_place_clone_project;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Build;
@@ -14,6 +16,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.social_media_market_place_clone_project.ui.ChatFragment;
+import com.example.social_media_market_place_clone_project.ui.HomeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -37,6 +42,10 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewprofile);
+
+
+        //I added this if statement to keep the selected fragment when rotating the device
+
 
         SessionManager sessionManager = new SessionManager(Profile.this);
         sessionManager.checkLogin();
@@ -85,6 +94,15 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         Toast.makeText(Profile.this,currentUser.get(session.EMAIL),Toast.LENGTH_SHORT).show();
         */
     }
+
+    public void onHome(View v){
+        Intent intentSignIn = new Intent(Profile.this, HomeView.class);
+        intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentSignIn);
+    }
+
+
+
 
     // Drop down menu
     public void showMenu(View v){
