@@ -6,10 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import java.util.HashMap;
 
 public class Settings extends AppCompatActivity {
     RelativeLayout editProfile, security, theme, help, logout;
     View back;
+    TextView displayName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,11 @@ public class Settings extends AppCompatActivity {
         theme = (RelativeLayout) findViewById(R.id.theme_layout);
         help = (RelativeLayout) findViewById(R.id.help_layout);
         logout = (RelativeLayout) findViewById(R.id.logout_layout);
-
+        displayName = findViewById(R.id.name_text);
+        SessionManager sessionManager = new SessionManager(Settings.this);
+        HashMap<String, String> currentUser = sessionManager.getUserDetails();
+        String name = currentUser.get("FULLNAME");
+        displayName.setText(name);
         // What happens when the buttons are clicked
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +83,7 @@ public class Settings extends AppCompatActivity {
 
     public void openEditProfile(){
         Intent intent = new Intent(Settings.this, EditProfile.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -84,5 +93,8 @@ public class Settings extends AppCompatActivity {
 
     public void openHelp(){}
 
-    public void doLogOut(){}
+    public void doLogOut(){
+        SessionManager sessionManager = new SessionManager(Settings.this);
+        sessionManager.logoutUser();
+    }
 }
