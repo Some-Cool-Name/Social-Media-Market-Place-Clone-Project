@@ -37,6 +37,9 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewprofile);
 
+        //I added this if statement to keep the selected fragment when rotating the device
+
+
         SessionManager sessionManager = new SessionManager(Profile.this);
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
@@ -80,6 +83,12 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         HashMap<String,String> currentUser = session.getUserDetails();
         Toast.makeText(Profile.this,currentUser.get(session.EMAIL),Toast.LENGTH_SHORT).show();
         */
+    }
+
+    public void onHome(View v){
+        Intent intentSignIn = new Intent(Profile.this, HomeView.class);
+        intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentSignIn);
     }
 
     // Drop down menu

@@ -1,4 +1,4 @@
-package com.example.social_media_market_place_clone_project.ui;
+package com.example.social_media_market_place_clone_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.social_media_market_place_clone_project.EditProfile;
-import com.example.social_media_market_place_clone_project.R;
-import com.example.social_media_market_place_clone_project.Settings;
 
 public class SecuritySettings extends AppCompatActivity {
     EditText currentPassword, newPassword, confirmNewPassword;

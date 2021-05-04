@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".Profile">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -248,4 +248,57 @@
 
         </RelativeLayout>
     </ScrollView>
+
+    // Navigation bar
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottom_navigation"
+        android:background="#000000" />
+
+    <LinearLayout
+        android:id="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical">
+
+        <Space
+            android:layout_width="60dp"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            android:onClick="onHome"
+            app:srcCompat="@drawable/home"
+            tools:ignore="VectorDrawableCompat" />
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/chat"
+            tools:ignore="VectorDrawableCompat" />
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true"
+            app:srcCompat="@drawable/profile2"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
 </RelativeLayout>

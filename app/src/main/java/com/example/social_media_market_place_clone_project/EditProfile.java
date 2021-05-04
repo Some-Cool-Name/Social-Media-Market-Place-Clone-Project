@@ -12,7 +12,7 @@ import android.widget.ImageView;
 public class EditProfile extends AppCompatActivity {
     View back;
     Button save;
-    EditText bio, interests, location;
+    EditText name, bio, interests, location;
     ImageView profilePicture;
 
     @Override
@@ -20,9 +20,10 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        // Buttons on the settings page
+        // Buttons and edit texts on the settings page
         back = (View) findViewById(R.id.back_button);
         save = (Button) findViewById(R.id.save_button);
+        name = (EditText) findViewById(R.id.editTextEditProfileName);
         bio = (EditText) findViewById(R.id.editTextBio);
         interests = (EditText) findViewById(R.id.editTextInterests);
         location = (EditText) findViewById(R.id.editTextLocation);

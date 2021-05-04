@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.social_media_market_place_clone_project.ui.SecuritySettings;
-
 import java.util.HashMap;
 
 public class Settings extends AppCompatActivity {
