@@ -26,6 +26,7 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+
         signIn = (Button) findViewById(R.id.sign_in_button);
         email = findViewById(R.id.editTextSignInEmailAddress);
         password = findViewById(R.id.editTextSignInPassword);
@@ -65,7 +66,7 @@ public class SignIn extends AppCompatActivity {
             Toast.makeText(SignIn.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
         }else{
             session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
-            Intent intentSignIn = new Intent(SignIn.this, Profile.class);
+            Intent intentSignIn = new Intent(SignIn.this, HomeView.class);
             intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intentSignIn);
         }

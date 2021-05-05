@@ -14,22 +14,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
-        <activity android:name=".MyFeed"></activity>
+        <activity
+            android:name=".SecuritySettings"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HomeView"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".NavigationBar"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".FeedActivity"
+            android:label="@string/title_activity_feed" />
+
         <activity
             android:name=".Profile"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".SignUp2"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".SignUp"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".SignIn"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".EditProfile"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Settings"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
