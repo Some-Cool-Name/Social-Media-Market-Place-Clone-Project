@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentSignIn);
         }
         public void goToProfile(){
-            Intent viewProfile = new Intent(this, Profile.class);
+            Intent viewProfile = new Intent(this, HomeView.class);
             viewProfile.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(viewProfile);
         }
