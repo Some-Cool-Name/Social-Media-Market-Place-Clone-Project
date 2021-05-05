@@ -24,7 +24,7 @@ public class Profile extends AppCompatActivity {
     TextView name,age,location,bio;
     Button logout, toFeed;
     ImageView imageView;
-
+    ArrayList<[]>
 
     // Disable back button
     @Override
