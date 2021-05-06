@@ -83,6 +83,12 @@ public class CalendarMonthTester {
     }
 
     @Test
+    public void getDefaultTest(){
+        String result = calendarMonth.getMonth(0);
+        assertEquals(result, "Month");
+    }
+
+    @Test
     public void testDateURLTest(){
         assertEquals(calendarMonth.getDateFormatURL(1,9,2021),"01-09-2021");
         assertEquals(calendarMonth.getDateFormatURL(1,11,2021),"01-11-2021");

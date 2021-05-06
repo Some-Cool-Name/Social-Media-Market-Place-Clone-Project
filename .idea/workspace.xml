@@ -27,24 +27,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f701d65a-6e51-48f0-b013-0391fae77097" name="Default Changelist" comment="profile picture, bio and name working" />
+    <list default="true" id="f701d65a-6e51-48f0-b013-0391fae77097" name="Default Changelist" comment="Reitumetse Android Studio (Sprint 2)">
+    <list default="true" id="f701d65a-6e51-48f0-b013-0391fae77097" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalendarMonthTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/CalendarMonthTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ValidationTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/social_media_market_place_clone_project/ValidationTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project/Settings.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[JAK02022013479]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_28]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -61,34 +70,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-05T21:53:45.033Z" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/example/social_media_market_place_clone_project" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.social_media_market_place_clone_project" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.social_media_market_place_clone_project" />
-    </key>
-    <key name="android.template.-1176160862">
-      <recent name="com.example.social_media_market_place_clone_project.ui" />
-      <recent name="com.example.social_media_market_place_clone_project" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\reitu\AndroidStudioProjects\Social-Media-Market-Place-Clone-Project\app\src\main\res\layout" />
-      <recent name="D:\Users\reitu\AndroidStudioProjects\Social-Media-Market-Place-Clone-Project\app\src\main\res" />
       <recent name="D:\Users\reitu\AndroidStudioProjects\Social-Media-Market-Place-Clone-Project\app\src\main\java\com\example\social_media_market_place_clone_project" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android Instrumented Tests.ValidationTester">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -153,6 +147,166 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidationTester" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <option name="TESTING_TYPE" value="2" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="getDefaultTest()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="getDefaultTest" />
+      <option name="CLASS_NAME" value="com.example.social_media_market_place_clone_project.CalendarMonthTester" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="usernameContainsOne()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
+      <module name="Social-Media-Market-Place-Clone-Project.app" />
+      <option name="TESTING_TYPE" value="3" />
+      <option name="METHOD_NAME" value="usernameContainsOne" />
+      <option name="CLASS_NAME" value="com.example.social_media_market_place_clone_project.ValidationTester" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android Instrumented Tests.ValidationTester" />
+        <item itemvalue="Android Instrumented Tests.usernameContainsOne()" />
+        <item itemvalue="Android Instrumented Tests.getDefaultTest()" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -179,70 +333,7 @@
       <option name="project" value="LOCAL" />
       <updated>1619024613616</updated>
     </task>
-    <task id="LOCAL-00003" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1619024856407</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619024856407</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1619695805915</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619695805915</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1619695853285</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1619695853285</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1619952550899</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1619952550899</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1619952564228</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1619952564228</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Reitumetse Android Studio (Sprint 2)">
-      <created>1620215626170</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1620215626171</updated>
-    </task>
-    <task id="LOCAL-00009" summary="profile picture, bio and name working">
-      <created>1620254900614</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1620254900614</updated>
-    </task>
-    <task id="LOCAL-00010" summary="profile picture, bio and name working">
-      <created>1620324283778</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1620324283778</updated>
-    </task>
-    <task id="LOCAL-00011" summary="profile picture, bio and name working">
-      <created>1620324833402</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1620324833402</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,92 +346,72 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reitumetse Android Studio (Sprint 2)" />
-    <MESSAGE value="profile picture, bio and name working" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile picture, bio and name working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reitumetse Android Studio (Sprint 2)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1620215935322">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620215935322" />
-    <state x="2685" y="246" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619951204789" />
-    <state x="2609" y="409" width="545" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1620130083860">
+    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619023771529">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2609" y="409" width="545" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620130083860" />
-    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619952075935">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619952075935" />
-    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1620251448934">
+    <state x="2610" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619023771529" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1620140792574">
+      <screen x="67" y="27" width="1299" height="741" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620251448934" />
-    <state x="2700" y="254" key="FileChooserDialogImpl" timestamp="1620128204662">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2700" y="254" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620128204662" />
-    <state width="1877" height="343" key="GridCell.Tab.0.bottom" timestamp="1620324875984">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024630576" />
+    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1620140792574" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1620140792574">
+      <screen x="67" y="27" width="1299" height="741" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
-    <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="343" key="GridCell.Tab.0.center" timestamp="1620324875984">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024630576" />
+    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1620140792574" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1620140792573">
+      <screen x="67" y="27" width="1299" height="741" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="343" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
-    <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="343" key="GridCell.Tab.0.left" timestamp="1620324875984">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024630576" />
+    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1620140792573" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1620140792574">
+      <screen x="67" y="27" width="1299" height="741" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="343" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
-    <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="343" key="GridCell.Tab.0.right" timestamp="1620324875984">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619024630576" />
+    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1620140792574" />
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="343" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
-    <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="280" key="GridCell.Tab.1.bottom" timestamp="1620255446070">
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="281" key="GridCell.Tab.1.center" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
-    <state width="1876" height="295" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920802" />
-    <state width="1877" height="280" key="GridCell.Tab.1.center" timestamp="1620255446070">
+    <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="281" key="GridCell.Tab.1.left" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.1.center/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
-    <state width="1876" height="295" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920802" />
-    <state width="1877" height="280" key="GridCell.Tab.1.left" timestamp="1620255446070">
+    <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state width="1877" height="281" key="GridCell.Tab.1.right" timestamp="1619116645771">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.1.left/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
-    <state width="1876" height="295" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="280" key="GridCell.Tab.1.right" timestamp="1620255446070">
+    <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116645771" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619116557837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.1.right/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
-    <state width="1876" height="295" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920802" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1620215666964">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619116557837" />
+    <state x="1814" y="-75" width="880" height="1026" maximized="true" key="dock-window-1" timestamp="1619117394556">
+      <screen x="1920" y="-96" width="768" height="1326" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620215666964" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1620324914511">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324914511" />
-    <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619952570431" />
-    <state x="1857" y="-150" width="880" height="1026" maximized="true" key="dock-window-1" timestamp="1620324943647">
-      <screen x="1920" y="-137" width="768" height="1326" />
-    </state>
-    <state x="1857" y="-150" width="880" height="1026" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324943647" />
-    <state x="587" y="308" key="git4idea.merge.GitPullDialog" timestamp="1620215650630">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="587" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620215650630" />
+    <state x="1814" y="-75" width="880" height="1026" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-96.768.1326@0.0.1920.1040" timestamp="1619117394556" />
     <state x="2681" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1619021913333">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
