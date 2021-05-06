@@ -313,14 +313,14 @@ public class EditProfile extends AppCompatActivity {
             public void onStart(String requestId) {
 //                start
                 System.out.println("starting");
-                Toast.makeText(EditProfile.this,"starting",Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this,"starting",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onProgress(String requestId, long bytes, long totalBytes) {
 //                uploading
                 System.out.println("in progress...");
-                Toast.makeText(EditProfile.this,"processing image...",Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this,"processing image...",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -329,20 +329,20 @@ public class EditProfile extends AppCompatActivity {
                 String url = resultData.get("url").toString();
                 System.out.println(url);
                 imageUrl = url;
-                Toast.makeText(EditProfile.this,url,Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this,url,Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(String requestId, ErrorInfo error) {
 //               error.getDescription()
                 System.out.println(error.getDescription());
-                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onReschedule(String requestId, ErrorInfo error) {
                 System.out.println(error.getDescription());
-                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
             }
         }).dispatch();
     }
