@@ -235,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620324283778</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="profile picture, bio and name working">
+      <created>1620324833402</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620324833402</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,25 +284,25 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2700" y="254" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620128204662" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1620255446070">
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom" timestamp="1620324875984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
     <state width="1876" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1620255446070">
+    <state width="1877" height="343" key="GridCell.Tab.0.center" timestamp="1620324875984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
+    <state width="1877" height="343" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
     <state width="1876" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1620255446070">
+    <state width="1877" height="343" key="GridCell.Tab.0.left" timestamp="1620324875984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
+    <state width="1877" height="343" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
     <state width="1876" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1620255446070">
+    <state width="1877" height="343" key="GridCell.Tab.0.right" timestamp="1620324875984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620255446070" />
+    <state width="1877" height="343" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324875984" />
     <state width="1876" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620131920801" />
     <state width="1877" height="280" key="GridCell.Tab.1.bottom" timestamp="1620255446070">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -321,15 +328,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620215666964" />
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1620324291231">
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2" timestamp="1620324914511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324291231" />
+    <state x="552" y="263" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324914511" />
     <state x="2472" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619952570431" />
-    <state x="1857" y="-150" width="880" height="1026" key="dock-window-1" timestamp="1620324632781">
+    <state x="1857" y="-150" width="880" height="1026" maximized="true" key="dock-window-1" timestamp="1620324943647">
       <screen x="1920" y="-137" width="768" height="1326" />
     </state>
-    <state x="1857" y="-150" width="880" height="1026" key="dock-window-1/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324632781" />
+    <state x="1857" y="-150" width="880" height="1026" maximized="true" key="dock-window-1/0.0.1920.1040/1920.-137.768.1326@0.0.1920.1040" timestamp="1620324943647" />
     <state x="587" y="308" key="git4idea.merge.GitPullDialog" timestamp="1620215650630">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
