@@ -81,8 +81,9 @@ public class SignUp2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DataValidation validate = new DataValidation();
+                AgeCalculator ageCalculator = new AgeCalculator();
                 String isValid =validate.validateSignuUp2(name.getText().toString());
-               if(isValid.equals("Valid")){
+               if(isValid.equals("Valid") && Integer.parseInt(ageCalculator.calculateAge(dateURLformat))>=18){
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
