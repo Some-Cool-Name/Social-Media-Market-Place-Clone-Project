@@ -112,7 +112,7 @@ public class EditProfile extends AppCompatActivity {
 
         String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("username","vhugala");
+        urlBuilder.addQueryParameter("username",email);
         urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
 
 
