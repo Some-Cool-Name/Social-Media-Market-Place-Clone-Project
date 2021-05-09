@@ -51,24 +51,26 @@ public class SignIn extends AppCompatActivity {
         String url = urlBuilder.build().toString();
         request.execute(url);
 
-        while(request.Result.equals("Waiting")){
+        while(request.Result.equals("Waiting")) {
             Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
         }
 
 
-        // Request is finished
-        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
-        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
+            // Request is finished
+            JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+            JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
 
-        JSONObject userCredentials = jsonArray.getJSONObject(0);
+            JSONObject userCredentials = jsonArray.getJSONObject(0);
 
-        if(wholeString.getString("success").equals("0")){
-            Toast.makeText(SignIn.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
-        }else{
-            session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
-            Intent intentSignIn = new Intent(SignIn.this, HomeView.class);
-            intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intentSignIn);
-        }
+            if (wholeString.getString("success").equals("0")) {
+                Toast.makeText(SignIn.this,"error",Toast.LENGTH_SHORT).show();
+               // password.setError("Enter a valid password or Email ");
+            } else {
+                session.createSession(userCredentials.getString("username"), userCredentials.getString("name"), userCredentials.getString("Birthday"), userCredentials.getString("gender"), userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
+                Intent intentSignIn = new Intent(SignIn.this, HomeView.class);
+                intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intentSignIn);
+            }
+
     }
 }
