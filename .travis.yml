@@ -1,22 +1,55 @@
 language: android
-sudo: required
-jdk: oraclejdk8
-android: 
-   components:
-      - tools
-      - platform-tools
-      - tools
-      - build-tools-29.0.1
-      - android-29
-      - extra-android-m2repository
-#optional, use it if only you haven't give permission yet.
+# you MUST mention trusty https://docs.travis-ci.com/user/languages/android/
+dist: trusty
+env:
+ global:
+# These parameters should match the parameters for build tools and sdk versions in the gradle file
+ - ANDROID_BUILD_TOOLS=29.0.2 # should match gradle
+ - ADB_INSTALL_TIMEOUT=5 # minutes
+ - ANDROID_API=29 # api is same as gradle file
+ matrix: # list the android device api you want to test.
+ - EMULATOR_API=22
+#  - EMULATOR_API=28
+android:
+  components:
+    - tools
+    - platform-tools-$ANDROID_BUILD_TOOLS
+    - build-tools-$ANDROID_BUILD_TOOLS
+    - android-$ANDROID_API
+    - android-$EMULATOR_API
+    - extra-google-m2repository
+    - extra-android-m2repository # for design library
+    - addon-google_apis-google-19 # google play services
+    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
+    - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
+    - sys-img-armeabi-v7a-android-$EMULATOR_API
+  licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+jdk:
+  - oraclejdk8
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 before_install:
-  - chmod +x gradlew
-  - yes | sdkmanager "platforms;android-29"
-#   - mkdir "$ANDROID_HOME/licenses" || true
-#   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
-#   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
-#   - yes | sdkmanager --update
-#   - yes | sdkmanager --licenses
+    #- yes | sdkmanager "platforms;android-$ANDROID_API"
+before_script:
+  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a # create an emulator for testing purposes
+  - emulator -avd test -no-audio -no-window & #do not let the emulator have sound or pop up on screen
+  - android-wait-for-emulator # wait for the emulator to turn on fully
+  - adb shell input keyevent 82 & 
+
+#clean your environment if there is anything to clean, then build the project and run the tests and get the report.
 script:
-   - ./gradlew build
+  - ./gradlew clean 
+  - ./gradlew build connectedCheck
+
+
+#if the build is successful, send the generated reports to codecov
+after_success:
+   - bash <(curl -s https://codecov.io/bash)
+
