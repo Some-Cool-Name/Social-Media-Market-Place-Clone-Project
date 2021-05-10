@@ -51,7 +51,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class SignUp2 extends AppCompatActivity {
-    TextView birthday, gender, preference;
+    TextView birthday, gender, preference, error, error2;
     Button register;
     EditText name, bio;
     ImageView profilePicture;
@@ -74,6 +74,8 @@ public class SignUp2 extends AppCompatActivity {
         name = (EditText) findViewById(R.id.editTextSignUpName);
         bio = (EditText) findViewById(R.id.editTextSignUpBio);
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
+        error = findViewById(R.id.textErrorSign);
+        error2 = findViewById(R.id.textErrorSign2);
         // **************************************************************
 
         // Switch activities when buttons are pressed
@@ -83,7 +85,11 @@ public class SignUp2 extends AppCompatActivity {
                 DataValidation validate = new DataValidation();
                 AgeCalculator ageCalculator = new AgeCalculator();
                 String isValid =validate.validateSignuUp2(name.getText().toString());
-               if(isValid.equals("Valid") &&dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))>=18){
+
+                if(dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))<18){
+                    error2.setText("No under 18's");
+                }
+               else if(isValid.equals("Valid") &&dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))>=18&& imageUrl!=null){
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
@@ -144,7 +150,9 @@ public class SignUp2 extends AppCompatActivity {
 
 
                 }else{
-                   Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                 Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                   error.setText("Fill out all fields");
+
                 }
 
             }

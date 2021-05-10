@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
@@ -14,6 +15,7 @@ import org.w3c.dom.Text;
 public class SignUp extends AppCompatActivity {
     Button next;
     EditText email, password, confirmPassword;
+    TextView error;
     public static  String emailExport, passwordExport;
 
     @Override
@@ -26,6 +28,7 @@ public class SignUp extends AppCompatActivity {
         email = (EditText) findViewById(R.id.editTextSignUpEmail);
         password = (EditText) findViewById(R.id.editTextSignUpPassword);
         confirmPassword = (EditText) findViewById(R.id.editTextSignUpConfirmPassword);
+        error = findViewById(R.id.signUp1Error);
         // **************************************************************
 
         // Switch activities when buttons are pressed
@@ -40,7 +43,8 @@ public class SignUp extends AppCompatActivity {
                     passwordExport= password.getText().toString();
                     doNext();
                 }else{
-                    Toast.makeText(SignUp.this,isValid,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(SignUp.this,isValid,Toast.LENGTH_SHORT).show();
+                    error.setText("Fill out all fields");
                 }
 
 

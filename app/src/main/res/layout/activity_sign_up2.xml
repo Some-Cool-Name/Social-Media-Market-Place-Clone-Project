@@ -245,6 +245,26 @@
 
                 android:paddingRight="15dp"
                 android:textColor="@color/grey" />
+            <TextView
+                android:id="@+id/textErrorSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextSignUpBio"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+
+
+                android:textColor="#FF0000" />
+            <TextView
+                android:id="@+id/textErrorSign2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sign_up_birthday_text2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+
+
+                android:textColor="#FF0000" />
             // **************************************************************
 
             // Register Button
