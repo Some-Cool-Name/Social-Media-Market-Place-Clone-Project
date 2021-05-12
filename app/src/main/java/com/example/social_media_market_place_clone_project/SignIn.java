@@ -84,7 +84,7 @@ public class SignIn extends AppCompatActivity {
 
             if (wholeString.getString("success").equals("0")) {
                 System.out.print("");
-                error.setText("wrong cred");
+                error.setText("wrong credentials");
 
                 //return;
 

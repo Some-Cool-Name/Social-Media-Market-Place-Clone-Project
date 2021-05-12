@@ -37,8 +37,13 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 DataValidation validate = new DataValidation();
                 String isValid = validate.validateSignUp1(email.getText().toString(),password.getText().toString(),
+
                         confirmPassword.getText().toString());
-                if(isValid.equals("Valid")){
+
+                if(!password.getText().toString().equals(confirmPassword.getText().toString())){
+                    confirmPassword.setError("Passwords do not match");
+                }
+                else if(isValid.equals("Valid")){
                     emailExport = email.getText().toString();
                     passwordExport= password.getText().toString();
                     doNext();

@@ -120,7 +120,8 @@ public class EditProfile extends AppCompatActivity {
         request.execute(url);
 
         while(request.Result.equals("Waiting")){
-            Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+            System.out.print("waiting");
         }
 
 
@@ -129,7 +130,8 @@ public class EditProfile extends AppCompatActivity {
 
 
         if(wholeString.getString("success").equals("0")){
-            Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
+            System.out.print("waiting" );
         }else{
             session.createSession(email,fullname,birthday,gender,sexuality, bio, updatedImageUrl);
             Intent intentSignIn = new Intent(EditProfile.this, HomeView.class);
@@ -179,7 +181,8 @@ public class EditProfile extends AppCompatActivity {
             request.execute(url);
 
             while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+                System.out.print("loadiing");
             }
 
 
@@ -190,7 +193,8 @@ public class EditProfile extends AppCompatActivity {
             //JSONObject userCredentials = jsonArray.getJSONObject(0);
 
             if(wholeString.getString("success").equals("0")){
-                Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
+                System.out.print("load");
             }else{
 
 
@@ -226,7 +230,8 @@ public class EditProfile extends AppCompatActivity {
             request.execute(url);
 
             while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+                System.out.print("loading");
             }
 
 
@@ -313,14 +318,14 @@ public class EditProfile extends AppCompatActivity {
             public void onStart(String requestId) {
 //                start
                 System.out.println("starting");
-                Toast.makeText(EditProfile.this,"starting",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditProfile.this,"starting",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onProgress(String requestId, long bytes, long totalBytes) {
 //                uploading
                 System.out.println("in progress...");
-                Toast.makeText(EditProfile.this,"processing image...",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditProfile.this,"processing image...",Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -329,20 +334,20 @@ public class EditProfile extends AppCompatActivity {
                 String url = resultData.get("url").toString();
                 System.out.println(url);
                 imageUrl = url;
-                Toast.makeText(EditProfile.this,url,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EditProfile.this,url,Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(String requestId, ErrorInfo error) {
 //               error.getDescription()
                 System.out.println(error.getDescription());
-                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onReschedule(String requestId, ErrorInfo error) {
                 System.out.println(error.getDescription());
-                Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EditProfile.this,error.getDescription(),Toast.LENGTH_SHORT).show();
             }
         }).dispatch();
     }

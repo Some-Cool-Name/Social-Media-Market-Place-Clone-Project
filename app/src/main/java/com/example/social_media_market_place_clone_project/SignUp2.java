@@ -116,7 +116,8 @@ public class SignUp2 extends AppCompatActivity {
 
                     // if request result is success go ahead and create session and call do register
                    while(request.Result.equals("Waiting")){
-                       Toast.makeText(SignUp2.this,"Loading",Toast.LENGTH_SHORT).show();
+                       //Toast.makeText(SignUp2.this,"Loading",Toast.LENGTH_SHORT).show();
+                       System.out.print("waiting");
                    }
                    JSONObject wholeString = null; // Read the whole string
                    try {
@@ -150,7 +151,7 @@ public class SignUp2 extends AppCompatActivity {
 
 
                 }else{
-                 Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                 //Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
                    error.setText("Fill out all fields");
 
                 }
@@ -397,14 +398,14 @@ public class SignUp2 extends AppCompatActivity {
             public void onStart(String requestId) {
 //                start
                 System.out.println("starting");
-                Toast.makeText(SignUp2.this,"starting",Toast.LENGTH_LONG).show();
+                //Toast.makeText(SignUp2.this,"starting",Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onProgress(String requestId, long bytes, long totalBytes) {
 //                uploading
                 System.out.println("in progress...");
-                Toast.makeText(SignUp2.this,"processing image...",Toast.LENGTH_LONG).show();
+                //Toast.makeText(SignUp2.this,"processing image...",Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -413,20 +414,20 @@ public class SignUp2 extends AppCompatActivity {
                 String url = resultData.get("url").toString();
                 System.out.println(url);
                 imageUrl = url;
-                Toast.makeText(SignUp2.this,url,Toast.LENGTH_LONG).show();
+                //Toast.makeText(SignUp2.this,url,Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onError(String requestId, ErrorInfo error) {
 //               error.getDescription()
                 System.out.println(error.getDescription());
-                Toast.makeText(SignUp2.this,error.getDescription(),Toast.LENGTH_LONG).show();
+                //.makeText(SignUp2.this,error.getDescription(),Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onReschedule(String requestId, ErrorInfo error) {
                 System.out.println(error.getDescription());
-                Toast.makeText(SignUp2.this,error.getDescription(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(SignUp2.this,error.getDescription(),Toast.LENGTH_LONG).show();
             }
         }).dispatch();
     }
