@@ -13,17 +13,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-            // Top Action Bar
-
+            <!-- Top Action Bar -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@color/lightgrey">
 
-                // Back Button
-
+                <!--Back Button  -->
                 <View
                     android:id="@+id/back_button"
 
@@ -36,8 +34,7 @@
 
                     android:background="@drawable/ic_arrow_left" />
 
-                // Settings text
-
+                <!-- Settings text -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
@@ -49,15 +46,14 @@
                     android:gravity="center"
                     android:text="Settings"
                     android:textColor="@color/grey"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
 
                     android:textStyle="bold" />
             </RelativeLayout>
-            // **************************************************************
 
-            // Profile Details
-            // Profile Picture
 
+            <!-- Profile Details -->
+            <!-- Profile Picture -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
 
@@ -73,8 +69,7 @@
 
                 app:civ_border_width="2dp" />
 
-            // Name
-
+            <!-- Name -->
             <TextView
                 android:id="@+id/name_text"
                 android:layout_width="wrap_content"
@@ -88,10 +83,9 @@
                 android:text="Name"
                 android:textColor="@color/grey"
 
-                android:textSize="22dp" />
+                android:textSize="22sp" />
 
-            //Line Separator
-
+            <!-- Line Separator -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -100,10 +94,8 @@
                 android:layout_marginTop="15dp"
 
                 android:background="@color/grey2" />
-            // **************************************************************
 
-            // Edit Profile
-
+            <!-- Edit Profile -->
             <RelativeLayout
                 android:id="@+id/edit_layout"
 
@@ -115,8 +107,7 @@
 
                 android:background="@drawable/button_style4">
 
-                // Icon
-
+                <!-- Icon -->
                 <View
                     android:id="@+id/edit_profile_icon"
 
@@ -129,8 +120,7 @@
 
                     android:background="@drawable/ic_edit" />
 
-                // Text 1
-
+                <!-- Text 1 -->
                 <TextView
                     android:id="@+id/edit_profile_text"
                     android:layout_width="wrap_content"
@@ -142,12 +132,11 @@
                     android:gravity="center"
                     android:text="Edit Profile"
                     android:textColor="@color/grey"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
 
                     android:textStyle="bold" />
 
-                // Text 2
-
+                <!-- Text 2 -->
                 <TextView
                     android:id="@+id/edit_profile_text2"
                     android:layout_width="wrap_content"
@@ -161,12 +150,10 @@
                     android:text="Profile Picture, Bio and more"
                     android:textColor="@color/grey"
 
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
-            // **************************************************************
 
-            // Security
-
+            <!-- Security -->
             <RelativeLayout
                 android:id="@+id/security_layout"
 
@@ -178,8 +165,7 @@
 
                 android:background="@drawable/button_style4">
 
-                // Icon
-
+                <!-- Icon -->
                 <View
                     android:id="@+id/security_icon"
 
@@ -192,8 +178,7 @@
 
                     android:background="@drawable/ic_lock" />
 
-                // Text 1
-
+                <!--Text 1  -->
                 <TextView
                     android:id="@+id/security_text"
                     android:layout_width="wrap_content"
@@ -205,12 +190,11 @@
                     android:gravity="center"
                     android:text="Security"
                     android:textColor="@color/grey"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
 
                     android:textStyle="bold" />
 
-                // Text 2
-
+                <!-- Text 2 -->
                 <TextView
                     android:id="@+id/security_text2"
                     android:layout_width="wrap_content"
@@ -224,12 +208,10 @@
                     android:text="Change Password, Privacy Settings"
                     android:textColor="@color/grey"
 
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
-            // **************************************************************
 
-            // Theme
-
+            <!-- Theme -->
             <RelativeLayout
                 android:id="@+id/theme_layout"
 
@@ -241,8 +223,7 @@
 
                 android:background="@drawable/button_style4">
 
-                // Icon
-
+                <!-- Icon -->
                 <View
                     android:id="@+id/theme_icon"
 
@@ -255,8 +236,7 @@
 
                     android:background="@drawable/ic_palette" />
 
-                // Text 1
-
+                <!-- Text 1 -->
                 <TextView
                     android:id="@+id/theme_text"
                     android:layout_width="wrap_content"
@@ -268,12 +248,11 @@
                     android:gravity="center"
                     android:text="Theme"
                     android:textColor="@color/grey"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
 
                     android:textStyle="bold" />
 
-                // Text 2
-
+                <!-- Text 2 -->
                 <TextView
                     android:id="@+id/theme_text2"
                     android:layout_width="wrap_content"
@@ -287,12 +266,10 @@
                     android:text="Choose the theme of the app"
                     android:textColor="@color/grey"
 
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
-            // **************************************************************
 
-            // Help
-
+            <!-- Help -->
             <RelativeLayout
                 android:id="@+id/help_layout"
 
@@ -304,8 +281,7 @@
 
                 android:background="@drawable/button_style4">
 
-                // Icon
-
+                <!-- Icon -->
                 <View
                     android:id="@+id/hlep_icon"
 
@@ -318,8 +294,7 @@
 
                     android:background="@drawable/ic_question_circle" />
 
-                // Text 1
-
+                <!-- Text 1 -->
                 <TextView
                     android:id="@+id/help_text"
                     android:layout_width="wrap_content"
@@ -331,11 +306,11 @@
                     android:gravity="center"
                     android:text="Help"
                     android:textColor="@color/grey"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
 
                     android:textStyle="bold" />
 
-                // Text 2
+                <!-- Text 2 -->
 
                 <TextView
                     android:id="@+id/help_text2"
@@ -350,12 +325,10 @@
                     android:text="Help, Contact us, About"
                     android:textColor="@color/grey"
 
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
-            // **************************************************************
 
-            // Log Out
-
+            <!-- Log Out -->
             <RelativeLayout
                 android:id="@+id/logout_layout"
 
@@ -368,10 +341,7 @@
 
                 android:background="@drawable/button_style4">
 
-
-
-                // Icon
-
+               <!-- Icon -->
                 <View
                     android:id="@+id/log_out_icon"
 
@@ -384,8 +354,7 @@
 
                     android:background="@drawable/ic_sign_out" />
 
-                // Text 1
-
+                <!-- Text 1 -->
                 <TextView
                     android:id="@+id/log_out_text"
                     android:layout_width="wrap_content"
@@ -397,12 +366,11 @@
                     android:gravity="center"
                     android:text="Log Out"
                     android:textColor="@color/grey"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
 
                     android:textStyle="bold" />
 
-                // Text 2
-
+                // <!-- Text 2 -->
                 <TextView
                     android:id="@+id/log_out_text2"
                     android:layout_width="wrap_content"
@@ -416,9 +384,9 @@
                     android:text="Log out of your account"
                     android:textColor="@color/grey"
 
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
-            // **************************************************************
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.service.autofill.FieldClassification;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -100,6 +101,18 @@ public class HomeView extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void Matches(View v){
+        Intent intent = new Intent(HomeView.this, Matches.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void Chat(View v){
+        Intent intent = new Intent(HomeView.this, Chat.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     public void Profile(View v){

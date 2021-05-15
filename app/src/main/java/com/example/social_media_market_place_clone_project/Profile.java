@@ -70,10 +70,22 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
     }
 
-    public void onHome(View v){
+    public void Home(View v){
         Intent intentSignIn = new Intent(Profile.this, HomeView.class);
         intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentSignIn);
+    }
+
+    public void Matches(View v){
+        Intent intent = new Intent(Profile.this, Matches.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void Chat(View v){
+        Intent intent = new Intent(Profile.this, Chat.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     // Drop down menu
