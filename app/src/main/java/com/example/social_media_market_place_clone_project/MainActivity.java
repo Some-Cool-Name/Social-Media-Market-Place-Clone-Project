@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     Button signIn, signUp;
     Map config = new HashMap();
 
-//    TODO: Vhugala - insert your cloudinary details here
     //    sets up cloud connection
     private void configCloudinary() {
         config.put("cloud_name", "dkctv74ue");

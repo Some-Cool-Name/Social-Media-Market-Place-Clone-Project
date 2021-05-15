@@ -139,17 +139,6 @@ public class HomeView extends AppCompatActivity {
 
         }
 
-
-
-
-            //session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
-
-
-
-
-
-
-
         return users;
     }
 
@@ -159,25 +148,22 @@ public class HomeView extends AppCompatActivity {
         popup.inflate(R.menu.popup_menu);
         popup.show();
     }
-    public void nothing(){
 
-    }
+//    public boolean onMenuItemClick(MenuItem item) {
+//        switch (item.getItemId()){
+//            case R.id.settings_item:
+//                openMenu();
+//                return true;
+//
+//            default:
+//                return false;
+//        }
+//    }
 
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.settings_item:
-                openMenu();
-                return true;
-
-            default:
-                return false;
-        }
-    }
-
-    public void openMenu(){
-        Intent intent = new Intent(HomeView.this, Settings.class);
-        startActivity(intent);
-    }
+//    public void openMenu(){
+//        Intent intent = new Intent(HomeView.this, Settings.class);
+//        startActivity(intent);
+//    }
     // **************************************************************
 
 
