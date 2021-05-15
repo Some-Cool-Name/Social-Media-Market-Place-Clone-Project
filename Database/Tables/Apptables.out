@@ -19,11 +19,13 @@ mysql> DESC User_Accounts;
 | Full_Name | varchar(50) | NO   |     | NULL    |       |
 | Birthday  | varchar(20) | NO   |     | NULL    |       |
 | Gender    | varchar(6)  | NO   |     | NULL    |       |
-| Password  | text        | NO   |     | NULL    |       |
+| Password  | char(12)    | NO   |     | NULL    |       |
 | Sexuality | varchar(25) | NO   |     | NULL    |       |
 +-----------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
+mysql> DESC User_Description;
+ERROR 1146 (42S02): Table 'd1851427.User_Description' doesn't exist
 mysql> DESC Description;
 +--------+--------------+------+-----+---------+-------+
 | Field  | Type         | Null | Key | Default | Extra |
@@ -78,5 +80,38 @@ mysql> DESC Account_Link;
 | Twitter_Link   | varchar(100) | YES  |     | NULL    |       |
 +----------------+--------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_d1851427 |
++--------------------+
+| Account_Link       |
+| Description        |
+| Images             |
+| Interest           |
+| Likes              |
+| Location           |
+| Matches            |
+| User_Accounts      |
++--------------------+
+8 rows in set (0.01 sec)
+
+mysql> DESC Likes;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| liker | varchar(50) | NO   | PRI | NULL    |       |
+| likee | varchar(50) | YES  | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC Matches;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| E_mail1 | varchar(50) | NO   | PRI | NULL    |       |
+| E_mail2 | varchar(50) | YES  | MUL | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
 
 mysql> notee
