@@ -135,10 +135,9 @@
 
             android:layout_marginRight="70dp"
 
-            android:background="@color/button"
-
             app:srcCompat="@drawable/ic_sparkle"
 
+            android:onClick="Matches"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageButton
@@ -151,7 +150,6 @@
             android:background="@color/white"
             app:srcCompat="@drawable/chat"
 
-            android:onClick="Chat"
             tools:ignore="VectorDrawableCompat" />
 
 
