@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,6 +23,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +45,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageView profilePicture;
     int numPics = 1;
     Uri uri;
+    String email, password;
     String imageUrl;
     String date, dateURLformat; // DD MONTH YYYY
     String genderValue, preferenceValue;
@@ -75,8 +82,8 @@ public class SignUp2 extends AppCompatActivity {
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
-                    String email= signUp.emailExport;
-                    String password = signUp.passwordExport;
+                     email= signUp.emailExport;
+                     password = signUp.passwordExport;
                     String link ="https://lamp.ms.wits.ac.za/home/s1851427/WDAReg.php";
                     HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
                     urlBuilder.addQueryParameter("username",email);
@@ -88,7 +95,7 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("location","Braamfontein");
                    urlBuilder.addQueryParameter("bio",bio.getText().toString());
 
-                   String updatedImageUrl=stringHandler.addChar(imageUrl, 's', 4); // should add an s to image url
+                   String updatedImageUrl=stringHandler.addChar(imageHandler.imageUrl, 's', 4); // should add an s to image url
 
 
                    urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
@@ -108,6 +115,7 @@ public class SignUp2 extends AppCompatActivity {
 
                            // if done change ui'
                            doRegister();
+                           loginChat();
                        }
                        else {
                            //set ui to signin1
@@ -275,5 +283,42 @@ public class SignUp2 extends AppCompatActivity {
         Intent viewProfile = new Intent(this, SignUp.class);
         viewProfile.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(viewProfile);
+    }
+    public void loginChat(){
+        String url = "https://datingapp-d1e37-default-rtdb.firebaseio.com/.json";
+        final ProgressDialog pd = new ProgressDialog(SignUp2.this);
+        pd.setMessage("Loading...");
+        pd.show();
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
+            if (response.equals("null")) {
+                Toast.makeText(SignUp2.this, "user not found", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    JSONObject obj = new JSONObject(response);
+
+                    if (!obj.has(email)) {
+                        Toast.makeText(SignUp2.this, "user not found", Toast.LENGTH_LONG).show();
+
+                    } else if (obj.getJSONObject(email).getString("password").equals(password)) {
+                        UserDetails.username = email;
+                        UserDetails.password = password;
+                        //startActivity(new Intent(SignUp2.this, Users.class));
+                    } else {
+                        Toast.makeText(SignUp2.this, "incorrect password", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            pd.dismiss();
+        }, volleyError -> {
+            System.out.println("" + volleyError);
+            pd.dismiss();
+        });
+
+        RequestQueue rQueue = Volley.newRequestQueue(SignUp2.this);
+        rQueue.add(request);
     }
 }

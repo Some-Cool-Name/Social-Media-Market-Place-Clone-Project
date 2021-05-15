@@ -43,7 +43,7 @@ import okhttp3.HttpUrl;
 public class HomeView extends AppCompatActivity {
     ImageView imageView;
     TextView nameAge, location;
-    ImageButton cross;
+    ImageButton cross, chat;
     ArrayList<User> users = new ArrayList<>();
     int index =0;
 
@@ -56,6 +56,14 @@ public class HomeView extends AppCompatActivity {
         nameAge = (TextView) findViewById(R.id.home_name_text);
         location = (TextView) findViewById(R.id.home_location_text);
         cross = findViewById(R.id.cross);
+        chat = findViewById(R.id.chat);
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentSignIn = new Intent(HomeView.this, Users.class);
+                startActivity(intentSignIn);
+            }
+        });
         imageView = findViewById(R.id.picture);
 
         try {
