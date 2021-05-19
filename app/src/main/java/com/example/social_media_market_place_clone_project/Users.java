@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,11 +26,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 public class Users extends AppCompatActivity {
     ListView usersList;
-    TextView noUsersText;
+    //TextView noUsersText;
+    EditText searchText;
+    ImageButton  search;
     ArrayList<String> al = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
@@ -38,12 +45,13 @@ public class Users extends AppCompatActivity {
         setContentView(R.layout.activity_users);
 
         usersList = (ListView)findViewById(R.id.usersList);
-        noUsersText = (TextView)findViewById(R.id.noUsersText);
-
+        //noUsersText = (TextView)findViewById(R.id.noUsersText);
+        search = findViewById(R.id.match_search_Button);
+        searchText = findViewById(R.id.match_search_EditText);
         pd = new ProgressDialog(Users.this);
         pd.setMessage("Loading...");
         pd.show();
-
+        loginChat();
         String url = "https://datingapp-d1e37-default-rtdb.firebaseio.com/.json";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
@@ -60,7 +68,22 @@ public class Users extends AppCompatActivity {
 
         RequestQueue rQueue = Volley.newRequestQueue(Users.this);
         rQueue.add(request);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+
+
+                ArrayList<String> newAl = new ArrayList<>();
+                newAl = al;
+
+                al.removeIf(s -> !s.contains(searchText.getText().toString()));
+                //al.add("second");
+                usersList.setAdapter(new ArrayAdapter<String>(Users.this, android.R.layout.simple_list_item_1, al));
+
+
+            }
+        });
         usersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -92,15 +115,53 @@ public class Users extends AppCompatActivity {
         }
 
         if(totalUsers <=1){
-            noUsersText.setVisibility(View.VISIBLE);
+           // noUsersText.setVisibility(View.VISIBLE);
             usersList.setVisibility(View.GONE);
         }
         else{
-            noUsersText.setVisibility(View.GONE);
+            //noUsersText.setVisibility(View.GONE);
             usersList.setVisibility(View.VISIBLE);
             usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
         }
 
         pd.dismiss();
     }
+    public void loginChat(){
+        String url = "https://datingapp-d1e37-default-rtdb.firebaseio.com/.json";
+        final ProgressDialog pd = new ProgressDialog(Users.this);
+        pd.setMessage("Loading...");
+        pd.show();
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
+            if (response.equals("null")) {
+                Toast.makeText(Users.this, "user not found", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    JSONObject obj = new JSONObject(response);
+
+                    if (!obj.has("second")) {
+                        Toast.makeText(Users.this, "user not found", Toast.LENGTH_LONG).show();
+
+                    } else if (obj.getJSONObject("second").getString("password").equals("s")) {
+                        UserDetails.username = "second";
+                        UserDetails.password = "s";
+                        // startActivity(new Intent(SignIn.this, Users.class));
+                    } else {
+                        Toast.makeText(Users.this, "incorrect password", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            pd.dismiss();
+        }, volleyError -> {
+            System.out.println("" + volleyError);
+            pd.dismiss();
+        });
+
+        RequestQueue rQueue = Volley.newRequestQueue(Users.this);
+        rQueue.add(request);
+    }
+
 }
