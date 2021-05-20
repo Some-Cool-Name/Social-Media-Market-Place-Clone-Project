@@ -1,6 +1,7 @@
 package com.example.social_media_market_place_clone_project;
 
 import android.app.Activity;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -12,11 +13,17 @@ import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
 import com.example.social_media_market_place_clone_project.SignUp2;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ImageHandler {
 
     public String imageUrl = null;
+    Map config = new HashMap();
+    private Context context ;
+    public ImageHandler(Context context){
+        this.context=context;
+    }
 
     //    this method uploads image to cloud and returns it's url
     //    also outputs a toast message to indicate status of upload
@@ -62,6 +69,11 @@ public class ImageHandler {
         }
         catch (Exception e){
             e.printStackTrace();
+            config.put("cloud_name", "dkctv74ue");
+            config.put("api_key", "421896893816688");
+            config.put("api_secret", "pumaVpw63KKXxpRi-ZfLzwo7eck");
+            MediaManager.init(context, config);
+            uploadToCloudinary(filePath);
         }
 
         return 0;

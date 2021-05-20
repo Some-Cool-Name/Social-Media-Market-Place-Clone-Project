@@ -4,7 +4,11 @@ public class DataValidation {
     public String validateSignUp1(String email,String password,String confirmPassword){
         if(email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
             return "Fill Out All Fields";
-        }else if(!password.equals(confirmPassword)){
+        }
+        else if(email.contains(".")||email.contains("#")||email.contains("$")||email.contains("[")||email.contains("]")){
+            return "Username can not have special characters";
+        }
+        else if(!password.equals(confirmPassword)){
             return "Passwords Do Not Match";
         }
         else{

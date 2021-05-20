@@ -32,7 +32,7 @@ public class EditProfile extends AppCompatActivity {
     Button save;
     EditText name, biog, interests, location;
     ImageView profilePicture;
-    String imageUrl;
+   // String imageUrl;
     int numPics = 1;
     String filePath;
     Uri uri;
@@ -55,7 +55,7 @@ public class EditProfile extends AppCompatActivity {
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
 
 //        helper classes
-        imageHandler = new ImageHandler();
+        imageHandler = new ImageHandler(this);
         stringHandler = new StringHandler();
 
         // What happens when the buttons are clicked
@@ -80,7 +80,7 @@ public class EditProfile extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     // upper part is for profile picture;
-                    if(imageUrl!=null){
+                    if(imageHandler.imageUrl!=null){
                         processImage();
                     }
 
@@ -95,7 +95,7 @@ public class EditProfile extends AppCompatActivity {
     }
 
     public void processImage() throws JSONException {
-        String updatedImageUrl= stringHandler.addChar(imageUrl, 's', 4);
+        String updatedImageUrl= stringHandler.addChar(imageHandler.imageUrl, 's', 4);
         SessionManager session = new SessionManager(EditProfile.this);
         session.checkLogin();
         HashMap<String, String> currentUser = session.getUserDetails();
@@ -264,7 +264,7 @@ public class EditProfile extends AppCompatActivity {
             //get the image's file location
             filePath = imageHandler.getRealPathFromUri(uri, EditProfile.this);
             imageHandler.uploadToCloudinary(filePath);
-            imageUrl = imageHandler.imageUrl;
+            //imageUrl = imageHandler.imageUrl;
 
 
             try {

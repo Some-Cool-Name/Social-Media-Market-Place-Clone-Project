@@ -68,7 +68,7 @@ public class SignUp2 extends AppCompatActivity {
         // **************************************************************
 
 //        declare image handler
-        imageHandler = new ImageHandler();
+        imageHandler = new ImageHandler(this);
         stringHandler = new StringHandler();
 
         // Switch activities when buttons are pressed
