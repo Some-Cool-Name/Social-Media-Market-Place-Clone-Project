@@ -289,6 +289,7 @@ public class SignUp2 extends AppCompatActivity {
         final ProgressDialog pd = new ProgressDialog(SignUp2.this);
         pd.setMessage("Loading...");
         pd.show();
+        pd.dismiss();
 
         StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
             if (response.equals("null")) {

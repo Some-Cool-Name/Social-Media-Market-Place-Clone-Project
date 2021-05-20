@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,6 +32,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import okhttp3.HttpUrl;
+
 public class Users extends AppCompatActivity {
     ListView usersList;
     //TextView noUsersText;
@@ -39,6 +42,7 @@ public class Users extends AppCompatActivity {
     ArrayList<String> al = new ArrayList<>();
     int totalUsers = 0;
     ProgressDialog pd;
+    ArrayList<String> matches = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +62,11 @@ public class Users extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
             public void onResponse(String s) {
-                doOnSuccess(s);
+                try {
+                    doOnSuccess(s);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         },new Response.ErrorListener(){
             @Override
@@ -94,40 +102,80 @@ public class Users extends AppCompatActivity {
         });
     }
 
-    public void doOnSuccess(String s){
+    public void doOnSuccess(String s) throws JSONException {
         try {
             JSONObject obj = new JSONObject(s);
 
             Iterator i = obj.keys();
             String key = "";
-
-            while(i.hasNext()){
-
-                //get mached users and set key to the email
-                key = i.next().toString();
-
-                if(!key.equals(UserDetails.username)) {
-                    al.add(key);
-                }
-
-                totalUsers++;
-            }
+            matches = getMatch();
+            totalUsers = matches.size();
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        if(totalUsers <=1){
+        if(matches.size() <1){
            // noUsersText.setVisibility(View.VISIBLE);
             usersList.setVisibility(View.GONE);
         }
         else{
             //noUsersText.setVisibility(View.GONE);
             usersList.setVisibility(View.VISIBLE);
-            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, al));
+            al = matches;
+            usersList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, matches));
         }
 
         pd.dismiss();
+    }
+
+    public ArrayList<String>  getMatch() throws JSONException {
+        SessionManager sessionManager = new SessionManager(Users.this);
+        sessionManager.checkLogin();
+        HashMap<String, String> currentUser = sessionManager.getUserDetails();
+        // Display Name and Age
+        String n = currentUser.get("EMAIL");
+        ArrayList<String> users = new ArrayList<>();
+        AsyncNetwork request = new AsyncNetwork();
+
+        sessionManager.checkLogin();
+
+
+
+
+
+
+        // Display Name and Age
+
+
+        String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAgetMatches.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("username",n);
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+
+        while (request.Result.equals("Waiting")) {
+            System.out.print("waiting");
+            // Toast.makeText(HomeView.this,"",Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        // Request is finished
+        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("matchedWith").toString()); // extract the login credentials array
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject userCredentials = jsonArray.getJSONObject(i);
+
+            users.add(userCredentials.getString("E_mail"));
+
+        }
+
+        return users;
+
+
     }
     public void loginChat(){
         String url = "https://datingapp-d1e37-default-rtdb.firebaseio.com/.json";
