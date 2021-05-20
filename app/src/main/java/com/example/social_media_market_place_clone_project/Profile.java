@@ -68,27 +68,24 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         System.out.print(url);
 
         Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
-        /*
-        logout=findViewById(R.id.logout_button);
-        logout.setText("Logout");
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sessionManager.logoutUser();
-            }
-        });
-
-        SessionManager session = new SessionManager(Profile.this);
-        session.checkLogin();
-        HashMap<String,String> currentUser = session.getUserDetails();
-        Toast.makeText(Profile.this,currentUser.get(session.EMAIL),Toast.LENGTH_SHORT).show();
-        */
     }
 
-    public void onHome(View v){
+    public void Home(View v){
         Intent intentSignIn = new Intent(Profile.this, HomeView.class);
         intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentSignIn);
+    }
+
+    public void Matches(View v){
+        Intent intent = new Intent(Profile.this, Matches.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void Chat(View v){
+        Intent intent = new Intent(Profile.this, Chat.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     // Drop down menu
@@ -130,25 +127,4 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
             }
         });
     }
-
-    // a Function to automatically calculate the age given a string with the birthdate. //
-   /* @RequiresApi(api = Build.VERSION_CODES.O)
-    public Integer calculateAge(String birthDate){
-        // Convert birthdayString to Integers //
-        int bYear = Integer.parseInt(String.valueOf(birthDate.charAt(6)))*1000
-                +Integer.parseInt(String.valueOf(birthDate.charAt(7)))*100
-                +Integer.parseInt(String.valueOf(birthDate.charAt(8)))*10
-                +Integer.parseInt(String.valueOf(birthDate.charAt(9)));
-        int bMonth = Integer.parseInt(String.valueOf(birthDate.charAt(3)))*10
-                + Integer.parseInt(String.valueOf(birthDate.charAt(4)));
-        int bDay = Integer.parseInt(String.valueOf(birthDate.charAt(0)))*10
-                +Integer.parseInt(String.valueOf(birthDate.charAt(1)));
-
-        LocalDate birthday= LocalDate.of(bYear,bMonth,bDay);
-        LocalDate now = LocalDate.now();
-        Period diff = Period.between(birthday, now);
-        return diff.getYears();
-    }
-
-    */
 }

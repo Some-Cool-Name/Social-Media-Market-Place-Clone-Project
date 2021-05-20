@@ -3,6 +3,7 @@ package com.example.social_media_market_place_clone_project;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +40,7 @@ public class SignIn extends AppCompatActivity {
         signIn.setOnClickListener(v -> {
             try {
                 doSignIn();
+                loginChat();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -52,7 +59,8 @@ public class SignIn extends AppCompatActivity {
         request.execute(url);
 
         while(request.Result.equals("Waiting")){
-            Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
+            System.out.print("loading");
         }
 
 
@@ -70,5 +78,42 @@ public class SignIn extends AppCompatActivity {
             intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intentSignIn);
         }
+    }
+    public void loginChat(){
+        String url = "https://datingapp-d1e37-default-rtdb.firebaseio.com/.json";
+        final ProgressDialog pd = new ProgressDialog(SignIn.this);
+        pd.setMessage("Loading...");
+        pd.show();
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
+            if (response.equals("null")) {
+                Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    JSONObject obj = new JSONObject(response);
+
+                    if (!obj.has(email.getText().toString())) {
+                        Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
+
+                    } else if (obj.getJSONObject(email.getText().toString()).getString("password").equals("pass123")) {
+                        UserDetails.username = email.getText().toString();
+                        UserDetails.password = password.getText().toString();
+                       // startActivity(new Intent(SignIn.this, Users.class));
+                    } else {
+                        Toast.makeText(SignIn.this, "incorrect password", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            pd.dismiss();
+        }, volleyError -> {
+            System.out.println("" + volleyError);
+            pd.dismiss();
+        });
+
+        RequestQueue rQueue = Volley.newRequestQueue(SignIn.this);
+        rQueue.add(request);
     }
 }
