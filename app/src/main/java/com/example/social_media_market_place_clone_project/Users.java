@@ -102,6 +102,8 @@ public class Users extends AppCompatActivity {
             String key = "";
 
             while(i.hasNext()){
+
+                //get mached users and set key to the email
                 key = i.next().toString();
 
                 if(!key.equals(UserDetails.username)) {
