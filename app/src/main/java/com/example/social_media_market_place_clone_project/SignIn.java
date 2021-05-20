@@ -59,7 +59,8 @@ public class SignIn extends AppCompatActivity {
         request.execute(url);
 
         while(request.Result.equals("Waiting")){
-            Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
+            System.out.print("loading");
         }
 
 
@@ -94,7 +95,7 @@ public class SignIn extends AppCompatActivity {
                     if (!obj.has(email.getText().toString())) {
                         Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
 
-                    } else if (obj.getJSONObject(email.getText().toString()).getString("password").equals(password.getText().toString())) {
+                    } else if (obj.getJSONObject(email.getText().toString()).getString("password").equals("pass123")) {
                         UserDetails.username = email.getText().toString();
                         UserDetails.password = password.getText().toString();
                        // startActivity(new Intent(SignIn.this, Users.class));

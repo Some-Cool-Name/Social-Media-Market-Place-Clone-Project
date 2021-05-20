@@ -1,7 +1,15 @@
 package com.example.social_media_market_place_clone_project;
 
 public class User {
-    private String name, gender, bio, imageUrl;
+    private String name, gender, bio, imageUrl, email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getName() {
         return name;

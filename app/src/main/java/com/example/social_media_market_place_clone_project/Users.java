@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -131,6 +132,16 @@ public class Users extends AppCompatActivity {
         final ProgressDialog pd = new ProgressDialog(Users.this);
         pd.setMessage("Loading...");
         pd.show();
+        SessionManager sessionManager = new SessionManager(Users.this);
+        sessionManager.checkLogin();
+        HashMap<String, String> currentUser = sessionManager.getUserDetails();
+
+
+
+        AgeCalculator ageCalculator = new AgeCalculator();
+
+        // Display Name and Age
+        String n = currentUser.get("EMAIL");
 
         StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
             if (response.equals("null")) {
@@ -139,12 +150,12 @@ public class Users extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject(response);
 
-                    if (!obj.has("second")) {
+                    if (!obj.has(n)) {
                         Toast.makeText(Users.this, "user not found", Toast.LENGTH_LONG).show();
 
-                    } else if (obj.getJSONObject("second").getString("password").equals("s")) {
-                        UserDetails.username = "second";
-                        UserDetails.password = "s";
+                    } else if (obj.getJSONObject(n).getString("password").equals("pass123")) {
+                        UserDetails.username = n;
+                        UserDetails.password = "pass123";
                         // startActivity(new Intent(SignIn.this, Users.class));
                     } else {
                         Toast.makeText(Users.this, "incorrect password", Toast.LENGTH_LONG).show();
@@ -162,6 +173,23 @@ public class Users extends AppCompatActivity {
 
         RequestQueue rQueue = Volley.newRequestQueue(Users.this);
         rQueue.add(request);
+    }
+    public void Home(View v){
+        Intent intentSignIn = new Intent(Users.this, HomeView.class);
+        intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentSignIn);
+    }
+
+    public void Profile(View v){
+        Intent intent = new Intent(Users.this, Profile.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void Matches(View v){
+        Intent intent = new Intent(Users.this, Matches.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
 }

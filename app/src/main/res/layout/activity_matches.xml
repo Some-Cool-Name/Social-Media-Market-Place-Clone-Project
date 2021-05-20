@@ -1,62 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
+    tools:context=".Matches">
 
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    tools:context=".HomeView">
-
-    <TextView
+    <!-- Number of likes -->
+    <RelativeLayout
+        android:id="@+id/match_layout_1"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/number_likes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingVertical="20dp"
+            android:gravity="center_horizontal"
+
+            android:text="X Likes"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#222" />
+
+        <!-- Line -->
+        <View
+            android:id="@+id/line_matches"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:layout_below="@+id/number_likes_text"
+
+            android:background="@color/grey2" />
+
+        <!-- Matches Text -->
+        <TextView
+            android:id="@+id/matches_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/line_matches"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+
+            android:text="Matches"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/matches_gridview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_centerInParent="true"
+        android:layout_below="@id/match_layout_1"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginVertical="10dp"
 
-        android:padding="3dp"
-        android:textColor="#222"
-        android:textSize="20dp"
+        android:gravity="center_horizontal"
 
-        android:text="No users available" />
+        android:verticalSpacing="30dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="2" />
 
-
-    <!--on below line we are creating a swipe
-         frame layout for providing a swipe action-->
-    <com.daprlabs.cardstack.SwipeFrameLayout
-        xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!--below widget is used for creating a swipe deck-->
-        <!--in below widget card spacing is the spacing between cards
-            max visible is the max number of cards which are visible
-            render above is to render the cards
-            rotation degree is the angle of card rotation when card is swipped-->
-        <com.daprlabs.cardstack.SwipeDeck
-            android:id="@+id/swipe_deck"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_marginBottom="70dp"
-            android:padding="20dp"
-
-            swipedeck:card_spacing="5dp"
-            swipedeck:max_visible="3"
-            swipedeck:render_above="true"
-            swipedeck:rotation_degrees="15" />
-
-    </com.daprlabs.cardstack.SwipeFrameLayout>
 
     <!-- Navbar -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@id/bottom_navigation"
-        android:background="@color/black" />
+        android:background="@color/grey2" />
 
     <LinearLayout
         android:id="@id/bottom_navigation"
@@ -80,6 +99,7 @@
             android:background="@color/white"
             app:srcCompat="@drawable/home"
 
+            android:onClick="Home"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageButton
@@ -92,7 +112,6 @@
             android:background="@color/white"
             app:srcCompat="@drawable/ic_sparkle"
 
-            android:onClick="Matches"
             tools:ignore="VectorDrawableCompat" />
 
         <ImageButton
