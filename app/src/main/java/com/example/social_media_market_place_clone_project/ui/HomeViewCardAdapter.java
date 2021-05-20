@@ -8,8 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.social_media_market_place_clone_project.HomeView;
 import com.example.social_media_market_place_clone_project.R;
 import com.example.social_media_market_place_clone_project.User;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,7 @@ public class HomeViewCardAdapter extends BaseAdapter {
     // for our array list and context.
     private ArrayList<User> userData;
     private Context context;
+    private  ImageView imageView;
 
     // on below line we have created constructor for our variables.
     public HomeViewCardAdapter(ArrayList<User> userData, Context context) {
@@ -56,7 +59,24 @@ public class HomeViewCardAdapter extends BaseAdapter {
         ((TextView) v.findViewById(R.id.UserNameTextView)).setText(userData.get(position).getName());
 
         // Load Image
-        ((ImageView) v.findViewById(R.id.UserPicImageView)).setImageResource(R.drawable.messi);
+        imageView = v.findViewById(R.id.UserPicImageView);
+        loadImageFromUrl(userData.get(position).getImageUrl());
+       // ((ImageView) v.findViewById(R.id.UserPicImageView)).setImageResource(R.drawable.messi);
         return v;
+    }
+
+
+    private void loadImageFromUrl(String url) {
+        Picasso.with(context).load(url).into(imageView, new com.squareup.picasso.Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
     }
 }

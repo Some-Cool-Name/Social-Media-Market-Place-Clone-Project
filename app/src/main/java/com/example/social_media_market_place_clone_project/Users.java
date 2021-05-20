@@ -84,12 +84,19 @@ public class Users extends AppCompatActivity {
 
 
                 ArrayList<String> newAl = new ArrayList<>();
-                newAl = al;
+                //newAl = al;
 
-                al.removeIf(s -> !s.contains(searchText.getText().toString()));
+                //newAl.removeIf(s -> !s.contains(searchText.getText().toString()));
+
+                for(int i=0; i< al.size(); i ++){
+
+                    if(al.get(i).contains(searchText.getText().toString())){
+                        newAl.add(al.get(i));
+                    }
+                }
+
                 //al.add("second");
-                usersList.setAdapter(new ArrayAdapter<String>(Users.this, android.R.layout.simple_list_item_1, al));
-
+                usersList.setAdapter(new ArrayAdapter<String>(Users.this, android.R.layout.simple_list_item_1, newAl));
 
             }
         });

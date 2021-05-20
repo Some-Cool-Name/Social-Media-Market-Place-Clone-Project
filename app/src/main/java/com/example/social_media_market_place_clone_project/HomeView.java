@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.service.autofill.FieldClassification;
 import android.util.Log;
@@ -113,40 +114,44 @@ public class HomeView extends AppCompatActivity {
             @Override
             public void cardSwipedLeft(int position) {
                 // on card swipe left we are displaying a toast message.
-                Toast.makeText(HomeView.this, "Card Swiped Left", Toast.LENGTH_SHORT).show();
+
                 //send disliked request
+
+                SessionManager sessionManager = new SessionManager(HomeView.this);
+                sessionManager.checkLogin();
+                HashMap<String, String> currentUser = sessionManager.getUserDetails();
+
+
+                Constants constants = new Constants();
+                // Display Name and Age
+                String n = currentUser.get("EMAIL");
                 try {
-                    SessionManager sessionManager = new SessionManager(HomeView.this);
-                    sessionManager.checkLogin();
-                    HashMap<String, String> currentUser = sessionManager.getUserDetails();
-
-
-
-
-
-                    // Display Name and Age
-                    String n = currentUser.get("EMAIL");
-
                     dislike(n, users.get(position).getEmail());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
 
+
+
+
+
             @Override
             public void cardSwipedRight(int position) {
                 // on card swipped to right we are displaying a toast message.
-                Toast.makeText(HomeView.this, "Card Swiped Right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeView.this, "Card Swiped Right", Toast.LENGTH_SHORT).show();
                 //send the liked request
 
                 ;
+                Constants constants = new Constants();
+
                 SessionManager sessionManager = new SessionManager(HomeView.this);
                 sessionManager.checkLogin();
                 HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
                 // Display Name and Age
                 String n = currentUser.get("EMAIL");
-                like(n,users.get(position).getEmail());
+                backGroundLike(n,users.get(position).getEmail());
             }
 
             @Override
@@ -168,8 +173,9 @@ public class HomeView extends AppCompatActivity {
             }
         });
     }
+/*
+    private void loadImageFromUrl(String url) {
 
-    /*private void loadImageFromUrl(String url) {
         Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
             @Override
             public void onSuccess() {
@@ -188,17 +194,30 @@ public class HomeView extends AppCompatActivity {
        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+    public void like(String username, String liked){
 
-    public void Chat(View v) {
-        Intent intent = new Intent(HomeView.this, Users.class);
-       // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+        AsyncNetwork request = new AsyncNetwork();
+        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDALikeUser.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("likerUsername",username);
+        urlBuilder.addQueryParameter("likeeUsername",liked);
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+        while(request.Result.equals("Waiting")){
+            System.out.print("loading");
+        }
+
+
+        // Request is finished
+
     }
-
-    public void Profile(View v) {
-        Intent intentSignIn = new Intent(HomeView.this, Profile.class);
-        //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intentSignIn);
+    private void backGroundLike(String username, String like) {
+        runOnUiThread(new Runnable(){
+            public void run() {
+                like(username, like);
+            }
+        });
     }
     public void dislike(String username, String disliked) throws JSONException {
         AsyncNetwork request = new AsyncNetwork();
@@ -220,24 +239,20 @@ public class HomeView extends AppCompatActivity {
 
 
     }
-    public void like(String username, String liked){
-        AsyncNetwork request = new AsyncNetwork();
 
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDALikeUser.php";
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("likerUsername",username);
-        urlBuilder.addQueryParameter("likeeUsername",liked);
-        String url = urlBuilder.build().toString();
-        request.execute(url);
-
-        while(request.Result.equals("Waiting")){
-            System.out.print("loading");
-        }
-
-
-        // Request is finished
-
+    public void Chat(View v) {
+        Intent intent = new Intent(HomeView.this, Users.class);
+       // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
+
+    public void Profile(View v) {
+        Intent intentSignIn = new Intent(HomeView.this, Profile.class);
+        //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intentSignIn);
+    }
+
+
 
     public ArrayList getUsers() throws JSONException {
         ArrayList<User> users = new ArrayList<>();

@@ -84,7 +84,7 @@ public class SignIn extends AppCompatActivity {
         final ProgressDialog pd = new ProgressDialog(SignIn.this);
         pd.setMessage("Loading...");
         pd.show();
-
+        pd.dismiss();
         StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
             if (response.equals("null")) {
                 Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
