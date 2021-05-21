@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColorHint="@color/grey1"
-            android:textColor="#CFD8DC"
+            android:textColor="@color/grey"
             android:hint="@string/write_a_message"
             android:id="@+id/messageArea"
             android:maxLines="3"
