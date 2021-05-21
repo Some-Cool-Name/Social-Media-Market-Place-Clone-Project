@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    tools:context=".EditProfile">
+
+    <!-- Top Action Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lightgrey"
+        >
+
+        <!-- Back Button -->
+        <View
+            android:id="@+id/back_button"
+
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+
+            android:background="@drawable/ic_arrow_left"/>
+
+        <!-- Settings text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back_button"
+            android:layout_marginLeft="30dp"
+
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+
+            android:text="Edit Profile"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Profile Picture Text -->
+            <TextView
+                android:id="@+id/profile_picture_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+
+                android:text="Profile Picture" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="360dp"
+                android:layout_height="350dp"
+                app:cardCornerRadius="12dp"
+
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" >
+
+                <ImageView
+                    android:id="@+id/sign_up_profile_picture_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+
+                    android:background="@drawable/image_style"
+                    android:src="@drawable/add_dp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/edit_profile_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+
+                android:text="Full Name" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/editTextEditProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+
+                    android:layout_marginLeft="50dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+
+                    android:background="@drawable/textfield_style"
+                    android:textColor="@color/grey"
+
+                    android:textSize="16sp"
+                    android:hint="Enter Name"
+                    android:textColorHint="@color/grey2"
+
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <!-- Bio Text -->
+            <TextView
+                android:id="@+id/bio_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+
+                android:text="Bio" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/editTextBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginLeft="50dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+
+                    android:background="@drawable/textfield_style"
+                    android:textSize="16sp"
+
+                    android:gravity="top"
+                    android:maxLines="5"
+                    android:inputType="textMultiLine"
+
+                    android:hint="Tell us something about yourself..."
+                    android:textColorHint="@color/grey2"
+
+                    android:paddingRight="15dp"
+                    android:textColor="@color/grey" />
+            </RelativeLayout>
+
+            <!-- Interests -->
+            <TextView
+                android:id="@+id/interests_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+
+                android:text="Interests" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="7dp" >
+
+                <EditText
+                    android:id="@+id/editTextInterests"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_toLeftOf="@id/add_button"
+
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+
+                    android:background="@drawable/textfield_style"
+                    android:textColor="@color/grey"
+
+                    android:textSize="16sp"
+                    android:hint="Enter an interests, then click '+'"
+                    android:textColorHint="@color/grey2"
+
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:inputType="text" />
+
+                <!-- Search Button -->
+                <ImageButton
+                    android:id="@+id/add_button"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+
+                    android:layout_margin="5dp"
+                    android:padding="6dp"
+
+                    android:layout_toLeftOf="@+id/remove_button"
+                    android:layout_centerVertical="true"
+
+
+                    style="@style/Widget.AppCompat.Button"
+                    android:elevation="5dp"
+                    android:background="@drawable/button_style5"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="centerCrop"/>
+
+                <ImageButton
+                    android:id="@+id/remove_button"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+
+                    android:layout_margin="5dp"
+                    android:padding="6dp"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+
+                    style="@style/Widget.AppCompat.Button"
+                    android:elevation="5dp"
+                    android:background="@drawable/button_style5"
+                    android:src="@drawable/ic_minus"
+                    android:scaleType="centerCrop"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/editTextInterests"
+
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="7dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/int_tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/int_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/int_tv_1"
+
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    />
+            </RelativeLayout>
+
+            <!-- Location -->
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+
+                android:textColor="@color/grey"
+                android:textSize="20sp"
+
+                android:text="Location" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="20dp" >
+
+                <EditText
+                    android:id="@+id/editTextLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+
+                    android:layout_marginLeft="50dp"
+                    android:layout_centerHorizontal="true"
+
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+
+                    android:background="@drawable/textfield_style"
+                    android:textColor="@color/grey"
+
+                    android:textSize="16sp"
+                    android:hint="Enter your Location"
+                    android:textColorHint="@color/grey2"
+
+                    android:inputType="text" />
+            </RelativeLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+
+                android:layout_marginBottom="30dp"
+
+                android:layout_gravity="right"
+                android:layout_marginRight="25dp"
+
+                android:background="@drawable/button_style"
+                style="@style/Widget.AppCompat.Button"
+
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="Save" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

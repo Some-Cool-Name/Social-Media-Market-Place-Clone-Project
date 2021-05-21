@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Matches">
+
+    <!-- Number of likes -->
+    <RelativeLayout
+        android:id="@+id/match_layout_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Text -->
+        <TextView
+            android:id="@+id/number_likes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingVertical="20dp"
+            android:gravity="center_horizontal"
+
+            android:text="X Likes"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#222" />
+
+        <!-- Line -->
+        <View
+            android:id="@+id/line_matches"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:layout_below="@+id/number_likes_text"
+
+            android:background="@color/grey2" />
+
+        <!-- Matches Text -->
+        <TextView
+            android:id="@+id/matches_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/line_matches"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+
+            android:text="Matches"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/matches_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/match_layout_1"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginVertical="10dp"
+
+        android:gravity="center_horizontal"
+
+        android:verticalSpacing="30dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="2" />
+
+
+    <!-- Navbar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottom_navigation"
+        android:background="@color/grey2" />
+
+    <LinearLayout
+        android:id="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+
+        android:background="@color/white"
+
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
+            app:srcCompat="@drawable/home"
+
+            android:onClick="Home"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageButton
+            android:id="@+id/match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_sparkle_selected"
+
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageButton
+            android:id="@+id/chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
+            app:srcCompat="@drawable/chat"
+
+            android:onClick="Chat"
+            tools:ignore="VectorDrawableCompat" />
+
+
+        <ImageButton
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@color/white"
+            app:srcCompat="@drawable/profile2"
+
+            android:onClick="Profile"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+</RelativeLayout>

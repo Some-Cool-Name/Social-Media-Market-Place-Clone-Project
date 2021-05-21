@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Social-Media-Market-Place-Clone-Project</string>
+    <string name="title_activity_feed">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="match">Match</string>
+    <string name="feed">Feed</string>
+
+    <string name="no_users_found">No users found!</string>
+    <string name="login">Login</string>
+    <string name="enter_username">enter username</string>
+    <string name="click_here_to_register">Click here to register</string>
+    <string name="write_a_message">Type a message</string>
+    <string name="click_here_to_login">Click here to login</string>
+    <string name="enter_password">enter password</string>
+    <string name="register">Register</string>
 </resources>
