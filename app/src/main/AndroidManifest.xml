@@ -14,16 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMediaMarketPlaceCloneProject">
-        <activity android:name=".Users"></activity>
+        <activity android:name=".Interest"></activity>
+        <activity android:name=".Users" />
         <activity android:name=".Chat" />
         <activity
             android:name=".SecuritySettings"
             android:screenOrientation="portrait" />
-        <activity android:name=".Matches"
-            android:screenOrientation="portrait"
-            >
-
-        </activity>
+        <activity
+            android:name=".Matches"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".HomeView"
             android:screenOrientation="portrait" />
