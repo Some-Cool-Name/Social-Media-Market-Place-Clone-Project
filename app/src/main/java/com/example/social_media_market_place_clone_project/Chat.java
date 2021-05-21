@@ -116,6 +116,7 @@ public class Chat extends AppCompatActivity {
 
         LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.weight = 7.0f;
+        lp2.setMargins(0,5,0,5);
 
         if(type == 1) {
             lp2.gravity = Gravity.LEFT;
