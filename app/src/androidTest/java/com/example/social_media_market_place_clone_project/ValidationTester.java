@@ -76,11 +76,11 @@ public class ValidationTester {
     @Test
     public void emptyPassword(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "", "1234");
         assertEquals("Fill Out All Fields", result);
     }
     @Test
-    public void emptyEmail(){
+    public void emptyUsername(){
         DataValidation dataValidation = new DataValidation();
         String result = dataValidation.validateSignUp1("", "1234", "1234");
         assertEquals("Fill Out All Fields", result);
@@ -88,19 +88,19 @@ public class ValidationTester {
     @Test
     public void emptyConfirmPassword(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "1234", "");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "1234", "");
         assertEquals("Fill Out All Fields", result);
     }
     @Test
     public void passwordDifferent(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "123", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "123", "1234");
         assertEquals("Passwords Do Not Match", result);
     }
     @Test
     public void allValid(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "1234", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "1234", "1234");
         assertEquals("Valid", result);
     }
 }
