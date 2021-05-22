@@ -1,16 +1,22 @@
 package com.example.social_media_market_place_clone_project;
 
+import com.squareup.picasso.Picasso;
+
 public class MiniProfile {
     // string course_name for storing course_name
     // and imgid for storing image id.
     private String username, userAge;
-    private int imageId;
+    private String imageId;
 
-    public MiniProfile(String name, String age, int id) {
 
+
+    public MiniProfile(String name, String age, String id) {
         username = name;
         userAge = age;
         imageId = id;
+
+
+
     }
 
     public String getUsername() {
@@ -29,11 +35,12 @@ public class MiniProfile {
         this.userAge = userAge;
     }
 
-    public int getImageId() {
+    public String getImageId() {
         return imageId;
     }
 
-    public void setImageId(int imageId) {
+    public void setImageId(String imageId) {
         this.imageId = imageId;
     }
+
 }

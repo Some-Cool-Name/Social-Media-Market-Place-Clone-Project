@@ -301,9 +301,9 @@ public class SignUp2 extends AppCompatActivity {
                     if (!obj.has(email)) {
                         Toast.makeText(SignUp2.this, "user not found", Toast.LENGTH_LONG).show();
 
-                    } else if (obj.getJSONObject(email).getString("password").equals(password)) {
+                    } else if (obj.getJSONObject(email).getString("password").equals("pass123")) {
                         UserDetails.username = email;
-                        UserDetails.password = password;
+                        UserDetails.password = "pass123";
                         //startActivity(new Intent(SignUp2.this, Users.class));
                     } else {
                         Toast.makeText(SignUp2.this, "incorrect password", Toast.LENGTH_LONG).show();

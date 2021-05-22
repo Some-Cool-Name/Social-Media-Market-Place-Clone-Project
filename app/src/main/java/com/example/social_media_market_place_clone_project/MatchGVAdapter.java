@@ -11,11 +11,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class MatchGVAdapter extends ArrayAdapter<MiniProfile> {
-    public MatchGVAdapter(@NonNull Context context, ArrayList<MiniProfile> courseModelArrayList) {
+    private Context context;
+    ImageView imageView;
+    String ImageUrl;
+    public MatchGVAdapter(@NonNull Context context, ArrayList<MiniProfile> courseModelArrayList, String imageUrl) {
         super(context, 0, courseModelArrayList);
+        this.context = context;
+        this.ImageUrl = imageUrl;
     }
 
     @NonNull
@@ -32,9 +39,13 @@ public class MatchGVAdapter extends ArrayAdapter<MiniProfile> {
         TextView infoTV = listitemView.findViewById(R.id.profile_name_text);
         ImageView picture = listitemView.findViewById(R.id.match_picture);
 
+
+        //imageView = listitemView.findViewById(R.id.match_picture);
         String info = miniProfile.getUsername() + ", " + miniProfile.getUserAge();
         infoTV.setText(info);
         //picture.setImageResource(miniProfile.getImageId());
         return listitemView;
     }
+
+
 }
