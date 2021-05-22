@@ -9,6 +9,7 @@ public class MiniProfile {
     private String imageId;
 
 
+
     public MiniProfile(String name, String age, String id) {
         username = name;
         userAge = age;

@@ -12,6 +12,16 @@ public class UserTest extends TestCase {
 
     public void tearDown() throws Exception {
     }
+
+    @Test
+    public void testTestGetEmail() {
+        User user = new User();
+        user.setEmail("thando@gmail.com");
+        String results = user.getEmail();
+        assertEquals(results, "thando@gmail.com");
+
+    }
+
     @Test
     public void testTestGetName() {
         User user = new User();

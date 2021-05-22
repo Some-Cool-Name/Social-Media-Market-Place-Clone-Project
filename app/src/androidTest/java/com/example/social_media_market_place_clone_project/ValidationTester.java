@@ -59,11 +59,40 @@ public class ValidationTester {
         String result = dataValidation.validateSignuUp2("8one");
         assertEquals("Username Cannot Contain Numbers", result);
     }
+
     @Test
-    public void usernameContainsNine(){
+    public void usernameContainsDot(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignuUp2("9one");
-        assertEquals("Username Cannot Contain Numbers", result);
+        String result = dataValidation.validateSignUp1("t@gmail.com", "1234", "1234");
+        assertEquals("Username can not have special characters", result);
+    }
+
+    @Test
+    public void usernameContainsHash(){
+        DataValidation dataValidation = new DataValidation();
+        String result = dataValidation.validateSignUp1("t#@gmailcom", "1234", "1234");
+        assertEquals("Username can not have special characters", result);
+    }
+
+    @Test
+    public void usernameContainsDollarSign(){
+        DataValidation dataValidation = new DataValidation();
+        String result = dataValidation.validateSignUp1("t$@gmailcom", "1234", "1234");
+        assertEquals("Username can not have special characters", result);
+    }
+
+    @Test
+    public void usernameContainsLeftSquareBracket(){
+        DataValidation dataValidation = new DataValidation();
+        String result = dataValidation.validateSignUp1("[t@gmailcom", "1234", "1234");
+        assertEquals("Username can not have special characters", result);
+    }
+
+    @Test
+    public void usernameContainsRightSquareBracket(){
+        DataValidation dataValidation = new DataValidation();
+        String result = dataValidation.validateSignUp1("]t@gmailcom", "1234", "1234");
+        assertEquals("Username can not have special characters", result);
     }
 
     @Test
@@ -74,13 +103,20 @@ public class ValidationTester {
     }
 
     @Test
+    public void usernameContainsNine(){
+        DataValidation dataValidation = new DataValidation();
+        String result = dataValidation.validateSignuUp2("9one");
+        assertEquals("Username Cannot Contain Numbers", result);
+    }
+
+    @Test
     public void emptyPassword(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "", "1234");
         assertEquals("Fill Out All Fields", result);
     }
     @Test
-    public void emptyEmail(){
+    public void emptyUsername(){
         DataValidation dataValidation = new DataValidation();
         String result = dataValidation.validateSignUp1("", "1234", "1234");
         assertEquals("Fill Out All Fields", result);
@@ -88,19 +124,19 @@ public class ValidationTester {
     @Test
     public void emptyConfirmPassword(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "1234", "");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "1234", "");
         assertEquals("Fill Out All Fields", result);
     }
     @Test
     public void passwordDifferent(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "123", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "123", "1234");
         assertEquals("Passwords Do Not Match", result);
     }
     @Test
     public void allValid(){
         DataValidation dataValidation = new DataValidation();
-        String result = dataValidation.validateSignUp1("one@gmail.com", "1234", "1234");
+        String result = dataValidation.validateSignUp1("one@gmailcom", "1234", "1234");
         assertEquals("Valid", result);
     }
 }
