@@ -36,13 +36,13 @@ public class ImageHandler {
                 @Override
                 public void onStart(String requestId) {
 //                start
-                    System.out.println("starting");
+                    //System.out.println("starting");
                 }
 
                 @Override
                 public void onProgress(String requestId, long bytes, long totalBytes) {
 //                uploading
-                    System.out.println("in progress...");
+                    //System.out.println("in progress...");
                 }
 
                 @Override
@@ -55,13 +55,13 @@ public class ImageHandler {
                 @Override
                 public void onError(String requestId, ErrorInfo error) {
 //               error.getDescription()
-                    System.out.println(error.getDescription());
+                    //System.out.println(error.getDescription());
                     imageUrl = "error";
                 }
 
                 @Override
                 public void onReschedule(String requestId, ErrorInfo error) {
-                    System.out.println(error.getDescription());
+                    //System.out.println(error.getDescription());
                 }
             }).dispatch();
 
