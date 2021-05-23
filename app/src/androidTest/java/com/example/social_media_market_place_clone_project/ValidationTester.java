@@ -7,6 +7,15 @@ import static org.junit.Assert.assertEquals;
 public class ValidationTester {
     @Test
     public void usernameContainsZero(){
+
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
       DataValidation dataValidation = new DataValidation();
       String result = dataValidation.validateSignuUp2("0one");
       assertEquals("Username Cannot Contain Numbers", result);
@@ -37,6 +46,16 @@ public class ValidationTester {
     }
     @Test
     public void usernameContainsFive(){
+
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
         DataValidation dataValidation = new DataValidation();
         String result = dataValidation.validateSignuUp2("5one");
         assertEquals("Username Cannot Contain Numbers", result);
@@ -55,6 +74,16 @@ public class ValidationTester {
     }
     @Test
     public void usernameContainsEight(){
+
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
         DataValidation dataValidation = new DataValidation();
         String result = dataValidation.validateSignuUp2("8one");
         assertEquals("Username Cannot Contain Numbers", result);
@@ -111,6 +140,14 @@ public class ValidationTester {
 
     @Test
     public void emptyPassword(){
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         DataValidation dataValidation = new DataValidation();
         String result = dataValidation.validateSignUp1("one@gmailcom", "", "1234");
         assertEquals("Fill Out All Fields", result);
