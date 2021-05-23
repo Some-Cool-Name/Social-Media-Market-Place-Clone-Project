@@ -20,7 +20,7 @@ public class MainActivityTest {
 
     @Test
     public void doSignUp() {
-        onView(withId(R.id.sign_up_button)).perform(click());\
+        onView(withId(R.id.sign_up_button)).perform(click());
         onView(withId(R.layout.activity_sign_up)).check(matches(isDisplayed()));
     }
 
