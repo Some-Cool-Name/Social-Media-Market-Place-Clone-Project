@@ -6,13 +6,6 @@ import org.junit.Test;
 
 public class UserTest extends TestCase {
 
-    public void setUp() throws Exception {
-        super.setUp();
-    }
-
-    public void tearDown() throws Exception {
-    }
-
     @Test
     public void testTestGetEmail() {
         User user = new User();
