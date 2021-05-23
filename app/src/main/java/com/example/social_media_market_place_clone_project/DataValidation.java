@@ -1,10 +1,14 @@
 package com.example.social_media_market_place_clone_project;
 
 public class DataValidation {
-    public String validateSignUp1(String email,String password,String confirmPassword){
-        if(email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
+    public String validateSignUp1(String username,String password,String confirmPassword){
+        if(username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
             return "Fill Out All Fields";
-        }else if(!password.equals(confirmPassword)){
+        }
+        else if(username.contains(".")||username.contains("#")||username.contains("$")||username.contains("[")||username.contains("]")){
+            return "Username can not have special characters";
+        }
+        else if(!password.equals(confirmPassword)){
             return "Passwords Do Not Match";
         }
         else{

@@ -8,15 +8,10 @@ import androidx.test.core.app.ApplicationProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
+
 
 import static org.junit.Assert.*;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(sdk = 28)
 public class SessionManagerTest {
 
     private String email = "test@gmail.com",
@@ -41,5 +36,11 @@ public class SessionManagerTest {
         sessionManager.createSession(email, fullname, birthday, gender, sexuality, bio, profilePicture);
         assertEquals(true, sessionManager.checkLogin());
     }
+   //@Test
+    /*public void checkLogOut(){
+        sessionManager.createSession(email, fullname, birthday, gender, sexuality, bio, profilePicture);
+        sessionManager.logoutUser();
+     //   assertEquals(false, sessionManager.checkLogin());
+    }*/
 
 }

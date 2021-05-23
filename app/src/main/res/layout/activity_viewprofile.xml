@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            // Dropdown Menu
+            <!-- Dropdown Menu -->
             <View
                 android:id="@+id/menu_button"
 
@@ -30,9 +30,8 @@
                 android:background="@drawable/options"
 
                 android:onClick="showMenu"/>
-            // **************************************************************
 
-            // Profile Picture
+            <!--Profile Picture  -->
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
 
@@ -46,9 +45,8 @@
                 app:civ_border_width="2dp"
 
                 android:src="@drawable/default_dp"/>
-            // **************************************************************
 
-            // Name, Age
+            <!-- Name, Age -->
             <TextView
                 android:id="@+id/txtNameAge"
 
@@ -62,9 +60,8 @@
                 android:textStyle="bold"
                 android:textColor="@color/grey"
                 android:text="Name, Age"/>
-            // **************************************************************
 
-            // Location
+            <!-- Location -->
             <TextView
                 android:id="@+id/txtLocation"
 
@@ -77,10 +74,10 @@
                 android:textSize="25dp"
                 android:textColor="@color/grey"
                 android:text="Location" />
-            // **************************************************************
 
-            // Bio
-            // Line Separator
+
+            <!-- Bio -->
+            <!-- Line Separator -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -119,10 +116,9 @@
                 android:textSize="16dp"
 
                 android:text="Testing" />
-            // **************************************************************
 
-            // Interests
-            // Line Separator
+            <!-- Interests -->
+            <!-- Line Separator -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -145,9 +141,8 @@
                 android:textStyle="bold"
 
                 android:text="Interests"/>
-            // **************************************************************
 
-            // Interest Items
+            <!-- Interest Items -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -244,61 +239,77 @@
                     android:background="@drawable/rounded" />
 
             </RelativeLayout>
-            // **************************************************************
 
         </RelativeLayout>
     </ScrollView>
 
-    // Navigation bar
+    <!-- Navbar -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@id/bottom_navigation"
-        android:background="#000000" />
+        android:background="@color/black" />
 
     <LinearLayout
         android:id="@id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical">
 
-        <Space
-            android:layout_width="60dp"
-            android:layout_height="match_parent"/>
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+
+        android:background="@color/white"
+
+        android:gravity="center">
 
         <ImageButton
             android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="#ffffff"
-            android:onClick="onHome"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
             app:srcCompat="@drawable/home"
+
+            android:onClick="Home"
             tools:ignore="VectorDrawableCompat" />
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
+            app:srcCompat="@drawable/ic_sparkle"
+
+            android:onClick="Matches"
+            tools:ignore="VectorDrawableCompat" />
+
         <ImageButton
             android:id="@+id/chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:layout_alignParentBottom="true"
+
+            android:layout_marginRight="70dp"
+
+            android:background="@color/white"
             app:srcCompat="@drawable/chat"
+
+            android:onClick="Chat"
             tools:ignore="VectorDrawableCompat" />
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="match_parent"/>
+
+
         <ImageButton
             android:id="@+id/profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:layout_alignParentBottom="true"
+
+            android:background="@color/white"
             app:srcCompat="@drawable/profile2"
+
             tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
 </RelativeLayout>
