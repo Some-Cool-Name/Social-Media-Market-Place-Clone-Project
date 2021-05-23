@@ -45,7 +45,7 @@ before_script:
 
 #clean your environment if there is anything to clean, then build the project and run the tests and get the report.
 script:
-  - ./gradlew clean createDebugCoverageReport jacocoTestReport
+  - ./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport
 
 
 #if the build is successful, send the generated reports to codecov
