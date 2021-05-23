@@ -4,6 +4,16 @@ dist: trusty
 env:
  global:
 # These parameters should match the parameters for build tools and sdk versions in the gradle file
+ -type="service_account",
+ -project_id="social-media-clone-314615",
+ -private_key_id="cf7c72d3468d3f1a8c4e2054792e327ca6e99d62",
+ -private_key="-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDb18S/CWv92hah\nRheN4WEM4ocKaGoAS6E5AMTAD6Tqnygp2ydV25/bx6jv/Oo7SHKMHe1tDbQZSjsY\nPQwtHAe3cTF+l138kAlYSKdBMQeYzGY8QUIHuaIv2PA0NYmv3S1G1sseY9A3EGPF\nzR+8xSvAbmFaQ/Hs9kX15kMPy6uPbFIUribMD2Lol7HFLXt/0RAq3gTnQngQYu/9\n+Ij18AZid0MVy2D5ac5pyzrGtEZqysFUqIlrmwSfNVmzK89vymrSZdX1flQa8orf\nlYHpdgnqa6k9xFGJVcHcVRrbHrp4RN+SW/mi2SQJshIHj07846LmKN3orMobHy65\nKLWHdn17AgMBAAECggEAIXUnFkPi0ZF9XDIEp60jTgizsJvPdhgMg1ZgmzJGUQbD\n4ArgY6q3G4W5ajy9kSQnerebSLuLK0Ym1DuGPN9FNV/evnte7G8nXO5BtiQ2GcUR\n0h3EZNSVoF6NwARd3gv1NhC+fPOH3rl51cKwD9SaIgEqg8hPa1bXsuLGVgMTKxJy\n8j3MsV7zCbwv3t3JH24dWmYxwp7Q3xtOL59xdrljuexOMxB5a9XwMNu7M/GzBS/K\nehy7OYXBM0LVz1pRLekWVuNXnOCwzCN8ex794Y3rUB6zUN7nZuF152thJ8Oa0jCV\n/o8g6mjzh8BitZJnFvtIJOeDkjXCoqfyRb4QSosHwQKBgQD1xsLIocaON49xGp5z\nRfAZo1kkQ0Gam1IkE1XgO5iwI6OJ8sVttN6yBnfzX01tFSvwo4WtN4mJQoBsjOUB\n9nHJHsDhDmV+aCnWbkOihKt0PYh0Yf/0fHVdB0g52t8PHxcmv/qjf+BCPXxWqIki\nvUvvBtk5eNTApFC/ZCR6XHFxSwKBgQDk/Ng/cA5M2HnqPrdHITT5zTCvwBFoUPlA\nrSW8pBeEkNtriWqNKFORQPw3PgD6hkOAaKxzbN6KYHQDbGUTYmSwR/R1lw9y9nxO\nBE0SqW3nztGP717r6re3tpOdUGl9t9pM47O9e5PBsjzAtgF8CVLV5tCHSVxnfw5f\nYBiO7b62kQKBgGwAdtHxfS47rhX2q5BeOF8bz+1GfMqy3EqsEH2j0rn8Pz48Z5OI\n+p9ihk11ILIBrrhlMzXmBNNDXOnWlD/jiyblE78SM3lzzobDF4eQI0PGUnNKKU7H\nbk9+BrgdvQ2JDQRjMoGsjOCu4je2geS5KGgWK1i9B0jMLAuetwTqIJO3AoGAXc63\nSEW/lfuY9j17F8iiyzMkHtuwRevmMHi+XOlcORKe0Q8ad3ltwrO8n2TnQbp/LLu0\n6hRPlqCs5johri9A0HapzwJzccVIZy2b5WlDfRNdBnopiLw/RyOklW27yaTn6Vfe\n6mEVxuQdv1TQht/K75X/F20WTc/fM3NKnEMJPgECgYA249Dyo4j40Hhnzur5zA3u\nM+VX/O40BIYvsha7FDdr8Mmmx+PJsPU5yAkfQN2WfdV+CEgaHZeZ9b42yer3Bzq1\ndgZyxbE+4JO3kiGpCSPsCGR3SFLFvShBAz6c6Qk7N+emJVZhS3OBqoI249F+XFCC\nbme3ZGrWidFCKRnDcDBRiA==\n-----END PRIVATE KEY-----\n",
+ -client_email="social-media-clone-service-acc@social-media-clone-314615.iam.gserviceaccount.com",
+ -client_id="113442661008602510030",
+ -auth_uri"https://accounts.google.com/o/oauth2/auth",
+ -token_uri="https://oauth2.googleapis.com/token",
+ -auth_provider_x509_cert_url="https://www.googleapis.com/oauth2/v1/certs",
+ -client_x509_cert_url="https://www.googleapis.com/robot/v1/metadata/x509/social-media-clone-service-acc%40social-media-clone-314615.iam.gserviceaccount.com"
  - ANDROID_BUILD_TOOLS=29.0.2 # should match gradle
  - BRANCH_NAME=Vuyo
  - ADB_INSTALL_TIMEOUT=5 # minutes
