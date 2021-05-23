@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Interest">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:paddingStart="20sp"
+        android:paddingLeft="20sp"
+        android:text="Choose five interests"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginTop="-10dp"
+        android:layout_alignTop="@+id/interests"/>
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/interests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:toggle_selectableAmount="5"
+
+        app:flexWrap="wrap"
+        android:layout_centerInParent="true"
+        app:toggle_requiredAmount="5"
+        app:toggle_selectAnimation="circular_reveal">
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Sport" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Social Media" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Wine" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag4"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Board Games" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag5"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Yoga" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag6"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Pet Lover" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag7"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Movies" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag8"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Art" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag9"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Gardening" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag10"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Foodie" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag11"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Dancing" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag12"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Fashion" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag13"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Music" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag14"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Baking" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag15"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Golf" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag16"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Travel" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag17"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Netflix" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag18"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Photography" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag19"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Gamer" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag20"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Gym" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag21"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Politics" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag22"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Shopping" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag23"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Writing" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag24"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Cooking" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag25"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Karaoke" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag26"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Fishing" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag27"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Reading" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag28"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Cycling" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag29"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Comedy" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag30"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Spirituality" /><nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+        android:id="@+id/tag31"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_margin="3dp"
+        app:toggle_text="Spirituality" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag32"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Picnicking" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag33"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Swimming" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag34"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Hiking" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag35"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Vlogging" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag36"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Surfing" />
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/tag37"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="3dp"
+            app:toggle_text="Football" />
+
+
+
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginBottom="-30dp"
+        android:layout_alignBottom="@+id/interests"/>
+
+    <Button
+        android:id="@+id/BtnContinue"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/interests"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-115dp"
+        android:background="@drawable/button_style"
+
+        android:onClick="onContinue"
+
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+</RelativeLayout>
