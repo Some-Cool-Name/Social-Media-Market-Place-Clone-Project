@@ -3,3 +3,4 @@ mkdir -p /opt
 tar zxf /tmp/google-cloud-sdk.tar.gz --directory /opt  
 /opt/google-cloud-sdk/install.sh --quiet
 source /opt/google-cloud-sdk/path.bash.inc
+# changes
