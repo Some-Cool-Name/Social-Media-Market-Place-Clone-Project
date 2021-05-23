@@ -1,10 +1,14 @@
 language: android
+jdk:
+- oraclejdk8
+sudo: required
 dist: trusty
 env:
   global:
   - ANDROID_BUILD_TOOLS=29.0.2
   - ADB_INSTALL_TIMEOUT=5
   - ANDROID_API=29
+  - BRANCH_NAME=Vuyo
   - secure: tSn33HkrRbCWiFP7HOtAOyCSvqmihNA98+dvl3EFb3eusdEcI3LwFy+XetUpXfbcu1aCl4c1pt7XK1VbX04xR8HCaLwPnGug4IscEsUNg5Gom51UVkGcnj/9zd38uGzmxHCBAAApgMYIOXg0XYp+dFmIKTIPYBlmIPkNvSX65J0mP24oVvukLor2HhdrZcRpNS9X/kBq31fwLdZDjgzb2OpnwkvWN07Do4kugWnP3M6cDePbUJxty70R5Yez8X1jDEO5ib3AO9Tky7ltz3ros9hgce9naGAGp9JC7yaV7w8CjlAPhVrgLj2IkSpgpPsOfezeMQ3MOiyI6neeq2IBqWX+gsFCHn01psCCfsR4I39e2chBLQdbi6OGNK7JsNSe4uhNoJMp8SVRX0F8x70XviaQWe/ed5vs3RlPI97jty5gl6o5EABecX4pldFiPMgZfoosvxlzUneONW5pq3w6CJbVnpiXAdNbvsYGSCWUsQTm8kbDbirKZUgx4wsgKRaK1V/OHHUHb5CwJT3kngHwH7XwgEht7D9aS7ZMrIT81MzisBlYGYg6VAHtz1nmsdNGMo+mb/uWujkIyai8Jm5KsyEdkPJrli5wQVhdpqKNQkO284ArwnqriJNouXntJAnqtqMLj0rSWTNdpbykG7efF0CZIeq21nBYz7cCokPL6XI=
   matrix:
   - EMULATOR_API=22
@@ -21,7 +25,9 @@ android:
   - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
   - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
   - sys-img-armeabi-v7a-android-$EMULATOR_API
+  - extra-google-google_play_services
   licenses:
+  - ".+"
   - android-sdk-preview-license-.+
   - android-sdk-license-.+
   - google-gdk-license-.+
@@ -34,12 +40,16 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
 before_install:
+  - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
+  -in social-media-clone-314615-cf7c72d3468d.json.enc -out social-media-clone-314615-cf7c72d3468d.json -d
 before_script:
+- env
 - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
 - emulator -avd test -no-audio -no-window &
 - android-wait-for-emulator
 - adb shell input keyevent 82 &
 script:
 - "./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport"
+- "./build_command.sh"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
