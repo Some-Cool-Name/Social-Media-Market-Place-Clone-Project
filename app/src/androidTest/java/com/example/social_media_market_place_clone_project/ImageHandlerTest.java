@@ -5,9 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import androidx.test.core.app.ApplicationProvider;
 import org.junit.Test;
-import org.mockito.Mock;
 
-import java.net.URI;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -26,13 +24,13 @@ public class ImageHandlerTest {
 
 
 
-   //@Test
- /*   public void invalidDataIntoCloudinary(){
+   @Test
+    public void invalidDataIntoCloudinaryOriginal(){
         ImageHandler imageHandler = new ImageHandler(context);
         int result = imageHandler.uploadToCloudinary(invalid);
         assertEquals(0, result);
     }
-*/
+
     @Test
     public void validDataIntoCloudinary(){
         ImageHandler imageHandler = mock(ImageHandler.class);
@@ -60,6 +58,7 @@ public class ImageHandlerTest {
         assertEquals("0", result);
 
     }
+
     @Test
     public void testGetRealPathFromUriPass() {
         MainActivity m = mock(MainActivity.class);
