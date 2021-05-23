@@ -15,4 +15,12 @@
     <string name="click_here_to_login">Click here to login</string>
     <string name="enter_password">enter password</string>
     <string name="register">Register</string>
+
+    <string name="instructions">
+        Swipe Left for No \n
+        Swipe Right for Yes \n
+        Information Displayed: \n
+           Name \n
+           Interest \n
+           Bio</string>
 </resources>

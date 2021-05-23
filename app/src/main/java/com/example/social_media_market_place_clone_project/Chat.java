@@ -50,6 +50,7 @@ public class Chat extends AppCompatActivity {
         reference1 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.username + "_" + UserDetails.chatWith);
         reference2 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.chatWith + "_" + UserDetails.username);
 
+        matchName.setText(UserDetails.chatWith);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

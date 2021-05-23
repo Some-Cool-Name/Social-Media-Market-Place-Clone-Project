@@ -67,7 +67,7 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         loadImageFromUrl(url);
         System.out.print(url);
 
-        Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
     }
 
     public void Home(View v){

@@ -1,5 +1,7 @@
 package com.example.social_media_market_place_clone_project;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,34 +46,24 @@ public class HomeView extends AppCompatActivity {
         cross = findViewById(R.id.cross);
         imageView = findViewById(R.id.picture);
 
+        // Instructions
+        String instructions = "Swipe Left for No" + "\n" + "Swipe Right for Yes" + "\n" + "\n" + "Information Displayed:" + "\n" + " • Name" + "\n" + " • Interest" + "\n" + " • Bio";
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomeView.this);
+        builder.setTitle("Instructions");
+        builder.setMessage(instructions);
+
+        builder.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
         // on below line we are initializing our array list and swipe deck.
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
-
-        /*try {
-            users = getUsers();
-            if (users != null) {
-                nameAge.setText(users.get(index).getName());
-                String url = users.get(index).getImageUrl();
-                loadImageFromUrl(url);
-                index++;
-            }
-
-            cross.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    nameAge.setText(users.get(index).getName());
-                    String url = users.get(index).getImageUrl();
-                    loadImageFromUrl(url);
-                    if (index < users.size() - 1) {
-                        index++;
-                    }
-                }
-            });
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
 
 
         try {
@@ -111,9 +103,6 @@ public class HomeView extends AppCompatActivity {
             }
 
 
-
-
-
             @Override
             public void cardSwipedRight(int position) {
                 // on card swipped to right we are displaying a toast message.
@@ -129,7 +118,7 @@ public class HomeView extends AppCompatActivity {
 
                 // Display Name and Age
                 String n = currentUser.get("EMAIL");
-                backGroundLike(n,users.get(position).getEmail());
+                backGroundLike(n, users.get(position).getEmail());
             }
 
             @Override
@@ -151,38 +140,25 @@ public class HomeView extends AppCompatActivity {
             }
         });
     }
-/*
-    private void loadImageFromUrl(String url) {
 
-        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
-    }*/
 
     public void Matches(View v) {
         Intent intent = new Intent(HomeView.this, Matches.class);
-       // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    public void like(String username, String liked){
+
+    public void like(String username, String liked) {
 
         AsyncNetwork request = new AsyncNetwork();
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDALikeUser.php";
+        String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDALikeUser.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("likerUsername",username);
-        urlBuilder.addQueryParameter("likeeUsername",liked);
+        urlBuilder.addQueryParameter("likerUsername", username);
+        urlBuilder.addQueryParameter("likeeUsername", liked);
         String url = urlBuilder.build().toString();
         request.execute(url);
 
-        while(request.Result.equals("Waiting")){
+        while (request.Result.equals("Waiting")) {
             System.out.print("loading");
         }
 
@@ -190,37 +166,38 @@ public class HomeView extends AppCompatActivity {
         // Request is finished
 
     }
+
     private void backGroundLike(String username, String like) {
-        runOnUiThread(new Runnable(){
+        runOnUiThread(new Runnable() {
             public void run() {
                 like(username, like);
             }
         });
     }
+
     public void dislike(String username, String disliked) throws JSONException {
         AsyncNetwork request = new AsyncNetwork();
 
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDARejectUser.php";
+        String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDARejectUser.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("rejectorUsername",username);
-        urlBuilder.addQueryParameter("rejecteeUsername",disliked);
+        urlBuilder.addQueryParameter("rejectorUsername", username);
+        urlBuilder.addQueryParameter("rejecteeUsername", disliked);
         String url = urlBuilder.build().toString();
         request.execute(url);
 
-        while(request.Result.equals("Waiting")){
+        while (request.Result.equals("Waiting")) {
             System.out.print("loading");
         }
 
 
         // Request is finished
-
 
 
     }
 
     public void Chat(View v) {
         Intent intent = new Intent(HomeView.this, Users.class);
-       // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -231,7 +208,6 @@ public class HomeView extends AppCompatActivity {
     }
 
 
-
     public ArrayList getUsers() throws JSONException {
         ArrayList<User> users = new ArrayList<>();
         AsyncNetwork request = new AsyncNetwork();
@@ -240,15 +216,12 @@ public class HomeView extends AppCompatActivity {
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
 
-
-
-
         // Display Name and Age
         String n = currentUser.get("EMAIL");
 
         String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAgetFeed.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("username",n);
+        urlBuilder.addQueryParameter("username", n);
         String url = urlBuilder.build().toString();
         request.execute(url);
 
@@ -285,22 +258,44 @@ public class HomeView extends AppCompatActivity {
         popup.show();
     }
 
-//    public boolean onMenuItemClick(MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.settings_item:
-//                openMenu();
-//                return true;
-//
-//            default:
-//                return false;
-//        }
-//    }
+/*try {
+            users = getUsers();
+            if (users != null) {
+                nameAge.setText(users.get(index).getName());
+                String url = users.get(index).getImageUrl();
+                loadImageFromUrl(url);
+                index++;
+            }
 
-//    public void openMenu(){
-//        Intent intent = new Intent(HomeView.this, Settings.class);
-//        startActivity(intent);
-//    }
-    // **************************************************************
+            cross.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    nameAge.setText(users.get(index).getName());
+                    String url = users.get(index).getImageUrl();
+                    loadImageFromUrl(url);
+                    if (index < users.size() - 1) {
+                        index++;
+                    }
+                }
+            });
 
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }*/
+    /*
+    private void loadImageFromUrl(String url) {
+
+        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+    }*/
 }
