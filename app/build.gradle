@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'jacoco' //added
+apply plugin: 'com.google.gms.google-services' //added
 
 android {
     compileSdkVersion 29
