@@ -76,7 +76,7 @@ public class SessionManager {
         Intent i = new Intent(context, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(i);
-        ((Settings) context).finish();
+//        ((Settings) context).finish(); // check if this line is relevant
     }
 
 
