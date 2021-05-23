@@ -1,5 +1,6 @@
 language: android
 # you MUST mention trusty https://docs.travis-ci.com/user/languages/android/
+#just
 dist: trusty
 env:
  global:
