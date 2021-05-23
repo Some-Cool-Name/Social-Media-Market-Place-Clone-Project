@@ -2,7 +2,7 @@
 
 # Firebase service account decrypt
 - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
-  -in service-account.json.enc -out service-account.json -d
+  -in social-media-clone-314615-cf7c72d3468d.json.enc -out social-media-clone-314615-cf7c72d3468d.json -d
 #  Install Google Cloud SDK
 wget --quiet --output-document=/tmp/google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz  
 mkdir -p /opt  
@@ -16,7 +16,7 @@ echo FIREBASE_PROJECT_ID
 gcloud config set project FIREBASE_PROJECT_ID
 
 # Activate cloud credentials
-gcloud auth activate-service-account --key-file service-account.json
+gcloud auth activate-service-account --key-file social-media-clone-314615-cf7c72d3468d.json
 
 # List available options for logging purpose only (so that we can review available options)
 gcloud firebase test android models list
