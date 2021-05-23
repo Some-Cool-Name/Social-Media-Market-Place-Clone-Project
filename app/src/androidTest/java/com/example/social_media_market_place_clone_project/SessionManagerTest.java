@@ -36,5 +36,11 @@ public class SessionManagerTest {
         sessionManager.createSession(email, fullname, birthday, gender, sexuality, bio, profilePicture);
         assertEquals(true, sessionManager.checkLogin());
     }
+    @Test
+    public void checkLogOut(){
+        sessionManager.createSession(email, fullname, birthday, gender, sexuality, bio, profilePicture);
+        sessionManager.logoutUser();
+        assertEquals(false, sessionManager.checkLogin());
+    }
 
 }
