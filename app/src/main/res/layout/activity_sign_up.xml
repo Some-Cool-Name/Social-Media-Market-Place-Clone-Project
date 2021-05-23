@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:focusable="true"
+
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".SignUp">
@@ -15,7 +17,7 @@
 
         android:contentDescription="TODO"
 
-        android:background="@drawable/gradient"
+        android:background="@drawable/gradients"
         />
 
     // Icon /Logo

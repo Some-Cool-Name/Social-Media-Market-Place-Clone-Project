@@ -6,23 +6,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:focusable="true"
+    android:background="@drawable/gradients"
     tools:context=".MainActivity">
 
-    // Icon /Logo
     <ImageView
         android:id="@+id/sign_in_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-
+        android:focusable="true"
         android:layout_marginTop="220dp"
 
         android:layout_centerHorizontal="true"
 
         app:srcCompat="@drawable/ic_launcher_foreground" />
-    // **************************************************************
 
-    // Register Button
+    <!-- Sign Button-->
     <Button
         android:id="@+id/sign_in_button"
         android:layout_width="150dp"
@@ -38,9 +37,9 @@
         android:textSize="20dp"
         android:textAllCaps="false"
         android:textColor="@color/grey" />
-    // **************************************************************
+    <!-- **************************************************************-->
 
-    // Register Button
+    <!-- Register Button -->
     <Button
         android:id="@+id/sign_up_button"
         android:layout_width="150dp"
