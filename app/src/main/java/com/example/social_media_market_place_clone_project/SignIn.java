@@ -48,22 +48,10 @@ public class SignIn extends AppCompatActivity {
 
     public void doSignIn() throws JSONException {
         SessionManager session = new SessionManager(SignIn.this);
-        AsyncNetwork request = new AsyncNetwork();
-
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAGet.php";
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("username",email.getText().toString());
-        urlBuilder.addQueryParameter("password",password.getText().toString());
-        String url = urlBuilder.build().toString();
-        request.execute(url);
-
-        while(request.Result.equals("Waiting")){
-           // Toast.makeText(SignIn.this,"Loading",Toast.LENGTH_SHORT).show();
-            System.out.print("loading");
-        }
+        DatabaseQueries queryLogin = new DatabaseQueries();
 
         // Request is finished
-        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+        JSONObject wholeString = new JSONObject(queryLogin.loginUser(email.getText().toString(), password.getText().toString())); // Read the whole string
 
         if(wholeString.getString("success").equals("0")){
             Toast.makeText(SignIn.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
