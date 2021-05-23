@@ -116,19 +116,20 @@ public class Chat extends AppCompatActivity {
 
         LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.weight = 7.0f;
-        lp2.setMargins(0,5,0,5);
 
         if(type == 1) {
             lp2.gravity = Gravity.LEFT;
             textView.setBackgroundResource(R.drawable.bubble_in);
             textView.setTextColor(0xFFFFFFFF);
             textView.setTextSize(16);
+            lp2.setMargins(0,8,80,8);
         }
         else{
             lp2.gravity = Gravity.RIGHT;
             textView.setBackgroundResource(R.drawable.bubble_out);
             textView.setTextColor(0xFF707070);
             textView.setTextSize(16);
+            lp2.setMargins(80,8,0,8);
         }
         textView.setLayoutParams(lp2);
         layout.addView(textView);
