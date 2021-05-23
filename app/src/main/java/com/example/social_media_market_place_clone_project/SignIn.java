@@ -64,13 +64,14 @@ public class SignIn extends AppCompatActivity {
 
         // Request is finished
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
-        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
-
-        JSONObject userCredentials = jsonArray.getJSONObject(0);
 
         if(wholeString.getString("success").equals("0")){
             Toast.makeText(SignIn.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
         }else{
+            // moved because of index out of bounds error
+            JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
+            JSONObject userCredentials = jsonArray.getJSONObject(0);
+
             session.createSession(userCredentials.getString("username"),userCredentials.getString("name"),userCredentials.getString("Birthday"),userCredentials.getString("gender"),userCredentials.getString("Sexuality"), userCredentials.getString("bio"), userCredentials.getString("profile_picture"));
             Intent intentSignIn = new Intent(SignIn.this, HomeView.class);
             intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -91,7 +92,7 @@ public class SignIn extends AppCompatActivity {
                     JSONObject obj = new JSONObject(response);
 
                     if (!obj.has(email.getText().toString())) {
-                        Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(SignIn.this, "user not found", Toast.LENGTH_LONG).show();
 
                     } else if (obj.getJSONObject(email.getText().toString()).getString("password").equals("pass123")) {
                         UserDetails.username = email.getText().toString();

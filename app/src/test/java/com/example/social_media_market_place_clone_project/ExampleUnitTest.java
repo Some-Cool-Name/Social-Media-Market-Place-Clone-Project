@@ -15,11 +15,5 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    @Test
-    public void calculatorAddTwoPass(){
-        Calculator calculator = new Calculator();
-        int sum = calculator.addTwo(3, 4);
-        assertEquals(sum , 7);
-    }
 }
 
