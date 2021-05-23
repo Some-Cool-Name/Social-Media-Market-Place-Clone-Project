@@ -62,7 +62,6 @@ public class SignIn extends AppCompatActivity {
             System.out.print("loading");
         }
 
-
         // Request is finished
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
         JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
