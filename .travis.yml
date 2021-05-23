@@ -1,53 +1,45 @@
 language: android
-# you MUST mention trusty https://docs.travis-ci.com/user/languages/android/
 dist: trusty
 env:
- global:
-# These parameters should match the parameters for build tools and sdk versions in the gradle file
- - ANDROID_BUILD_TOOLS=29.0.2 # should match gradle
- - ADB_INSTALL_TIMEOUT=5 # minutes
- - ANDROID_API=29 # api is same as gradle file
- matrix: # list the android device api you want to test.
- - EMULATOR_API=22
-#  - EMULATOR_API=28
+  global:
+  - ANDROID_BUILD_TOOLS=29.0.2
+  - ADB_INSTALL_TIMEOUT=5
+  - ANDROID_API=29
+  - secure: tSn33HkrRbCWiFP7HOtAOyCSvqmihNA98+dvl3EFb3eusdEcI3LwFy+XetUpXfbcu1aCl4c1pt7XK1VbX04xR8HCaLwPnGug4IscEsUNg5Gom51UVkGcnj/9zd38uGzmxHCBAAApgMYIOXg0XYp+dFmIKTIPYBlmIPkNvSX65J0mP24oVvukLor2HhdrZcRpNS9X/kBq31fwLdZDjgzb2OpnwkvWN07Do4kugWnP3M6cDePbUJxty70R5Yez8X1jDEO5ib3AO9Tky7ltz3ros9hgce9naGAGp9JC7yaV7w8CjlAPhVrgLj2IkSpgpPsOfezeMQ3MOiyI6neeq2IBqWX+gsFCHn01psCCfsR4I39e2chBLQdbi6OGNK7JsNSe4uhNoJMp8SVRX0F8x70XviaQWe/ed5vs3RlPI97jty5gl6o5EABecX4pldFiPMgZfoosvxlzUneONW5pq3w6CJbVnpiXAdNbvsYGSCWUsQTm8kbDbirKZUgx4wsgKRaK1V/OHHUHb5CwJT3kngHwH7XwgEht7D9aS7ZMrIT81MzisBlYGYg6VAHtz1nmsdNGMo+mb/uWujkIyai8Jm5KsyEdkPJrli5wQVhdpqKNQkO284ArwnqriJNouXntJAnqtqMLj0rSWTNdpbykG7efF0CZIeq21nBYz7cCokPL6XI=
+  matrix:
+  - EMULATOR_API=22
 android:
   components:
-    - tools
-    - platform-tools-$ANDROID_BUILD_TOOLS
-    - build-tools-$ANDROID_BUILD_TOOLS
-    - android-$ANDROID_API
-    - android-$EMULATOR_API
-    - extra-google-m2repository
-    - extra-android-m2repository # for design library
-    - addon-google_apis-google-19 # google play services
-    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
-    - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
-    - sys-img-armeabi-v7a-android-$EMULATOR_API
+  - tools
+  - platform-tools-$ANDROID_BUILD_TOOLS
+  - build-tools-$ANDROID_BUILD_TOOLS
+  - android-$ANDROID_API
+  - android-$EMULATOR_API
+  - extra-google-m2repository
+  - extra-android-m2repository
+  - addon-google_apis-google-19
+  - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
+  - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
+  - sys-img-armeabi-v7a-android-$EMULATOR_API
   licenses:
-    - android-sdk-preview-license-.+
-    - android-sdk-license-.+
-    - google-gdk-license-.+
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
 jdk:
-  - oraclejdk8
+- oraclejdk8
 before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 before_install:
-    #- yes | sdkmanager "platforms;android-$ANDROID_API"
 before_script:
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a # create an emulator for testing purposes
-  - emulator -avd test -no-audio -no-window & #do not let the emulator have sound or pop up on screen
-  - android-wait-for-emulator # wait for the emulator to turn on fully
-  - adb shell input keyevent 82 & 
-
-#clean your environment if there is anything to clean, then build the project and run the tests and get the report.
+- echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
+- emulator -avd test -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
 script:
-  - ./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport
-
-
-#if the build is successful, send the generated reports to codecov
+- "./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport"
 after_success:
-   - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)

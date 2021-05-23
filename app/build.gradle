@@ -124,4 +124,11 @@ dependencies {
     implementation 'org.mockito:mockito-android:2.27.0'
     androidTestImplementation 'com.android.support:support-annotations:24.0.0'
     androidTestImplementation 'com.android.support.test:runner:0.5'
+
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Declare the dependency for the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics'
 }
