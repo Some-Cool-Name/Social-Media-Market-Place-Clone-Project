@@ -6,6 +6,8 @@ import android.net.Uri;
 import androidx.test.core.app.ApplicationProvider;
 import org.junit.Test;
 
+import java.net.URL;
+
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -18,11 +20,11 @@ import static org.mockito.Mockito.when;
 public class ImageHandlerTest {
 
     private String invalid = "invalid";
-    private Uri uri;
+    //private String valid = "https://lamp.ms.wits.ac.za/home/s1851427/picture/Hello.jpg";
+    private Uri uri=null;
+    //private URL url=null;
 
     private Context context = ApplicationProvider.getApplicationContext();
-
-
 
    @Test
     public void invalidDataIntoCloudinaryOriginal(){
@@ -51,10 +53,8 @@ public class ImageHandlerTest {
     @Test
     public void testGetRealPathFromUriFail(){
         MainActivity m = mock(MainActivity.class);
-        ImageHandler imageHandler = mock(ImageHandler.class);
-        when(imageHandler.getRealPathFromUri(uri, m )).thenReturn("0");
-        String result = imageHandler.getRealPathFromUri(uri, m);
-        verify(imageHandler).getRealPathFromUri(uri, m);
+        ImageHandler imageHandler = new ImageHandler(context);
+        String result = imageHandler.getRealPathFromUri(uri, m );
         assertEquals("0", result);
 
     }
@@ -67,7 +67,6 @@ public class ImageHandlerTest {
         String result = imageHandler.getRealPathFromUri(uri, m);
         verify(imageHandler).getRealPathFromUri(uri, m);
         assertEquals("1", result);
-
     }
 
 
