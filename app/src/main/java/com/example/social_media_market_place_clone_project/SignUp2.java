@@ -234,7 +234,7 @@ public class SignUp2 extends AppCompatActivity {
     }
 
     public void doRegister(){
-        Intent intentRegister = new Intent(SignUp2.this, Interest.class);
+        Intent intentRegister = new Intent(SignUp2.this, Profile.class);
         intentRegister.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentRegister);
     }

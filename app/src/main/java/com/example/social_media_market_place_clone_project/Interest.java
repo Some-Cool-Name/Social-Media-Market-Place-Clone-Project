@@ -32,7 +32,8 @@ import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
     ThemedButton it;*/
     //ThemedToggleButtonGroup themedButtonGroup =(ThemedToggleButtonGroup) findViewById(R.id.interests);
      List<ThemedButton> Btn = new ArrayList();
-     ArrayList<String> Interests = new ArrayList();
+     ArrayList<String> InterestsStore = new ArrayList();
+     public ArrayList<String> Interests = new ArrayList();
      //Button button;
 
 
@@ -41,27 +42,37 @@ import nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interest);
-        ThemedButton themedButton;
-        ThemedToggleButtonGroup themedButtonGroup = (ThemedToggleButtonGroup)findViewById(R.id.interests);
 
+        ThemedToggleButtonGroup themedButtonGroup = (ThemedToggleButtonGroup)findViewById(R.id.interests);
+        themedButtonGroup.setOnSelectListener(themedButton1 -> {
+            String text = themedButton1.getText();
+            InterestsStore.add(text);
+            Toast.makeText(this,"Selected "+text , Toast.LENGTH_SHORT).show();
+            return null;
+        });
 
 
     }
 
+
    public void onContinue(View v){
-       /*ThemedToggleButtonGroup themedButtonGroup = (ThemedToggleButtonGroup)findViewById(R.id.interests);
+      int SizeArray = InterestsStore.size();
 
-       Btn=themedButtonGroup.getSelectedButtons();
+      if(SizeArray>4) {
+          --SizeArray;
+          for (int i = 0; i < 5; i++) {
+              Interests.add(InterestsStore.get(SizeArray));
+              --SizeArray;
+          }
+          //do The http request
 
-        for(int i=0;i<Btn.size();i++){
-            String text = Btn.get(i).getText();
-            Interests.add(text);
-           // Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-        }*/
 
-       Intent intentSignIn = new Intent(Interest.this, HomeView.class);
-       //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-       startActivity(intentSignIn);
+
+          Intent intentSignIn = new Intent(Interest.this, SignUp2.class);
+          //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+          startActivity(intentSignIn);
+      }
+      else{Toast.makeText(this,"Please Select Five Interests",Toast.LENGTH_LONG).show();}
 
     }
 
