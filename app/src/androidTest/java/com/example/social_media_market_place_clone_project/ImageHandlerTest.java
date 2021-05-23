@@ -26,8 +26,6 @@ public class ImageHandlerTest {
 
     private Context context = ApplicationProvider.getApplicationContext();
 
-
-
    @Test
     public void invalidDataIntoCloudinaryOriginal(){
         ImageHandler imageHandler = new ImageHandler(context);

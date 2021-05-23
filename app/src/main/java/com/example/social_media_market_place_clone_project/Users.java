@@ -81,8 +81,6 @@ public class Users extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
                 ArrayList<String> newAl = new ArrayList<>();
                 //newAl = al;
 
@@ -146,10 +144,6 @@ public class Users extends AppCompatActivity {
         AsyncNetwork request = new AsyncNetwork();
 
         sessionManager.checkLogin();
-
-
-
-
 
 
         // Display Name and Age
