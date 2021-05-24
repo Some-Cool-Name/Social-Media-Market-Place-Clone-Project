@@ -19,13 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:paddingVertical="20dp"
             android:gravity="center_horizontal"
+            android:paddingVertical="20dp"
 
-            android:text="X Likes"
+            android:text="0 Likes"
+            android:textColor="#222"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#222" />
+            android:textStyle="bold" />
 
         <!-- Line -->
         <View
