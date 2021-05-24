@@ -1,7 +1,7 @@
 language: android
 jdk:
 - oraclejdk8
-sudo: required #just
+sudo: required
 dist: trusty
 env:
   global:
@@ -9,6 +9,7 @@ env:
   - ADB_INSTALL_TIMEOUT=5
   - ANDROID_API=29
   - BRANCH_NAME=Vuyo
+  - secure: CPPb7VEWQ/5uXplsHemzJp2KF0AejM+3mRcYKePN2ahTvG9jDOOb6qFZg0ZsW/CRovRFyiBzj2VHwvn1tBtenNvISD3D+Njyr9FDwbrMd8fRQmlX2pCJlBkeZoVXzVldJT3W5HqPoYCDP/f0/k2euR7mAzmgdis7Msqati+Sj51wuBU7R2b+AGwmiM2fYWGQxCr7f1EPwiRBRyBABdW6rvuu2yioQjOd1BeQnkVQ02pfVbsnRpnioZ3ioM658lr6eksGFDC4R0Iz5O5O7q0AdKnmxjx6yosX7ST3Tq01+EhXZGfQdrDRVt2H4C8NppdeTPMpls77X3SyPZhj5hA78wgIng5VjHQQB1zkW0Ynxre3KNdBo9ZN7NloUCTYHEXRsvQksRQpc4FjS1n8eNHwNtVn0NnWoX3DiovegkdpOx9Bo2wIdXxo4OO9BEVK25JHhOnhm49stvKcRnCAwItxr5IIM9hwfoChQegxvS5x8deeCYat2EZfSbMGoOovxGSSqSFGpEOv8kI+cKQCcOnQmJTvkGoztayQtC1JInYkcQD/AL7J0xF6JMZX0aftPBU6hhFbjf2de35FQrVrSAExUR7RJES6VOAJT758u5uRR17j8beicnTqMX2hQUIEalJghzi5JDE4OPVQ2b08O1tNxx223MmsDpu8QMlxseyK0K4=
   matrix:
   - EMULATOR_API=22
 android:
@@ -30,8 +31,6 @@ android:
   - android-sdk-preview-license-.+
   - android-sdk-license-.+
   - google-gdk-license-.+
-jdk:
-- oraclejdk8
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
@@ -39,8 +38,8 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
 before_install:
-  - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
-  - in key.json.enc -out key.json -d
+- openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
+- in key.json.enc -out key.json -d
 before_script:
 - env
 - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
