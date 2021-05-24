@@ -24,8 +24,8 @@ public class MainActivityTest {
 
     @Test
     public void doSignUp() {
-        onView(withId(R.id.sign_up_button)).perform(click());
-        onView(withId(R.id.sign_in_logo)).check(matches(isDisplayed()));
+        onView(withId(R.id.sign_up_button)).check(matches(isDisplayed()));
+//        onView(withId(R.id.sign_up_next_button)).check(matches(isDisplayed()));
     }
 
 //    @Test
