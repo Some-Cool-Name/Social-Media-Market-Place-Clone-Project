@@ -41,7 +41,7 @@ cache:
   - "$HOME/.gradle/wrapper/"
 before_install:
   - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
-  -in social-media-clone-314615-cf7c72d3468d.json.enc -out social-media-clone-314615-cf7c72d3468d.json -d
+  -in key.json.enc -out key.json -d
 before_script:
 - env
 - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
