@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
     android:background="@drawable/gradients"
     tools:context=".MainActivity">
 
@@ -14,7 +13,7 @@
         android:id="@+id/sign_in_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:focusable="true"
+
         android:layout_marginTop="220dp"
 
         android:layout_centerHorizontal="true"

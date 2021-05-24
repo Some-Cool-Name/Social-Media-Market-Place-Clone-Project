@@ -30,9 +30,7 @@
         <activity
             android:name=".NavigationBar"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".FeedActivity"
-            android:label="@string/title_activity_feed" />
+
         <activity
             android:name=".Profile"
             android:screenOrientation="portrait" />

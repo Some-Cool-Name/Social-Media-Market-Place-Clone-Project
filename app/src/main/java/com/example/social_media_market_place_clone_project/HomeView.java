@@ -133,9 +133,6 @@ public class HomeView extends AppCompatActivity {
             }
 
 
-
-
-
             @Override
             public void cardSwipedRight(int position) {
                 // on card swipped to right we are displaying a toast message.
@@ -260,9 +257,6 @@ public class HomeView extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(HomeView.this);
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
-
-
-
 
 
         // Display Name and Age
