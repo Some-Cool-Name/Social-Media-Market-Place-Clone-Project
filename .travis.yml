@@ -1,55 +1,53 @@
 language: android
-jdk:
-- oraclejdk8
-sudo: required #just
+# you MUST mention trusty https://docs.travis-ci.com/user/languages/android/
 dist: trusty
 env:
-  global:
-  - ANDROID_BUILD_TOOLS=29.0.2
-  - ADB_INSTALL_TIMEOUT=5
-  - ANDROID_API=29
-  - BRANCH_NAME=Vuyo
-  - secure: K0/ADuv0CPXGeZvziW1tmaA5zQ5hp0U24cyvS1yVQQUf8CzNG7h+NHQRRlwAr+gKirIbMgfayGXouFoBH4ww+dFbzXFiLWyxx6La1mPHals2dfNGV+2UcYxUC+jiXR8vMjRINckRtCDRFoNQUumh5gJKolP3hXxNxN20N2Z2qTqYcJqRw1V2mt7pxyOuq4tA+clNL95U9l7GsDogEQTyjjZ48Lz3/KN1vSVmuaAFDqC7IQ3XoU4w987mJr7Bw5zanzK6GWUmuriopT8nIWRnmwOBvO/52Ryo+2drAqq9GkoFIBI/DEXNNfs1hH5ZnW9w+FoDChhbDhEvWioqVjOsvfNrbnX6QdqhM1JvGLXdAxi4ps8skkmQmoQebaT83wsSTeZnbTKJbu6cu5GEYYAAMKaWZTrnUeheLAo/EDWQhDTZ++i+HBOjT3PdRXmP3lK/ELnjjrM0O1qP8Mcy2PwobiKsYf40hXsJ+wMgc99kT99AzAPkkTFil0g+FkJUT9q9Fo5v7vg56ltPzcNSFtT3Xj4KUHiseIXMQj96aLCfeVIJiI52I9cKqaTEu/hql8cWZH8pk0ihacuITNtrs+gMKKBqwrrkxvfMP7/he7ejiFqBGTDldzU1UIctp7Ri4x7laxkTf2H9qfopNsGVTiA8hhCZab51vgotM97uEJcurhk=
-  matrix:
-  - EMULATOR_API=22
+ global:
+# These parameters should match the parameters for build tools and sdk versions in the gradle file
+ - ANDROID_BUILD_TOOLS=29.0.2 # should match gradle
+ - ADB_INSTALL_TIMEOUT=5 # minutes
+ - ANDROID_API=29 # api is same as gradle file
+ matrix: # list the android device api you want to test.
+ - EMULATOR_API=22
+#  - EMULATOR_API=28
 android:
   components:
-  - tools
-  - platform-tools-$ANDROID_BUILD_TOOLS
-  - build-tools-$ANDROID_BUILD_TOOLS
-  - android-$ANDROID_API
-  - android-$EMULATOR_API
-  - extra-google-m2repository
-  - extra-android-m2repository
-  - addon-google_apis-google-19
-  - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
-  - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
-  - sys-img-armeabi-v7a-android-$EMULATOR_API
-  - extra-google-google_play_services
+    - tools
+    - platform-tools-$ANDROID_BUILD_TOOLS
+    - build-tools-$ANDROID_BUILD_TOOLS
+    - android-$ANDROID_API
+    - android-$EMULATOR_API
+    - extra-google-m2repository
+    - extra-android-m2repository # for design library
+    - addon-google_apis-google-19 # google play services
+    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
+    - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
+    - sys-img-armeabi-v7a-android-$EMULATOR_API
   licenses:
-  - ".+"
-  - android-sdk-preview-license-.+
-  - android-sdk-license-.+
-  - google-gdk-license-.+
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
 jdk:
-- oraclejdk8
+  - oraclejdk8
 before_cache:
-- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
   directories:
-  - "$HOME/.gradle/caches/"
-  - "$HOME/.gradle/wrapper/"
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 before_install:
-  - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
-  -in key.json.enc -out key.json -d
+    #- yes | sdkmanager "platforms;android-$ANDROID_API"
 before_script:
-- env
-- echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
-- emulator -avd test -no-audio -no-window &
-- android-wait-for-emulator
-- adb shell input keyevent 82 &
+  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a # create an emulator for testing purposes
+  - emulator -avd test -no-audio -no-window & #do not let the emulator have sound or pop up on screen
+  - android-wait-for-emulator # wait for the emulator to turn on fully
+  - adb shell input keyevent 82 & 
+
+#clean your environment if there is anything to clean, then build the project and run the tests and get the report.
 script:
-- "./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport"
-- "./build_command.sh"
+  - ./gradlew clean build connectedCheck createDebugCoverageReport jacocoTestReport
+
+
+#if the build is successful, send the generated reports to codecov
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+   - bash <(curl -s https://codecov.io/bash)
