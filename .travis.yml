@@ -9,7 +9,6 @@ env:
   - ADB_INSTALL_TIMEOUT=5
   - ANDROID_API=29
   - BRANCH_NAME=Vuyo
-  - secure: HQaJG0CncLNPehDXOoT1J2w/4Pqua2lfJ2ZN86uVdJaVEWZu7VJEGe38/VwX2EFJ9J8lvqLvE+mLMTexPJgcjfZXKjpthPnz7RvdgMpGQ7q8HoPWq3Xek4yzxPkNailnLOhYRj+tFDnm3fR787NyTILJNMCKfPZ5PPtM4n/Jb91x4kkJMwpWT2w/+CIA0QKw7VEiM9erkgx5NOh9MdpBV/Qy2m6ClcGN9njJccYb5SgP6LwS74AMb02gNPffYIV9hn6fzlW3fS5+N5KFI9al734/TkmLg1MrG7yfbHLqG1+RA+mjI8UnX1b2Hao1sHS3OKVJgteO2baUCCLTTuLkN8keTv7Nidp1Dcbme/uOUCQIXL2LNDqDbyZtbtUYjLhs/y5kFmgZZGtALIuY8jOp6fUAP1qMhUXJIKyzqIM995/zbHv0CrhI8QOqXDZqlSYv6S2TD7okjHWYd3/z9mDfeJuO7hdrDSGtwQruy2i8A+CLE57InzeYJeL+PbcjVnCDEu7L+VOB3AGRiltxEfu/lnvBY+IRI8Jj+sH33+VGuRuk/778wP06XxWfXU1naNfgovJkk2XCqiACcJKhhEU23wWG6+DucyUMW12V+yFOt0iuTnlIVOI1tD+pyOv6SttYyMhiYvBVupItpKoy+aLISyj7QPvUQaxj9Yr2B1T+KFA=
   matrix:
   - EMULATOR_API=22
 android:
@@ -40,8 +39,6 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
 before_install:
-  - openssl aes-256-cbc -K $encrypted_XXXXXXXXXXXX_key -iv $encrypted_XXXXXXXXXXXX_iv
-  - in key.json.enc -out key.json -d
 before_script:
 - env
 - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
