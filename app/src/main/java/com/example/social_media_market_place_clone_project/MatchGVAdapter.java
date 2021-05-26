@@ -19,6 +19,7 @@ public class MatchGVAdapter extends ArrayAdapter<MiniProfile> {
     private Context context;
     ImageView imageView;
     String ImageUrl;
+    AgeCalculator ageCalculator;
     public MatchGVAdapter(@NonNull Context context, ArrayList<MiniProfile> courseModelArrayList, String imageUrl) {
         super(context, 0, courseModelArrayList);
         this.context = context;
@@ -41,7 +42,7 @@ public class MatchGVAdapter extends ArrayAdapter<MiniProfile> {
 
 
         //imageView = listitemView.findViewById(R.id.match_picture);
-        String info = miniProfile.getUsername() + ", " + miniProfile.getUserAge();
+        String info = miniProfile.getUsername() ;
         infoTV.setText(info);
         //picture.setImageResource(miniProfile.getImageId());
         return listitemView;

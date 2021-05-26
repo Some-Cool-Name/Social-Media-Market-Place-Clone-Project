@@ -143,6 +143,7 @@
                 android:text="Gender"
                 />
 
+
             <TextView
             android:id="@+id/sign_up_gender_text2"
             android:layout_width="match_parent"
@@ -177,6 +178,16 @@
                 android:textColor="@color/grey"
 
                 android:textSize="20dp" />
+            <TextView
+                android:id="@+id/textErrorSign2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sign_up_birthday_text2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+
+
+                android:textColor="#FF0000" />
 
             <TextView
                 android:id="@+id/sign_up_preference_text2"

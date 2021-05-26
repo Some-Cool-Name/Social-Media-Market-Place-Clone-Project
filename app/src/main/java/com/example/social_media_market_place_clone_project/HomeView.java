@@ -47,7 +47,7 @@ public class HomeView extends AppCompatActivity {
         imageView = findViewById(R.id.picture);
 
         // Instructions
-        String instructions = "Swipe Left for No" + "\n" + "Swipe Right for Yes" + "\n" + "\n" + "Information Displayed:" + "\n" + " • Name" + "\n" + " • Interest" + "\n" + " • Bio";
+     /*   String instructions = "Swipe Left for No" + "\n" + "Swipe Right for Yes" + "\n" + "\n" + "Information Displayed:" + "\n" + " • Name" + "\n" + " • Interest" + "\n" + " • Bio";
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeView.this);
         builder.setTitle("Instructions");
         builder.setMessage(instructions);
@@ -60,7 +60,7 @@ public class HomeView extends AppCompatActivity {
         });
 
         AlertDialog dialog = builder.create();
-        dialog.show();
+        dialog.show();*/
 
         // on below line we are initializing our array list and swipe deck.
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
@@ -239,11 +239,19 @@ public class HomeView extends AppCompatActivity {
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject userCredentials = jsonArray.getJSONObject(i);
+            ArrayList<String> interests = new ArrayList<>();
             User newUser = new User();
+
             newUser.setName(userCredentials.getString("Full_Name"));
             newUser.setEmail(userCredentials.getString("E_mail"));
             newUser.setBio(userCredentials.getString("Bio"));
             newUser.setImageUrl(userCredentials.getString("Profile_Picture"));
+            interests.add(userCredentials.getString("Interest_1"));
+            interests.add(userCredentials.getString("Interest_2"));
+            interests.add(userCredentials.getString("Interest_3"));
+            interests.add(userCredentials.getString("Interest_4"));
+            interests.add(userCredentials.getString("Interest_5"));
+            newUser.setInterests(interests);
             users.add(newUser);
 
         }

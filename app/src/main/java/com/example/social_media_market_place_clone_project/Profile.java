@@ -16,13 +16,20 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.time.LocalDate;
 import java.time.Period;
 
+import okhttp3.HttpUrl;
+
 
 public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-    TextView name, location, bio;
+    TextView name, location, bio, int1,int2,int3,int4,int5, editInt;
     ImageView imageView;
 
     // Disable back button
@@ -45,7 +52,7 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
         name = findViewById(R.id.txtNameAge);
-
+        editInt= findViewById(R.id.editInt);
         AgeCalculator ageCalculator = new AgeCalculator();
 
         // Display Name and Age
@@ -54,7 +61,11 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
         name.setText(n + ", " + a);
 
-
+        int1 = findViewById(R.id.txtInterest1);
+        int2 = findViewById(R.id.txtInterest2);
+        int3 = findViewById(R.id.txtInterest3);
+        int4 = findViewById(R.id.txtInterest4);
+        int5 = findViewById(R.id.txtInterest5);
         location = findViewById(R.id.txtLocation);
         location.setText("Location");
 
@@ -63,10 +74,21 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
         String url = currentUser.get("PROFILE_PICTURE");
         imageView = findViewById(R.id.profile_image);
-
+        editInt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEditInt = new Intent(Profile.this, Interest.class);
+                //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intentEditInt);
+            }
+        });
         loadImageFromUrl(url);
         System.out.print(url);
-
+        try {
+            getInterests();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         //Toast.makeText(Profile.this,"Welcome",Toast.LENGTH_SHORT).show();
     }
 
@@ -83,7 +105,7 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
     }
 
     public void Chat(View v){
-        Intent intent = new Intent(Profile.this, Chat.class);
+        Intent intent = new Intent(Profile.this, Users.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -126,5 +148,41 @@ public class Profile extends AppCompatActivity implements PopupMenu.OnMenuItemCl
 
             }
         });
+    }
+
+    public void getInterests() throws JSONException {
+        ArrayList<User> users = new ArrayList<>();
+        AsyncNetwork request = new AsyncNetwork();
+        SessionManager sessionManager = new SessionManager(Profile.this);
+        sessionManager.checkLogin();
+        HashMap<String, String> currentUser = sessionManager.getUserDetails();
+
+
+        // Display Name and Age
+        String n = currentUser.get("EMAIL");
+
+        String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAGetInterest.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("username", n);
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+
+        while (request.Result.equals("Waiting")) {
+            System.out.print("waiting");
+            // Toast.makeText(HomeView.this,"",Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        // Request is finished
+        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("Interest").toString()); // extract the login credentials array
+        JSONObject userCredentials = jsonArray.getJSONObject(0);
+        int1.setText(userCredentials.getString("interest_1"));
+        int2.setText(userCredentials.getString("interest_2"));
+        int3.setText(userCredentials.getString("interest_3"));
+        int4.setText(userCredentials.getString("interest_4"));
+        int5.setText(userCredentials.getString("interest_5"));
     }
 }

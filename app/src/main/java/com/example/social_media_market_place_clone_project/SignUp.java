@@ -76,19 +76,18 @@ public class SignUp extends AppCompatActivity {
 
             if (response.equals("null")) {
                 reference.child(emailExport).child("password").setValue("pass123");
-                Toast.makeText(SignUp.this, "registration successful", Toast.LENGTH_LONG).show();
+               // Toast.makeText(SignUp.this, "registration successful", Toast.LENGTH_LONG).show();
             } else {
                 try {
                     JSONObject obj = new JSONObject(response);
 
                     if (!obj.has(emailExport)) {
                         reference.child(emailExport).child("password").setValue("pass123");
-                        Toast.makeText(SignUp.this, "registration successful", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(SignUp.this, "registration successful", Toast.LENGTH_LONG).show();
 
                         //startActivity(new Intent(getApplicationContext(), Login.class));
                         //finish();
-                    } else {
-                        Toast.makeText(SignUp.this, "username already exists", Toast.LENGTH_LONG).show();
+                    } else { Toast.makeText(SignUp.this, "username already exists", Toast.LENGTH_LONG).show();
 
                         // reset focus
                         //resetDataAndFocus();

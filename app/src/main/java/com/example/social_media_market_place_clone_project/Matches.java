@@ -31,7 +31,7 @@ public class Matches extends AppCompatActivity {
     ImageView imageView;
     ArrayList<User> users = new ArrayList<>();
     CardView cardView;
-
+    AgeCalculator ageCalculator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,18 +122,25 @@ public class Matches extends AppCompatActivity {
 
 
         // Request is finished
-        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
-        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("matchedWith").toString()); // extract the login credentials array
-        noMatches = wholeString.getString("count");
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject userCredentials = jsonArray.getJSONObject(i);
-            User user = new User();
-            user.setEmail(userCredentials.getString("E_mail"));
-            user.setImageUrl(userCredentials.getString("Profile_Picture"));
-            users.add(user);
+       try{
+           JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+           noMatches = wholeString.getString("count");
+           JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("matchedWith").toString()); // extract the login credentials array
+
+           for (int i = 0; i < jsonArray.length(); i++) {
+               JSONObject userCredentials = jsonArray.getJSONObject(i);
+               User user = new User();
+               user.setEmail(userCredentials.getString("E_mail"));
+               user.setImageUrl(userCredentials.getString("Profile_Picture"));
+               users.add(user);
 
 
-        }
+           }
+       }
+       catch (Exception e){
+           e.printStackTrace();
+       }
+
 
         return users;
 

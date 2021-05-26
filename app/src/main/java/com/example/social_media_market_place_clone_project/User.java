@@ -1,7 +1,10 @@
 package com.example.social_media_market_place_clone_project;
 
+import java.util.ArrayList;
+
 public class User {
     private String name, gender, bio, imageUrl, email;
+    private ArrayList<String> interests;
 
     public String getEmail() {
         return email;
@@ -41,5 +44,13 @@ public class User {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public ArrayList<String> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(ArrayList<String> interests) {
+        this.interests = interests;
     }
 }

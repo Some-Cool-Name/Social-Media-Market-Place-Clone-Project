@@ -150,6 +150,15 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
+            <TextView
+                android:id="@+id/textError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editTextSignInPassword"
+                android:textSize="20sp"
+                android:textColor="	#FF0000"
+                android:layout_marginLeft="30dp" />
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

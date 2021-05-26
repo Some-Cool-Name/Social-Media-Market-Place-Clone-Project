@@ -57,7 +57,10 @@ public class HomeViewCardAdapter extends BaseAdapter {
         }
         // on below line we are initializing our variables and setting data to our variables.
         ((TextView) v.findViewById(R.id.UserNameTextView)).setText(userData.get(position).getName());
-        ((TextView) v.findViewById(R.id.UserBioTextView)).setText(userData.get(position).getBio());
+        ((TextView) v.findViewById(R.id.UserBioTextView)).setText("Bio: "+userData.get(position).getBio()+"   The rest is juts a place holder Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        ((TextView) v.findViewById(R.id.userInterest1)).setText(userData.get(position).getInterests().get(0));
+        ((TextView) v.findViewById(R.id.userInterest2)).setText(userData.get(position).getInterests().get(1));
+        ((TextView) v.findViewById(R.id.userInterest3)).setText(userData.get(position).getInterests().get(2));
 
         // Load Image
         imageView = v.findViewById(R.id.UserPicImageView);

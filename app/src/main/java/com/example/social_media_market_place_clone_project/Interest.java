@@ -54,7 +54,7 @@ import okhttp3.HttpUrl;
         themedButtonGroup.setOnSelectListener(themedButton1 -> {
             String text = themedButton1.getText();
             InterestsStore.add(text);
-            Toast.makeText(this,"Selected "+text , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"Selected "+text , Toast.LENGTH_SHORT).show();
             return null;
         });
 
@@ -83,11 +83,18 @@ import okhttp3.HttpUrl;
 
     }
      public void sendInterests() throws JSONException {
+         SessionManager sessionManager = new SessionManager(Interest.this);
+         sessionManager.checkLogin();
+         HashMap<String, String> currentUser = sessionManager.getUserDetails();
+
+
+         // Display Name and Age
+         String n = currentUser.get("EMAIL");
 
          AsyncNetwork request = new AsyncNetwork();
          String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAInterest.php";
          HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-         urlBuilder.addQueryParameter("username", email);
+         urlBuilder.addQueryParameter("username", n);
          urlBuilder.addQueryParameter("interest_1", Interests.get(0));
          urlBuilder.addQueryParameter("interest_2", Interests.get(1));
          urlBuilder.addQueryParameter("interest_3", Interests.get(2));

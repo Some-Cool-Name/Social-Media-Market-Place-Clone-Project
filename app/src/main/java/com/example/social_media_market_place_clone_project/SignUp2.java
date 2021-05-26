@@ -42,7 +42,7 @@ import java.util.Calendar;
 import okhttp3.HttpUrl;
 
 public class SignUp2 extends AppCompatActivity {
-    TextView birthday, gender, preference;
+    TextView birthday, gender, preference, error2;
     Button register;
     EditText name, bio;
     ImageView profilePicture;
@@ -70,6 +70,8 @@ public class SignUp2 extends AppCompatActivity {
         bio = (EditText) findViewById(R.id.editTextSignUpBio);
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
         consent = findViewById(R.id.checkBox);
+        error2= findViewById(R.id.textErrorSign2);
+
         // **************************************************************
 
 //        declare image handler
@@ -84,7 +86,10 @@ public class SignUp2 extends AppCompatActivity {
                 DataValidation validate = new DataValidation();
                 AgeCalculator ageCalculator = new AgeCalculator();
                 String isValid =validate.validateSignuUp2(name.getText().toString());
-               if(isValid.equals("Valid") &&dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))>=18 && consent.isChecked()){
+                if(dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))<18){
+                    error2.setText("No under 18's");
+                }
+               else if(isValid.equals("Valid") &&dateURLformat!= null&& Integer.parseInt(ageCalculator.calculateAge(dateURLformat))>=18 && consent.isChecked() && imageUrl!=null){
                     SessionManager sessionManager = new SessionManager(SignUp2.this);
                     SignUp signUp = new SignUp();
                     AsyncNetwork request  = new AsyncNetwork();
@@ -111,7 +116,8 @@ public class SignUp2 extends AppCompatActivity {
 
                     // if request result is success go ahead and create session and call do register
                    while(request.Result.equals("Waiting")){
-                       Toast.makeText(SignUp2.this,"Loading",Toast.LENGTH_SHORT).show();
+                      // Toast.makeText(SignUp2.this,"Loading",Toast.LENGTH_SHORT).show();
+                       System.out.print("loading");
                    }
                    JSONObject wholeString = null; // Read the whole string
                    try {
@@ -146,7 +152,7 @@ public class SignUp2 extends AppCompatActivity {
 
 
                 }else{
-                   Toast.makeText(SignUp2.this,isValid,Toast.LENGTH_SHORT).show();
+                   Toast.makeText(SignUp2.this,"Please fill out everything",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -307,9 +313,9 @@ public class SignUp2 extends AppCompatActivity {
                     if (!obj.has(email)) {
                         Toast.makeText(SignUp2.this, "user not found", Toast.LENGTH_LONG).show();
 
-                    } else if (obj.getJSONObject(email).getString("password").equals(password)) {
+                    } else if (obj.getJSONObject(email).getString("password").equals("pass123")) {
                         UserDetails.username = email;
-                        UserDetails.password = password;
+                        UserDetails.password = "pass123";
                         //startActivity(new Intent(SignUp2.this, Users.class));
                     } else {
                         Toast.makeText(SignUp2.this, "incorrect password", Toast.LENGTH_LONG).show();
