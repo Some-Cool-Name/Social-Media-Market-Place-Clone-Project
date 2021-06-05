@@ -30,7 +30,6 @@ public class Matches extends AppCompatActivity {
     TextView xlikes;
     ImageView imageView;
     ArrayList<User> users = new ArrayList<>();
-    CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +51,6 @@ public class Matches extends AppCompatActivity {
 
         for(int i =0;i< users.size();i++){
             matchList.add(new MiniProfile(users.get(i).getEmail(), "24", "https://res.cloudinary.com/dkctv74ue/image/upload/v1621549565/pc0l9hxwkvpxpugxupkh.jpg)"));
-            //loadImageFromUrl("https://res.cloudinary.com/dkctv74ue/image/upload/v1621549565/pc0l9hxwkvpxpugxupkh.jpg");
 
         }
 
@@ -73,15 +71,6 @@ public class Matches extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-            return null;
-        }
-    }
 
     public void Chat(View v){
         Intent intent = new Intent(Matches.this, Users.class);
@@ -99,13 +88,7 @@ public class Matches extends AppCompatActivity {
 
         sessionManager.checkLogin();
 
-
-
-
-
-
         // Display Name and Age
-
 
         String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAgetMatches.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
@@ -113,13 +96,11 @@ public class Matches extends AppCompatActivity {
         String url = urlBuilder.build().toString();
         request.execute(url);
 
-
         while (request.Result.equals("Waiting")) {
             System.out.print("waiting");
             // Toast.makeText(HomeView.this,"",Toast.LENGTH_SHORT).show();
 
         }
-
 
         // Request is finished
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
@@ -132,25 +113,10 @@ public class Matches extends AppCompatActivity {
             user.setImageUrl(userCredentials.getString("Profile_Picture"));
             users.add(user);
 
-
         }
 
         return users;
 
-
-    }
-    private void loadImageFromUrl(String url) {
-        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
     }
 
 }

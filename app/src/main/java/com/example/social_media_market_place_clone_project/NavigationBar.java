@@ -69,20 +69,6 @@ public class NavigationBar extends AppCompatActivity implements PopupMenu.OnMenu
     }
     // **************************************************************
 
-    private void loadImageFromUrl(String url) {
-        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
-    }
-
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
