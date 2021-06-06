@@ -188,9 +188,6 @@ public class Users extends AppCompatActivity {
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
 
-
-        AgeCalculator ageCalculator = new AgeCalculator();
-
         // Display Name and Age
         String n = currentUser.get("EMAIL");
 

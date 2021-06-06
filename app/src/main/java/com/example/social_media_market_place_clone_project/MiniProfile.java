@@ -16,7 +16,6 @@ public class MiniProfile {
         imageId = id;
 
 
-
     }
 
     public String getUsername() {

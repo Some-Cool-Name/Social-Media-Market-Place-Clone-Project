@@ -98,8 +98,8 @@ public class EditProfile extends AppCompatActivity {
         String updatedImageUrl= stringHandler.addChar(imageHandler.imageUrl, 's', 4);
         SessionManager session = new SessionManager(EditProfile.this);
         session.checkLogin();
+
         HashMap<String, String> currentUser = session.getUserDetails();
-        AsyncNetwork request = new AsyncNetwork();
         String fullname = currentUser.get("FULLNAME");
         String email = currentUser.get("EMAIL");
         String birthday = currentUser.get("BIRTHDAY");
@@ -107,22 +107,11 @@ public class EditProfile extends AppCompatActivity {
         String gender = currentUser.get("GENDER");
         String bio = currentUser.get("BIO");
 
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("username",email);
-        urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
 
-
-        String url = urlBuilder.build().toString();
-        request.execute(url);
-
-        while(request.Result.equals("Waiting")){
-            Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
-        }
-
-
+        DatabaseQueries updateProfile = new DatabaseQueries();
         // Request is finished
-        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+
+        JSONObject wholeString = new JSONObject(updateProfile.doUpdateProfile(email, updatedImageUrl )); // Read the whole string
 
 
         if(wholeString.getString("success").equals("0")){
@@ -148,40 +137,23 @@ public class EditProfile extends AppCompatActivity {
             SessionManager sessionManager = new SessionManager(EditProfile.this);
             sessionManager.checkLogin();
             HashMap<String, String> currentUser = sessionManager.getUserDetails();
-            AsyncNetwork request = new AsyncNetwork();
 
             //get values on current session then delete it
-            String fullname = currentUser.get("FULLNAME");
             String email = currentUser.get("EMAIL");
             String birthday = currentUser.get("BIRTHDAY");
             String sexuality = currentUser.get("SEXUALITY");
             String gender = currentUser.get("GENDER");
             String bio = currentUser.get("BIO");
             String imageUrl = currentUser.get("PROFILE_PICTURE");
-            String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpName.php";
-            HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-            urlBuilder.addQueryParameter("name",name.getText().toString());
-            urlBuilder.addQueryParameter("username",email);
 
-
-            String url = urlBuilder.build().toString();
-            request.execute(url);
-
-            while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
-            }
-
-
+            DatabaseQueries updateName = new DatabaseQueries();
             // Request is finished
-            JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
-            //JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("login").toString()); // extract the login credentials array
+            JSONObject wholeString = new JSONObject(updateName.doUpdateName(email,name.getText().toString() )); // Read the whole string
 
-            //JSONObject userCredentials = jsonArray.getJSONObject(0);
 
             if(wholeString.getString("success").equals("0")){
                 Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
             }else{
-
 
                 sessionManager.createSession(email, name.getText().toString(),birthday,gender,sexuality,bio,imageUrl);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
@@ -195,7 +167,6 @@ public class EditProfile extends AppCompatActivity {
             SessionManager sessionManager = new SessionManager(EditProfile.this);
             sessionManager.checkLogin();
             HashMap<String, String> currentUser = sessionManager.getUserDetails();
-            AsyncNetwork request = new AsyncNetwork();
 
             //get values on current session then delete it
             String fullname = currentUser.get("FULLNAME");
@@ -203,29 +174,15 @@ public class EditProfile extends AppCompatActivity {
             String birthday = currentUser.get("BIRTHDAY");
             String sexuality = currentUser.get("SEXUALITY");
             String gender = currentUser.get("GENDER");
-            String bio = currentUser.get("BIO");
             String imageUrl = currentUser.get("PROFILE_PICTURE");
-            String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpBio.php";
-            HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-            urlBuilder.addQueryParameter("biography", biog.getText().toString());
-            urlBuilder.addQueryParameter("username",email);
 
-
-            String url = urlBuilder.build().toString();
-            request.execute(url);
-
-            while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
-            }
-
-
+            DatabaseQueries updateBio = new DatabaseQueries();
             // Request is finished
-            JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+            JSONObject wholeString = new JSONObject(updateBio.doUpdateBio(email, biog.getText().toString())); // Read the whole string
 
             if(wholeString.getString("success").equals("0")){
                 Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
             }else{
-
 
                 sessionManager.createSession(email, fullname,birthday,gender,sexuality,biog.getText().toString(),imageUrl);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
