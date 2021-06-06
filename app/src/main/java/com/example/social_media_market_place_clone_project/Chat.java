@@ -1,6 +1,10 @@
 package com.example.social_media_market_place_clone_project;
 
+import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Gravity;
@@ -15,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -24,6 +29,7 @@ import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.squareup.picasso.Picasso;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -34,20 +40,18 @@ import java.util.Map;
 public class Chat extends AppCompatActivity {
     LinearLayout layout;
     RelativeLayout layout_2;
-    ImageView sendButton, imageButton;
+    ImageView sendButton, imageButton, imageView;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
     View backButton;
     TextView matchName;
-    Button addAttachment;
     ImageHandler imageHandler;
     int numPics = 1;
     String filePath;
     Uri uri;
     EditText captionEditText;
     String caption;
-    String imageUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +61,10 @@ public class Chat extends AppCompatActivity {
         layout = findViewById(R.id.layout1);
         layout_2 = findViewById(R.id.layout2);
         sendButton = findViewById(R.id.sendButton);
+        captionEditText = findViewById(R.id.captionEdit);
+        imageView = findViewById(R.id.UserPicImageView);
         messageArea = findViewById(R.id.messageArea);
         scrollView = findViewById(R.id.scrollView);
-        addAttachment = findViewById(R.id.attachment);
 
         imageHandler = new ImageHandler(this);
 
@@ -89,23 +94,19 @@ public class Chat extends AppCompatActivity {
                 }
             }
         });
-        addAttachment.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                select image
                 imageSelect();
-//                note that imagehandler now has string url
 
-//                TODO: add caption to image
-                captionEditText = null;
-                caption = null;
-                imageUrl = null;
-
+//                add caption to image
+                openDialog();
 
 //                send message
                 Map<String, String> map = new HashMap<String, String>();
                 map.put("message", caption);
-                map.put("imageUrl", imageUrl);
+                map.put("imageUrl", imageHandler.imageUrl);
                 map.put("user", UserDetails.username);
                 reference1.push().setValue(map);
                 reference2.push().setValue(map);
@@ -175,13 +176,6 @@ public class Chat extends AppCompatActivity {
             }
         });
 
-        // Create Image with text
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDialog();
-            }
-        });
     }
 
     private void imageSelect() {
@@ -200,6 +194,7 @@ public class Chat extends AppCompatActivity {
             //get the image's file location
             filePath = imageHandler.getRealPathFromUri(uri, Chat.this);
             imageHandler.uploadToCloudinary(filePath);
+            loadImageFromUrl(imageHandler.imageUrl);
 
         }
     }
@@ -247,6 +242,35 @@ public class Chat extends AppCompatActivity {
         scrollView.fullScroll(View.FOCUS_DOWN);
     }
 
+    public void addMessageBoxWithImage(String message, int type, String imageUrl){
+//        TODO: caption with image box
+        TextView textView = new TextView(Chat.this);
+        textView.setText(message);
+
+        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp2.weight = 7.0f;
+
+        if (type == 1) {
+            lp2.gravity = Gravity.LEFT;
+            textView.setBackgroundResource(R.drawable.bubble_in);
+            textView.setTextColor(0xFFFFFFFF);
+            textView.setTextSize(16);
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(0, 8, 80, 8);
+
+        } else {
+            lp2.gravity = Gravity.RIGHT;
+            textView.setBackgroundResource(R.drawable.bubble_out);
+            textView.setTextColor(0xFF707070);
+            textView.setTextSize(16);
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(80, 8, 0, 8);
+        }
+        textView.setLayoutParams(lp2);
+        layout.addView(textView);
+        scrollView.fullScroll(View.FOCUS_DOWN);
+    }
+
     public void openDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(Chat.this);
 
@@ -254,10 +278,10 @@ public class Chat extends AppCompatActivity {
         View view = inflater.inflate(R.layout.layout_image_text, null);
 
         builder.setView(view)
-                .setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Send", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        caption = captionEditText.getText().toString();
                     }
                 })
 
@@ -274,5 +298,19 @@ public class Chat extends AppCompatActivity {
         // Button Colours
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.blue));
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.blue));
+    }
+
+    private void loadImageFromUrl(String url) {
+        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
     }
 }
