@@ -41,11 +41,27 @@ public class MainActivityTest {
 
     @Test
     public void settingsActivityLayoutTest() {
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         onView(withId(R.id.setting_activity)).check(matches(isDisplayed()));
     }
 
     @Test
     public void settingsActivityViewsTest() {
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         onView(withId(R.id.back_button)).check(matches(isDisplayed()));
         onView(withId(R.id.edit_layout)).check(matches(isDisplayed()));
         onView(withId(R.id.security_layout)).check(matches(isDisplayed()));
@@ -57,6 +73,14 @@ public class MainActivityTest {
 
     @Test
     public void settingsActivityPressTest() {
+        /*
+        added sleep to delay the app
+        */
+        try{
+            Thread.sleep(15);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         onView(withId(R.id.edit_layout)).perform(click());
         onView(withId(R.id.editTextEditProfileName)).check(matches(isDisplayed()));
 
