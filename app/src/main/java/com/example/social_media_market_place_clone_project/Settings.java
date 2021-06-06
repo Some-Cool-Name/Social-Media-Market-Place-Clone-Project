@@ -94,6 +94,10 @@ public class Settings extends AppCompatActivity {
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
+
+                // Button Colours
+                dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.blue));
+                dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.blue));
             }
         });
     }

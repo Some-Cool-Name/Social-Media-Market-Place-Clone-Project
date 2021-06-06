@@ -11,21 +11,20 @@
     tools:context=".EditProfile">
 
     <!-- Top Action Bar -->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/lightgrey"
-        >
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/lightgrey1">
 
         <!-- Back Button -->
         <View
             android:id="@+id/back_button"
 
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
 
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
 
             android:background="@drawable/ic_arrow_left"/>
@@ -35,17 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/back_button"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
 
             android:gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:text="Edit Profile"
             android:textColor="@color/grey"
+            android:textSize="18sp"
 
-            android:text="Edit Profile"/>
-    </RelativeLayout>
+            android:textStyle="bold"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"

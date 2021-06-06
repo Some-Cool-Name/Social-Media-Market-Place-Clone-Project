@@ -1,9 +1,12 @@
 package com.example.social_media_market_place_clone_project;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.client.ChildEventListener;
@@ -25,7 +29,7 @@ import java.util.Map;
 public class Chat extends AppCompatActivity {
     LinearLayout layout;
     RelativeLayout layout_2;
-    ImageView sendButton;
+    ImageView sendButton, imageButton;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
@@ -46,6 +50,9 @@ public class Chat extends AppCompatActivity {
         backButton = findViewById(R.id.chat_back_button);
         matchName = (TextView) findViewById(R.id.match_name_text);
 
+        // Create Image with text
+        imageButton = findViewById(R.id.createImage);
+
         Firebase.setAndroidContext(this);
         reference1 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.username + "_" + UserDetails.chatWith);
         reference2 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.chatWith + "_" + UserDetails.username);
@@ -56,7 +63,7 @@ public class Chat extends AppCompatActivity {
             public void onClick(View v) {
                 String messageText = messageArea.getText().toString();
 
-                if(!messageText.equals("")){
+                if (!messageText.equals("")) {
                     Map<String, String> map = new HashMap<String, String>();
                     map.put("message", messageText);
                     map.put("user", UserDetails.username);
@@ -81,10 +88,9 @@ public class Chat extends AppCompatActivity {
                 String message = map.get("message").toString();
                 String userName = map.get("user").toString();
 
-                if(userName.equals(UserDetails.username)){
+                if (userName.equals(UserDetails.username)) {
                     addMessageBox(message, 1);
-                }
-                else{
+                } else {
                     addMessageBox(message, 2);
                 }
             }
@@ -109,31 +115,70 @@ public class Chat extends AppCompatActivity {
 
             }
         });
+
+        // Create Image with text
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
     }
 
-    public void addMessageBox(String message, int type){
+    public void addMessageBox(String message, int type) {
         TextView textView = new TextView(Chat.this);
         textView.setText(message);
 
         LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.weight = 7.0f;
 
-        if(type == 1) {
+        if (type == 1) {
             lp2.gravity = Gravity.LEFT;
             textView.setBackgroundResource(R.drawable.bubble_in);
             textView.setTextColor(0xFFFFFFFF);
             textView.setTextSize(16);
-            lp2.setMargins(0,8,80,8);
-        }
-        else{
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(0, 8, 80, 8);
+
+        } else {
             lp2.gravity = Gravity.RIGHT;
             textView.setBackgroundResource(R.drawable.bubble_out);
             textView.setTextColor(0xFF707070);
             textView.setTextSize(16);
-            lp2.setMargins(80,8,0,8);
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(80, 8, 0, 8);
         }
         textView.setLayoutParams(lp2);
         layout.addView(textView);
         scrollView.fullScroll(View.FOCUS_DOWN);
+    }
+
+    public void openDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Chat.this);
+
+        LayoutInflater inflater = Chat.this.getLayoutInflater();
+        View view = inflater.inflate(R.layout.layout_image_text, null);
+
+        builder.setView(view)
+                .setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Button Colours
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.blue));
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.blue));
     }
 }
