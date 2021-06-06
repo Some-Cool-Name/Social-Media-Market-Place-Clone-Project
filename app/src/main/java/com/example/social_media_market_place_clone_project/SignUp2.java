@@ -57,7 +57,7 @@ public class SignUp2 extends AppCompatActivity {
     ImageHandler imageHandler;
     StringHandler stringHandler;
     CheckBox consent;
-
+    MapsActivity mapsActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +71,7 @@ public class SignUp2 extends AppCompatActivity {
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
         consent = findViewById(R.id.checkBox);
         error2= findViewById(R.id.textErrorSign2);
-
+        String mLocation = mapsActivity.mLocation;
         // **************************************************************
 
 //        declare image handler
@@ -103,7 +103,7 @@ public class SignUp2 extends AppCompatActivity {
                     urlBuilder.addQueryParameter("gender",genderValue);
                     urlBuilder.addQueryParameter("birthday",dateURLformat);
                     urlBuilder.addQueryParameter("sexuality",preferenceValue);
-                    urlBuilder.addQueryParameter("location","Braamfontein");
+                    urlBuilder.addQueryParameter("location",mLocation);
                    urlBuilder.addQueryParameter("bio",bio.getText().toString());
 
                    String updatedImageUrl=stringHandler.addChar(imageHandler.imageUrl, 's', 4); // should add an s to image url

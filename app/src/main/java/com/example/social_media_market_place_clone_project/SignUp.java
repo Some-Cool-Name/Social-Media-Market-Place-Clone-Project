@@ -61,7 +61,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void doNext(){
-        Intent intentNext = new Intent(SignUp.this, SignUp2.class);
+        Intent intentNext = new Intent(SignUp.this, MapsActivity.class);
         startActivity(intentNext);
     }
 

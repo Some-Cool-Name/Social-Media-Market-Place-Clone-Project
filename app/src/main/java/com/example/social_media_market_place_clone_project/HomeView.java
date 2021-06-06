@@ -31,6 +31,7 @@ public class HomeView extends AppCompatActivity {
     TextView nameAge, location;
     ImageButton cross;
     ArrayList<User> users = new ArrayList<>();
+    String lat;
     int index = 0;
 
     private SwipeDeck cardStack;
@@ -241,10 +242,18 @@ public class HomeView extends AppCompatActivity {
             JSONObject userCredentials = jsonArray.getJSONObject(i);
             ArrayList<String> interests = new ArrayList<>();
             User newUser = new User();
-
+            // when we create a user add distance from the user to the user in feed
             newUser.setName(userCredentials.getString("Full_Name"));
             newUser.setEmail(userCredentials.getString("E_mail"));
             newUser.setBio(userCredentials.getString("Bio"));
+            // send request to coordinates api
+            ArrayList<Double> mine = new ArrayList<>();
+            mine= getCoordinates(userCredentials.getString("Location"));
+
+            ArrayList<Double> theirs = new ArrayList<>();
+
+            theirs = getCoordinates("cape town");
+            newUser.setDistanceFromUser(mine.get(0),theirs.get(0),mine.get(1),theirs.get(1));
             newUser.setImageUrl(userCredentials.getString("Profile_Picture"));
             interests.add(userCredentials.getString("Interest_1"));
             interests.add(userCredentials.getString("Interest_2"));
@@ -264,6 +273,46 @@ public class HomeView extends AppCompatActivity {
         popup.setOnMenuItemClickListener((PopupMenu.OnMenuItemClickListener) this);
         popup.inflate(R.menu.popup_menu);
         popup.show();
+    }
+    public ArrayList<Double> getCoordinates(String location) throws JSONException {
+        ArrayList<Double>coordinates= new ArrayList<>();
+        AsyncNetwork request = new AsyncNetwork();
+        SessionManager sessionManager = new SessionManager(HomeView.this);
+        sessionManager.checkLogin();
+        HashMap<String, String> currentUser = sessionManager.getUserDetails();
+
+
+        // Display Name and Age
+        String n = currentUser.get("EMAIL");
+
+        String link = "https://api.opencagedata.com/geocode/v1/json";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("key", "9f5b92750f8e4c0e9bdea773974c5f74");
+        urlBuilder.addQueryParameter("q",location);
+
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+        while (request.Result.equals("Waiting")) {
+            System.out.print("waiting");
+            // Toast.makeText(HomeView.this,"",Toast.LENGTH_SHORT).show();
+
+        }
+        JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
+        JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("results").toString()); // extract the login credentials array
+        //JSONArray jsonArray1 = new JSONArray(jsonArray.getJSONArray(0).toString());
+        JSONObject results = jsonArray.getJSONObject(0);
+        JSONObject bounds = results.getJSONObject("bounds");
+        JSONObject northEast = bounds.getJSONObject("northeast");
+        String latitude = northEast.getString("lat");
+        String longitude = northEast.getString("lng");
+
+        Double l = Double.parseDouble(latitude);
+        Double ln = Double.parseDouble(longitude);
+        coordinates.add(l);
+        coordinates.add(ln);
+
+        return coordinates;
     }
 
 /*try {
