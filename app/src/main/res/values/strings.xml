@@ -23,4 +23,6 @@
            Name \n
            Interest \n
            Bio</string>
+    <string name="add_caption">Add Caption</string>
+    <string name="type_a_caption">Type a caption</string>
 </resources>

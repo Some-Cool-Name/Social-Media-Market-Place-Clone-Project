@@ -10,6 +10,57 @@
     android:paddingBottom="5dp"
     tools:context=".HomeView">
 
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:id="@+id/chat_layout_1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:background="@color/white" >
+
+        <!-- Search Bar Edit Text -->
+        <EditText
+            android:id="@+id/feed_search_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:padding="10dp"
+
+            android:hint="Search Location"
+            android:textSize="18sp"
+            android:textColor="#222"
+            android:singleLine="true"
+
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/feed_search_Button"
+            android:elevation="3dp"
+
+            android:background="@drawable/textfield_style_lightgrey_round"
+            />
+
+        <!-- Search Button -->
+        <ImageButton
+            android:id="@+id/feed_search_Button"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+
+            android:layout_margin="5dp"
+            android:padding="8dp"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+
+            style="@style/Widget.AppCompat.Button"
+            android:elevation="5dp"
+            android:background="@drawable/button_style_round_gradient"
+            android:src="@drawable/ic_search_white"
+            android:scaleType="centerCrop"/>
+
+    </RelativeLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

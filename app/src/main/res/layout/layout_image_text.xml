@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <!--image view for uploaded image-->
+    <ImageView
+        android:id="@+id/UserPicImageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="15dp"
+        android:scaleType="centerCrop"
+
+        android:background="@drawable/messi"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="start"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="10dp"
+
+        android:textColor="@color/grey"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:text="@string/add_caption"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:layout_marginBottom="10dp"
+
+        android:background="@drawable/textfield_style_white_round"
+        android:hint="@string/type_a_caption"
+        android:maxLines="3"
+        android:textColor="@color/grey"
+        android:textColorHint="@color/grey1"
+        android:textSize="16sp"/>
+
+</LinearLayout>
+
+

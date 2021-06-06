@@ -1,13 +1,6 @@
 package com.example.social_media_market_place_clone_project;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Gravity;
@@ -22,7 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -41,7 +34,7 @@ import java.util.Map;
 public class Chat extends AppCompatActivity {
     LinearLayout layout;
     RelativeLayout layout_2;
-    ImageView sendButton;
+    ImageView sendButton, imageButton;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
@@ -72,6 +65,9 @@ public class Chat extends AppCompatActivity {
 
         backButton = findViewById(R.id.chat_back_button);
         matchName = (TextView) findViewById(R.id.match_name_text);
+
+        // Create Image with text
+        imageButton = findViewById(R.id.createImage);
 
         Firebase.setAndroidContext(this);
         reference1 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.username + "_" + UserDetails.chatWith);
@@ -178,6 +174,14 @@ public class Chat extends AppCompatActivity {
 
             }
         });
+
+        // Create Image with text
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
     }
 
     private void imageSelect() {
@@ -222,49 +226,53 @@ public class Chat extends AppCompatActivity {
         LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.weight = 7.0f;
 
-        if(type == 1) {
+        if (type == 1) {
             lp2.gravity = Gravity.LEFT;
             textView.setBackgroundResource(R.drawable.bubble_in);
             textView.setTextColor(0xFFFFFFFF);
             textView.setTextSize(16);
-            lp2.setMargins(0,8,80,8);
-        }
-        else{
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(0, 8, 80, 8);
+
+        } else {
             lp2.gravity = Gravity.RIGHT;
             textView.setBackgroundResource(R.drawable.bubble_out);
             textView.setTextColor(0xFF707070);
             textView.setTextSize(16);
-            lp2.setMargins(80,8,0,8);
+            textView.setPadding(20,10,20,20);
+            lp2.setMargins(80, 8, 0, 8);
         }
         textView.setLayoutParams(lp2);
         layout.addView(textView);
         scrollView.fullScroll(View.FOCUS_DOWN);
     }
 
-    public void addMessageBoxWithImage(String message, int type, String image){
-//        TODO: set the image url to be displayed
-        TextView textView = new TextView(Chat.this);
-        textView.setText(message);
+    public void openDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Chat.this);
 
-        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp2.weight = 7.0f;
+        LayoutInflater inflater = Chat.this.getLayoutInflater();
+        View view = inflater.inflate(R.layout.layout_image_text, null);
 
-        if(type == 1) {
-            lp2.gravity = Gravity.LEFT;
-            textView.setBackgroundResource(R.drawable.bubble_in);
-            textView.setTextColor(0xFFFFFFFF);
-            textView.setTextSize(16);
-            lp2.setMargins(0,8,80,8);
-        }
-        else{
-            lp2.gravity = Gravity.RIGHT;
-            textView.setBackgroundResource(R.drawable.bubble_out);
-            textView.setTextColor(0xFF707070);
-            textView.setTextSize(16);
-            lp2.setMargins(80,8,0,8);
-        }
-        textView.setLayoutParams(lp2);
-        layout.addView(textView);
-        scrollView.fullScroll(View.FOCUS_DOWN);
+        builder.setView(view)
+                .setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Button Colours
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.blue));
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.blue));
     }
 }
