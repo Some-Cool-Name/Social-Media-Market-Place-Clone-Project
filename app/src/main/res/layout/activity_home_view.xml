@@ -9,6 +9,59 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     tools:context=".HomeView">
+    <RelativeLayout
+        android:id="@+id/chat_layout_1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="10dp"
+        android:background="@color/white" >
+
+        <!-- Search Bar Edit Text -->
+        <EditText
+            android:id="@+id/match_search_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@id/match_search_Button"
+
+            android:background="@drawable/textfield_style_lightgrey_round"
+            android:elevation="3dp"
+            android:hint="Search..."
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#222"
+            android:textSize="18sp" />
+
+        <!-- Search Button -->
+        <ImageButton
+            android:id="@+id/match_search_Button"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+
+            android:layout_margin="5dp"
+            android:padding="8dp"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+
+            style="@style/Widget.AppCompat.Button"
+            android:elevation="5dp"
+            android:background="@drawable/button_style_round_gradient"
+            android:src="@drawable/ic_search_white"
+            android:scaleType="centerCrop"/>
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,8 +78,9 @@
 
     <!--on below line we are creating a swipe
          frame layout for providing a swipe action-->
+
+    <!-- Navbar -->
     <com.daprlabs.cardstack.SwipeFrameLayout
-        xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -40,18 +94,19 @@
             android:id="@+id/swipe_deck"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
 
+            android:layout_gravity="bottom"
             android:layout_marginBottom="70dp"
             android:padding="20dp"
 
-            swipedeck:card_spacing="5dp"
-            swipedeck:max_visible="3"
-            swipedeck:render_above="true"
-            swipedeck:rotation_degrees="15" />
+            app:card_spacing="5dp"
+            app:max_visible="3"
+            app:render_above="true"
+            app:rotation_degrees="15" />
 
     </com.daprlabs.cardstack.SwipeFrameLayout>
 
-    <!-- Navbar -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

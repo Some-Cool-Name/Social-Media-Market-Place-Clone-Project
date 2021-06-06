@@ -272,7 +272,10 @@ public class HomeView extends AppCompatActivity {
 
         }
         //quickSort(users,0,users.size()-1);
-        return users;
+
+        Quicksort quicksort = new Quicksort();
+        return quicksort.convert(users);
+
     }
 
     public void showMenu(View v) {
@@ -321,35 +324,7 @@ public class HomeView extends AppCompatActivity {
 
         return coordinates;
     }
-    protected ArrayList<User> quickSort(ArrayList<User> list, int a, int b)
-    {
-        if (a >= b)
-            return list;
 
-        User pivot = list.get(b);
-
-        int left = a;
-        int right = b;
-
-        while (left < right)
-        {
-            while(list.get(left).getDistanceFromUser().compareTo(pivot.getDistanceFromUser()) < 0)
-                left++;
-
-            while(list.get(right).getDistanceFromUser().compareTo(pivot.getDistanceFromUser()) > 0)
-                right--;
-
-            if (right > left);
-            {
-                Collections.swap(list, left, right);
-            }
-        }
-
-        quickSort(list, a, right-1);
-        quickSort(list, right+1, b);
-
-        return list;
-    }
     public  String [] splitString (String loc){
         return loc.split(" ");
 

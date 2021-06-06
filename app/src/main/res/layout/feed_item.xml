@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
+
         android:orientation="vertical">
 
         <!--image view for course image-->
         <ImageView
             android:id="@+id/UserPicImageView"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
 
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="15dp"
