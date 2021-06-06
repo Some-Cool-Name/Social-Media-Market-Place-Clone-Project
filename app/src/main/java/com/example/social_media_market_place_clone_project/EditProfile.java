@@ -53,7 +53,7 @@ public class EditProfile extends AppCompatActivity {
 
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
 
-//        helper classes
+        // helper classes
         imageHandler = new ImageHandler(this);
         stringHandler = new StringHandler();
 
