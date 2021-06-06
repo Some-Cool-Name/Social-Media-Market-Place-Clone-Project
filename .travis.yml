@@ -41,6 +41,9 @@ before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a # create an emulator for testing purposes
   - emulator -avd test -no-audio -no-window & #do not let the emulator have sound or pop up on screen
   - android-wait-for-emulator # wait for the emulator to turn on fully
+  - adb shell settings put global window_animation_scale 0 &
+  - adb shell settings put global transition_animation_scale 0 &
+  - adb shell settings put global animator_duration_scale 0 &
   - adb shell input keyevent 82 & 
 
 #clean your environment if there is anything to clean, then build the project and run the tests and get the report.
