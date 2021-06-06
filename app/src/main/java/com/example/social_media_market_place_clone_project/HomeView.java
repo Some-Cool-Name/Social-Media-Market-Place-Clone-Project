@@ -85,11 +85,9 @@ public class HomeView extends AppCompatActivity {
                 HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
 
-                Constants constants = new Constants();
                 // Display Name and Age
-                String n = currentUser.get("EMAIL");
                 try {
-                    dislike(n, users.get(position).getEmail());
+                    dislike(currentUser.get("EMAIL"), users.get(position).getEmail());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -99,21 +97,19 @@ public class HomeView extends AppCompatActivity {
             @Override
             public void cardSwipedRight(int position) {
 
-                Constants constants = new Constants();
-
                 SessionManager sessionManager = new SessionManager(HomeView.this);
                 sessionManager.checkLogin();
                 HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
                 // Display Name and Age
-                String n = currentUser.get("EMAIL");
-                backGroundLike(n,users.get(position).getEmail());
+
+                backGroundLike(currentUser.get("EMAIL"),users.get(position).getEmail());
             }
 
             @Override
             public void cardsDepleted() {
                 // this method is called when no card is present
-                Toast.makeText(HomeView.this, "No more courses present", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeView.this, "No more profiles to show", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -177,12 +173,9 @@ public class HomeView extends AppCompatActivity {
         sessionManager.checkLogin();
         HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
-        // Display Name and Age
-        String n = currentUser.get("EMAIL");
         DatabaseQueries getFeedUsers = new DatabaseQueries();
 
-
-        return getFeedUsers.getUsersFeed(n);
+        return getFeedUsers.getUsersFeed(currentUser.get("EMAIL"));
     }
 
     public void showMenu(View v) {

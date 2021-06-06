@@ -1,5 +1,7 @@
 package com.example.social_media_market_place_clone_project;
 
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -97,5 +99,59 @@ public class DatabaseQueries {
         return  users;
     }
 
+
+    public String doUpdateName(String username, String name){
+        AsyncNetwork request = new AsyncNetwork();
+        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpName.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("name",name);
+        urlBuilder.addQueryParameter("username",username);
+
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+        while(request.Result.equals("Waiting")){
+           // Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+        }
+
+        return request.Result;
+
+    }
+
+    public String doUpdateBio(String username, String biography){
+        AsyncNetwork request = new AsyncNetwork();
+        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpBio.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("biography", biography);
+        urlBuilder.addQueryParameter("username",username);
+
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+        while(request.Result.equals("Waiting")){
+          //  Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+        }
+
+        return request.Result;
+
+    }
+
+    public String doUpdateProfile(String username, String updatedImageUrl){
+        AsyncNetwork request = new AsyncNetwork();
+        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
+        urlBuilder.addQueryParameter("username",username);
+        urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
+
+        String url = urlBuilder.build().toString();
+        request.execute(url);
+
+        while(request.Result.equals("Waiting")){
+            //Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+        }
+
+        return request.Result;
+
+    }
 
 }
