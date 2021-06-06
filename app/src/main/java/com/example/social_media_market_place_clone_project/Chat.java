@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +30,6 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.squareup.picasso.Picasso;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,18 +37,16 @@ import java.util.Map;
 public class Chat extends AppCompatActivity {
     LinearLayout layout;
     RelativeLayout layout_2;
-    ImageView sendButton, imageButton, imageView;
+    ImageView sendButton, imageButton, imageView, image;
     EditText messageArea;
     ScrollView scrollView;
     Firebase reference1, reference2;
     View backButton;
     TextView matchName;
-    ImageHandler imageHandler;
     int numPics = 1;
-    String filePath;
+    ImageHandler imageHandler;
     Uri uri;
-    EditText captionEditText;
-    String caption;
+    String filePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,18 +56,15 @@ public class Chat extends AppCompatActivity {
         layout = findViewById(R.id.layout1);
         layout_2 = findViewById(R.id.layout2);
         sendButton = findViewById(R.id.sendButton);
-        captionEditText = findViewById(R.id.captionEdit);
-        imageView = findViewById(R.id.UserPicImageView);
         messageArea = findViewById(R.id.messageArea);
         scrollView = findViewById(R.id.scrollView);
-
-        imageHandler = new ImageHandler(this);
 
         backButton = findViewById(R.id.chat_back_button);
         matchName = (TextView) findViewById(R.id.match_name_text);
 
         // Create Image with text
         imageButton = findViewById(R.id.createImage);
+        imageHandler = new ImageHandler(this);
 
         Firebase.setAndroidContext(this);
         reference1 = new Firebase("https://dating-b5a28-default-rtdb.firebaseio.com/" + UserDetails.username + "_" + UserDetails.chatWith);
@@ -84,7 +76,7 @@ public class Chat extends AppCompatActivity {
             public void onClick(View v) {
                 String messageText = messageArea.getText().toString();
 
-                if(!messageText.equals("")){
+                if (!messageText.equals("")) {
                     Map<String, String> map = new HashMap<String, String>();
                     map.put("message", messageText);
                     map.put("user", UserDetails.username);
@@ -92,25 +84,6 @@ public class Chat extends AppCompatActivity {
                     reference2.push().setValue(map);
                     messageArea.setText("");
                 }
-            }
-        });
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                select image
-                imageSelect();
-
-//                add caption to image
-                openDialog();
-
-//                send message
-                Map<String, String> map = new HashMap<String, String>();
-                map.put("message", caption);
-                map.put("imageUrl", imageHandler.imageUrl);
-                map.put("user", UserDetails.username);
-                reference1.push().setValue(map);
-                reference2.push().setValue(map);
-                captionEditText.setText("");
             }
         });
 
@@ -136,7 +109,7 @@ public class Chat extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if(imageUrl.equals(null)){
+                if(imageUrl == null){
                     if(userName.equals(UserDetails.username)){
                         addMessageBox(message, 1);
                     }
@@ -176,45 +149,16 @@ public class Chat extends AppCompatActivity {
             }
         });
 
+        // Create Image with text
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
     }
 
-    private void imageSelect() {
-        requestPermission();
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, numPics);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == numPics && resultCode == RESULT_OK && data != null && data.getData() != null){
-            uri = data.getData();
-
-            //get the image's file location
-            filePath = imageHandler.getRealPathFromUri(uri, Chat.this);
-            imageHandler.uploadToCloudinary(filePath);
-            loadImageFromUrl(imageHandler.imageUrl);
-
-        }
-    }
-
-    private void requestPermission(){
-        if(ContextCompat.checkSelfPermission
-                (Chat.this,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
-                ) == PackageManager.PERMISSION_GRANTED
-        ){
-        } else {
-            ActivityCompat.requestPermissions(
-                    Chat.this,
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    1
-            );
-        }
-    }
-
-    public void addMessageBox(String message, int type){
+    public void addMessageBox(String message, int type) {
         TextView textView = new TextView(Chat.this);
         textView.setText(message);
 
@@ -226,7 +170,7 @@ public class Chat extends AppCompatActivity {
             textView.setBackgroundResource(R.drawable.bubble_in);
             textView.setTextColor(0xFFFFFFFF);
             textView.setTextSize(16);
-            textView.setPadding(20,10,20,20);
+            textView.setPadding(20, 10, 20, 20);
             lp2.setMargins(0, 8, 80, 8);
 
         } else {
@@ -234,36 +178,7 @@ public class Chat extends AppCompatActivity {
             textView.setBackgroundResource(R.drawable.bubble_out);
             textView.setTextColor(0xFF707070);
             textView.setTextSize(16);
-            textView.setPadding(20,10,20,20);
-            lp2.setMargins(80, 8, 0, 8);
-        }
-        textView.setLayoutParams(lp2);
-        layout.addView(textView);
-        scrollView.fullScroll(View.FOCUS_DOWN);
-    }
-
-    public void addMessageBoxWithImage(String message, int type, String imageUrl){
-//        TODO: caption with image box
-        TextView textView = new TextView(Chat.this);
-        textView.setText(message);
-
-        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp2.weight = 7.0f;
-
-        if (type == 1) {
-            lp2.gravity = Gravity.LEFT;
-            textView.setBackgroundResource(R.drawable.bubble_in);
-            textView.setTextColor(0xFFFFFFFF);
-            textView.setTextSize(16);
-            textView.setPadding(20,10,20,20);
-            lp2.setMargins(0, 8, 80, 8);
-
-        } else {
-            lp2.gravity = Gravity.RIGHT;
-            textView.setBackgroundResource(R.drawable.bubble_out);
-            textView.setTextColor(0xFF707070);
-            textView.setTextSize(16);
-            textView.setPadding(20,10,20,20);
+            textView.setPadding(20, 10, 20, 20);
             lp2.setMargins(80, 8, 0, 8);
         }
         textView.setLayoutParams(lp2);
@@ -277,11 +192,36 @@ public class Chat extends AppCompatActivity {
         LayoutInflater inflater = Chat.this.getLayoutInflater();
         View view = inflater.inflate(R.layout.layout_image_text, null);
 
+        TextView caption = (TextView) view.findViewById(R.id.addCaption_EditText);
+        imageView = (ImageView) view.findViewById(R.id.UserPicImageView);
+
+
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestPermission();
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, numPics);
+            }
+        });
+
         builder.setView(view)
-                .setPositiveButton("Send", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Create", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        caption = captionEditText.getText().toString();
+                        String captionText = caption.getText().toString();
+
+                        if (!captionText.equals("")  ) {
+                            Map<String, String> map = new HashMap<String, String>();
+                            map.put("message", captionText);
+                            map.put("imageUrl", imageHandler.imageUrl);
+                            map.put("user", UserDetails.username);
+                            reference1.push().setValue(map);
+                            reference2.push().setValue(map);
+                            caption.setText("");
+                        }
                     }
                 })
 
@@ -298,6 +238,88 @@ public class Chat extends AppCompatActivity {
         // Button Colours
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.blue));
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.blue));
+    }
+
+    private void requestPermission() {
+        if (ContextCompat.checkSelfPermission
+                (Chat.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_GRANTED
+        ) {
+        } else {
+            ActivityCompat.requestPermissions(
+                    Chat.this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    1
+            );
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == numPics && resultCode == RESULT_OK && data != null && data.getData() != null){
+            uri = data.getData();
+
+            //get the image's file location
+            filePath = imageHandler.getRealPathFromUri(uri, Chat.this);
+            imageHandler.uploadToCloudinary(filePath);
+            loadImageFromUrl(imageHandler.imageUrl);
+
+        }
+    }
+
+    public void addMessageBoxWithImage(String message, int type, String imageUrl){
+
+        image = new ImageView(Chat.this);
+        TextView textView = new TextView(Chat.this);
+        View view = new View(Chat.this);
+        LinearLayout bubble;
+
+        image.setImageResource(R.drawable.messi);
+        textView.setText(message);
+
+        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        lp2.weight = 7.0f;
+
+        image.setLayoutParams(lp2);
+
+        if (type == 1) {
+            lp2.gravity = Gravity.LEFT;
+
+            bubble = new LinearLayout(this);
+            bubble.setOrientation(LinearLayout.VERTICAL);
+            bubble.setGravity(Gravity.CENTER);
+
+            textView.setTextColor(0xFFFFFFFF);
+            textView.setTextSize(16);
+            bubble.setBackgroundResource(R.drawable.bubble_in);
+            bubble.addView(image);
+            bubble.addView(textView);
+
+
+
+        } else {
+            lp2.gravity = Gravity.RIGHT;
+
+            bubble = new LinearLayout(this);
+            textView.setBackgroundResource(R.drawable.bubble_out);
+            textView.setTextColor(0xFF707070);
+            textView.setTextSize(16);
+        }
+
+        //textView.setPadding(20,10,20,20);
+        bubble.setPadding(30,30,30,30);
+        lp2.setMargins(80, 8, 0, 8);
+
+        layout.addView(bubble);
+        //image.setLayoutParams(lp2);
+        //textView.setLayoutParams(lp2);
+
+        //layout.addView(image);
+        //layout.addView(textView);
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
 
     private void loadImageFromUrl(String url) {

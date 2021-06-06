@@ -6,8 +6,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -15,13 +13,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -29,7 +23,6 @@ import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import okhttp3.HttpUrl;
@@ -37,18 +30,14 @@ import okhttp3.HttpUrl;
 public class EditProfile extends AppCompatActivity {
     View back;
     Button save;
-    EditText name, biog, interests, location;
+    EditText name, biog, location;
     ImageView profilePicture;
-   // String imageUrl;
+    String imageUrl;
     int numPics = 1;
     String filePath;
     Uri uri;
     ImageHandler imageHandler;
     StringHandler stringHandler;
-
-    ArrayList<String> interestList = new ArrayList<>();
-    ImageButton add, remove;
-    TextView int1TV, int2TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,59 +49,11 @@ public class EditProfile extends AppCompatActivity {
         save = (Button) findViewById(R.id.save_button);
         name = (EditText) findViewById(R.id.editTextEditProfileName);
         biog = (EditText) findViewById(R.id.editTextBio);
-
         location = (EditText) findViewById(R.id.editTextLocation);
 
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
 
-        // Add and remove interests
-
-
-
-
-
-        remove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (interestList.size() > 0){
-                    interestList.remove(interestList.size() -1);
-
-                    String s1 = "";
-                    String s2 = "";
-
-                    for (int i = 0; i < interestList.size(); ++i) {
-                        if (i+1 <= 3){
-                            s1 += interestList.get(i) + " ";
-                        }
-
-                        else{
-                            s2 += interestList.get(i) + " ";
-                        }
-                    }
-
-                    int1TV.setText(s1);
-                    int2TV.setText(s2);
-                }
-
-                else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(EditProfile.this);
-                    builder.setTitle("Interest Empty");
-                    builder.setMessage("There are no interests to remove");
-
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
-
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                }
-            }
-        });
-
-//        helper classes
+        // helper classes
         imageHandler = new ImageHandler(this);
         stringHandler = new StringHandler();
 
@@ -138,7 +79,7 @@ public class EditProfile extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     // upper part is for profile picture;
-                    if(imageHandler.imageUrl!=null){
+                    if (imageUrl != null) {
                         processImage();
                     }
 
@@ -153,7 +94,7 @@ public class EditProfile extends AppCompatActivity {
     }
 
     public void processImage() throws JSONException {
-        String updatedImageUrl= stringHandler.addChar(imageHandler.imageUrl, 's', 4);
+        String updatedImageUrl = stringHandler.addChar(imageUrl, 's', 4);
         SessionManager session = new SessionManager(EditProfile.this);
         session.checkLogin();
         HashMap<String, String> currentUser = session.getUserDetails();
@@ -164,19 +105,18 @@ public class EditProfile extends AppCompatActivity {
         String sexuality = currentUser.get("SEXUALITY");
         String gender = currentUser.get("GENDER");
         String bio = currentUser.get("BIO");
-        String location = currentUser.get("LOCATION");
 
-        String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
+        String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-        urlBuilder.addQueryParameter("username",email);
-        urlBuilder.addQueryParameter("profile_picture",updatedImageUrl);
+        urlBuilder.addQueryParameter("username", email);
+        urlBuilder.addQueryParameter("profile_picture", updatedImageUrl);
 
 
         String url = urlBuilder.build().toString();
         request.execute(url);
 
-        while(request.Result.equals("Waiting")){
-            Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+        while (request.Result.equals("Waiting")) {
+            Toast.makeText(EditProfile.this, "Loading", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -184,15 +124,16 @@ public class EditProfile extends AppCompatActivity {
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
 
 
-        if(wholeString.getString("success").equals("0")){
-            Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
-        }else{
-            session.createSession(email,fullname,birthday,gender,sexuality, bio, updatedImageUrl,location);
+        if (wholeString.getString("success").equals("0")) {
+            Toast.makeText(EditProfile.this, wholeString.getString("message"), Toast.LENGTH_SHORT).show();
+        } else {
+            session.createSession(email, fullname, birthday, gender, sexuality, bio, updatedImageUrl);
             Intent intentSignIn = new Intent(EditProfile.this, HomeView.class);
-            intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intentSignIn);
         }
     }
+
     public void doBack() {
         Intent intent = new Intent(EditProfile.this, Settings.class);
         startActivity(intent);
@@ -202,7 +143,7 @@ public class EditProfile extends AppCompatActivity {
         Intent intent = new Intent(EditProfile.this, Settings.class);
         startActivity(intent);
 
-        if(!name.getText().toString().equals("")){
+        if (!name.getText().toString().equals("")) {
             //then send request to change name
             SessionManager sessionManager = new SessionManager(EditProfile.this);
             sessionManager.checkLogin();
@@ -217,18 +158,17 @@ public class EditProfile extends AppCompatActivity {
             String gender = currentUser.get("GENDER");
             String bio = currentUser.get("BIO");
             String imageUrl = currentUser.get("PROFILE_PICTURE");
-            String location = currentUser.get("LOCATION");
-            String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpName.php";
+            String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAUpName.php";
             HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
-            urlBuilder.addQueryParameter("name",name.getText().toString());
-            urlBuilder.addQueryParameter("username",email);
+            urlBuilder.addQueryParameter("name", name.getText().toString());
+            urlBuilder.addQueryParameter("username", email);
 
 
             String url = urlBuilder.build().toString();
             request.execute(url);
 
-            while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+            while (request.Result.equals("Waiting")) {
+                Toast.makeText(EditProfile.this, "Loading", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -238,19 +178,19 @@ public class EditProfile extends AppCompatActivity {
 
             //JSONObject userCredentials = jsonArray.getJSONObject(0);
 
-            if(wholeString.getString("success").equals("0")){
-                Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
-            }else{
+            if (wholeString.getString("success").equals("0")) {
+                Toast.makeText(EditProfile.this, wholeString.getString("message"), Toast.LENGTH_SHORT).show();
+            } else {
 
 
-                sessionManager.createSession(email, name.getText().toString(),birthday,gender,sexuality,bio,imageUrl,location);
+                sessionManager.createSession(email, name.getText().toString(), birthday, gender, sexuality, bio, imageUrl);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
-                intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intentSignIn);
             }
 
         }
-        if(!biog.getText().toString().equals("")){
+        if (!biog.getText().toString().equals("")) {
             //then send request to change name
             SessionManager sessionManager = new SessionManager(EditProfile.this);
             sessionManager.checkLogin();
@@ -265,47 +205,45 @@ public class EditProfile extends AppCompatActivity {
             String gender = currentUser.get("GENDER");
             String bio = currentUser.get("BIO");
             String imageUrl = currentUser.get("PROFILE_PICTURE");
-            String location = currentUser.get("LOCATION");
-            String link="https://lamp.ms.wits.ac.za/home/s1851427/WDAUpBio.php";
+            String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAUpBio.php";
             HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
             urlBuilder.addQueryParameter("biography", biog.getText().toString());
-            urlBuilder.addQueryParameter("username",email);
+            urlBuilder.addQueryParameter("username", email);
 
 
             String url = urlBuilder.build().toString();
             request.execute(url);
 
-            while(request.Result.equals("Waiting")){
-                Toast.makeText(EditProfile.this,"Loading",Toast.LENGTH_SHORT).show();
+            while (request.Result.equals("Waiting")) {
+                Toast.makeText(EditProfile.this, "Loading", Toast.LENGTH_SHORT).show();
             }
 
 
             // Request is finished
             JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
 
-            if(wholeString.getString("success").equals("0")){
-                Toast.makeText(EditProfile.this,wholeString.getString("message"),Toast.LENGTH_SHORT).show();
-            }else{
+            if (wholeString.getString("success").equals("0")) {
+                Toast.makeText(EditProfile.this, wholeString.getString("message"), Toast.LENGTH_SHORT).show();
+            } else {
 
 
-                sessionManager.createSession(email, fullname,birthday,gender,sexuality,biog.getText().toString(),imageUrl,location);
+                sessionManager.createSession(email, fullname, birthday, gender, sexuality, biog.getText().toString(), imageUrl);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
-                intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intentSignIn);
             }
 
         }
 
 
-
-
     }
-    private void requestPermission(){
-        if(ContextCompat.checkSelfPermission
+
+    private void requestPermission() {
+        if (ContextCompat.checkSelfPermission
                 (EditProfile.this,
                         Manifest.permission.READ_EXTERNAL_STORAGE
                 ) == PackageManager.PERMISSION_GRANTED
-        ){
+        ) {
         } else {
             ActivityCompat.requestPermissions(
                     EditProfile.this,
@@ -318,14 +256,14 @@ public class EditProfile extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == numPics && resultCode == RESULT_OK && data != null && data.getData() != null){
+        if (requestCode == numPics && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uri = data.getData();
 
             Bitmap bitmap = null;
             //get the image's file location
             filePath = imageHandler.getRealPathFromUri(uri, EditProfile.this);
             imageHandler.uploadToCloudinary(filePath);
-            //imageUrl = imageHandler.imageUrl;
+            imageUrl = imageHandler.imageUrl;
 
 
             try {
