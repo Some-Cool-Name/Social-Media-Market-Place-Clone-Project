@@ -123,7 +123,7 @@ public class SignUp2 extends AppCompatActivity {
                    try {
                        wholeString = new JSONObject(request.Result);
                        if(wholeString.getString("message").equals("success")){
-                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue,bio.getText().toString(),updatedImageUrl);
+                           sessionManager.createSession(email,name.getText().toString(),dateURLformat,genderValue,preferenceValue,bio.getText().toString(),updatedImageUrl,mLocation);
 
                            // if done change ui'
                            doRegister();

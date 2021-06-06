@@ -18,6 +18,7 @@ public class SessionManager {
     public static final String FULLNAME = "FULLNAME";
     public static final String BIRTHDAY = "BIRTHDAY";
     public static final String SEXUALITY = "SEXUALITY";
+    public static final String LOCATION = "LOCATION";
     public static final String GENDER = "GENDER";
     public static final String BIO="BIO";
     public static final String PROFILE_PICTURE ="PROFILE_PICTURE";
@@ -38,7 +39,7 @@ public class SessionManager {
     }
 
     //create a login session
-    public void createSession(String email, String fullname, String birthday, String gender, String sexuality, String bio, String profilePicture){
+    public void createSession(String email, String fullname, String birthday, String gender, String sexuality, String bio, String profilePicture, String location){
         editor.putBoolean(IS_LOGGED_IN, true);
         editor.putString(FULLNAME, fullname);
         editor.putString(EMAIL,email);
@@ -47,7 +48,7 @@ public class SessionManager {
         editor.putString(SEXUALITY,sexuality);
         editor.putString(BIO,bio);
         editor.putString(PROFILE_PICTURE,profilePicture);
-
+        editor.putString(LOCATION,location);
         editor.apply();
 
     }
@@ -67,6 +68,7 @@ public class SessionManager {
         user.put(GENDER, sharedPreferences.getString(GENDER, null));
         user.put(BIO, sharedPreferences.getString(BIO, null));
         user.put(PROFILE_PICTURE, sharedPreferences.getString(PROFILE_PICTURE, null));
+        user.put(LOCATION,sharedPreferences.getString(LOCATION,null));
 
         return user;
     }

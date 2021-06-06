@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import okhttp3.HttpUrl;
@@ -237,23 +238,29 @@ public class HomeView extends AppCompatActivity {
         // Request is finished
         JSONObject wholeString = new JSONObject(request.Result); // Read the whole string
         JSONArray jsonArray = new JSONArray(wholeString.getJSONArray("feedProfiles").toString()); // extract the login credentials array
+        String loc = currentUser.get("LOCATION");
+        String [] splitted = splitString(loc);
+        Double mylat = Double.parseDouble(splitted[0]);
+        Double mylong = Double.parseDouble(splitted[1]);
+
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject userCredentials = jsonArray.getJSONObject(i);
             ArrayList<String> interests = new ArrayList<>();
             User newUser = new User();
+
+            ArrayList<Double> theirs = new ArrayList<>();
             // when we create a user add distance from the user to the user in feed
             newUser.setName(userCredentials.getString("Full_Name"));
             newUser.setEmail(userCredentials.getString("E_mail"));
             newUser.setBio(userCredentials.getString("Bio"));
-            // send request to coordinates api
-            ArrayList<Double> mine = new ArrayList<>();
-            mine= getCoordinates(userCredentials.getString("Location"));
+            String locationAll = userCredentials.getString("Location");
+            String [] splittedTheirs = splitString(locationAll);
+            Double tlat = Double.parseDouble(splittedTheirs[0]);
+            Double tlong = Double.parseDouble(splittedTheirs[1]);
 
-            ArrayList<Double> theirs = new ArrayList<>();
 
-            theirs = getCoordinates("cape town");
-            newUser.setDistanceFromUser(mine.get(0),theirs.get(0),mine.get(1),theirs.get(1));
+            newUser.setDistanceFromUser(mylat,tlat,mylong,tlong);
             newUser.setImageUrl(userCredentials.getString("Profile_Picture"));
             interests.add(userCredentials.getString("Interest_1"));
             interests.add(userCredentials.getString("Interest_2"));
@@ -264,7 +271,7 @@ public class HomeView extends AppCompatActivity {
             users.add(newUser);
 
         }
-
+        //quickSort(users,0,users.size()-1);
         return users;
     }
 
@@ -313,6 +320,39 @@ public class HomeView extends AppCompatActivity {
         coordinates.add(ln);
 
         return coordinates;
+    }
+    protected ArrayList<User> quickSort(ArrayList<User> list, int a, int b)
+    {
+        if (a >= b)
+            return list;
+
+        User pivot = list.get(b);
+
+        int left = a;
+        int right = b;
+
+        while (left < right)
+        {
+            while(list.get(left).getDistanceFromUser().compareTo(pivot.getDistanceFromUser()) < 0)
+                left++;
+
+            while(list.get(right).getDistanceFromUser().compareTo(pivot.getDistanceFromUser()) > 0)
+                right--;
+
+            if (right > left);
+            {
+                Collections.swap(list, left, right);
+            }
+        }
+
+        quickSort(list, a, right-1);
+        quickSort(list, right+1, b);
+
+        return list;
+    }
+    public  String [] splitString (String loc){
+        return loc.split(" ");
+
     }
 
 /*try {
