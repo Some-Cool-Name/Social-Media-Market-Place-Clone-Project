@@ -93,8 +93,6 @@ public class HomeView extends AppCompatActivity {
                 sessionManager.checkLogin();
                 HashMap<String, String> currentUser = sessionManager.getUserDetails();
 
-
-                Constants constants = new Constants();
                 // Display Name and Age
                 String n = currentUser.get("EMAIL");
                 try {
@@ -146,7 +144,6 @@ public class HomeView extends AppCompatActivity {
 
     public void Matches(View v) {
         Intent intent = new Intent(HomeView.this, Matches.class);
-        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -163,7 +160,6 @@ public class HomeView extends AppCompatActivity {
         while (request.Result.equals("Waiting")) {
             System.out.print("loading");
         }
-
 
         // Request is finished
 
@@ -191,21 +187,17 @@ public class HomeView extends AppCompatActivity {
             System.out.print("loading");
         }
 
-
         // Request is finished
-
 
     }
 
     public void Chat(View v) {
         Intent intent = new Intent(HomeView.this, Users.class);
-        // intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void Profile(View v) {
         Intent intentSignIn = new Intent(HomeView.this, Profile.class);
-        //intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intentSignIn);
     }
 
@@ -330,44 +322,4 @@ public class HomeView extends AppCompatActivity {
 
     }
 
-/*try {
-            users = getUsers();
-            if (users != null) {
-                nameAge.setText(users.get(index).getName());
-                String url = users.get(index).getImageUrl();
-                loadImageFromUrl(url);
-                index++;
-            }
-
-            cross.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    nameAge.setText(users.get(index).getName());
-                    String url = users.get(index).getImageUrl();
-                    loadImageFromUrl(url);
-                    if (index < users.size() - 1) {
-                        index++;
-                    }
-                }
-            });
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
-    /*
-    private void loadImageFromUrl(String url) {
-
-        Picasso.with(this).load(url).into(imageView, new com.squareup.picasso.Callback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
-    }*/
 }

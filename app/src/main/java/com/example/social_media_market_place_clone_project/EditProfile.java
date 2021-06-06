@@ -60,60 +60,16 @@ public class EditProfile extends AppCompatActivity {
         save = (Button) findViewById(R.id.save_button);
         name = (EditText) findViewById(R.id.editTextEditProfileName);
         biog = (EditText) findViewById(R.id.editTextBio);
-        interests = (EditText) findViewById(R.id.editTextInterests);
+
         location = (EditText) findViewById(R.id.editTextLocation);
 
         profilePicture = (ImageView) findViewById(R.id.sign_up_profile_picture_background);
 
         // Add and remove interests
-        add = (ImageButton) findViewById(R.id.add_button);
-        remove = (ImageButton) findViewById(R.id.remove_button);
-        int1TV = (TextView) findViewById(R.id.int_tv_1);
-        int2TV = (TextView) findViewById(R.id.int_tv_2);
 
 
 
 
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (interestList.size() < 5){
-                    interestList.add(interests.getText().toString());
-                    interests.setText("");
-
-                    String s1 = "";
-                    String s2 = "";
-
-                    for (int i = 0; i < interestList.size(); ++i) {
-                        if (i+1 <= 3){
-                            s1 += interestList.get(i) + " ";
-                        }
-
-                        else{
-                            s2 += interestList.get(i) + " ";
-                        }
-                    }
-                    int1TV.setText(s1);
-                    int2TV.setText(s2);
-                }
-
-                else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(EditProfile.this);
-                    builder.setTitle("Interest Full");
-                    builder.setMessage("You have added the maximum number of interests.");
-
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
-
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                }
-            }
-        });
 
         remove.setOnClickListener(new View.OnClickListener() {
             @Override

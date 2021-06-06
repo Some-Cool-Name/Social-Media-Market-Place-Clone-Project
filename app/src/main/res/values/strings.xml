@@ -24,4 +24,6 @@
            Interest \n
            Bio</string>
     <string name="title_activity_maps">Map</string>
+    <string name="add_caption">Add caption</string>
+    <string name="type_a_caption">Type a caption</string>
 </resources>
