@@ -105,7 +105,7 @@ public class EditProfile extends AppCompatActivity {
         String sexuality = currentUser.get("SEXUALITY");
         String gender = currentUser.get("GENDER");
         String bio = currentUser.get("BIO");
-
+        String location =currentUser.get("LOCATION");
         String link = "https://lamp.ms.wits.ac.za/home/s1851427/WDAUpPicture.php";
         HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
         urlBuilder.addQueryParameter("username", email);
@@ -127,7 +127,7 @@ public class EditProfile extends AppCompatActivity {
         if (wholeString.getString("success").equals("0")) {
             Toast.makeText(EditProfile.this, wholeString.getString("message"), Toast.LENGTH_SHORT).show();
         } else {
-            session.createSession(email, fullname, birthday, gender, sexuality, bio, updatedImageUrl);
+            session.createSession(email, fullname, birthday, gender, sexuality, bio, updatedImageUrl,location);
             Intent intentSignIn = new Intent(EditProfile.this, HomeView.class);
             intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intentSignIn);
@@ -162,7 +162,7 @@ public class EditProfile extends AppCompatActivity {
             HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
             urlBuilder.addQueryParameter("name", name.getText().toString());
             urlBuilder.addQueryParameter("username", email);
-
+            String location =currentUser.get("LOCATION");
 
             String url = urlBuilder.build().toString();
             request.execute(url);
@@ -183,7 +183,7 @@ public class EditProfile extends AppCompatActivity {
             } else {
 
 
-                sessionManager.createSession(email, name.getText().toString(), birthday, gender, sexuality, bio, imageUrl);
+                sessionManager.createSession(email, name.getText().toString(), birthday, gender, sexuality, bio, imageUrl,location);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
                 intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intentSignIn);
@@ -209,6 +209,7 @@ public class EditProfile extends AppCompatActivity {
             HttpUrl.Builder urlBuilder = HttpUrl.parse(link).newBuilder();
             urlBuilder.addQueryParameter("biography", biog.getText().toString());
             urlBuilder.addQueryParameter("username", email);
+            String location =currentUser.get("LOCATION");
 
 
             String url = urlBuilder.build().toString();
@@ -227,7 +228,7 @@ public class EditProfile extends AppCompatActivity {
             } else {
 
 
-                sessionManager.createSession(email, fullname, birthday, gender, sexuality, biog.getText().toString(), imageUrl);
+                sessionManager.createSession(email, fullname, birthday, gender, sexuality, biog.getText().toString(), imageUrl,location);
                 Intent intentSignIn = new Intent(EditProfile.this, Profile.class);
                 intentSignIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intentSignIn);
