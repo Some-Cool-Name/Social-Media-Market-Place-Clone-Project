@@ -94,7 +94,7 @@ public class HomeView extends AppCompatActivity {
                 if(!searchText.getText().toString().equals("")) {
                     for (int i = 0; i < users.size(); i++) {
 
-                        if (users.get(i).getInterests().contains(searchText.getText().toString())) {
+                        if (users.get(i).getInterests().contains(searchText.getText().toString())  || users.get(i).getLocation().contains(searchText.getText().toString())) {
                             newAl.add(users.get(i));
                         }
                     }
