@@ -3,7 +3,7 @@ package com.example.social_media_market_place_clone_project;
 import java.util.ArrayList;
 
 public class User {
-    private String name, gender, bio, imageUrl, email;
+    private String name, gender, bio, imageUrl, email, location;
     private Double distanceFromUser;
 
     public Double getDistanceFromUser() {
@@ -14,9 +14,17 @@ public class User {
         this.distanceFromUser = distanceFromUser;
     }*/
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public  void setDistanceFromUser(double lat1,
-                            double lat2, double lon1,
-                            double lon2)
+                                     double lat2, double lon1,
+                                     double lon2)
     {
 
         // The math module contains a function

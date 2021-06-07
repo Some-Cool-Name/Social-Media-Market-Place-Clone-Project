@@ -57,7 +57,7 @@ public class HomeViewCardAdapter extends BaseAdapter {
         }
         // on below line we are initializing our variables and setting data to our variables.
         ((TextView) v.findViewById(R.id.UserNameTextView)).setText(userData.get(position).getName());
-        ((TextView) v.findViewById(R.id.UserBioTextView)).setText("Bio: "+userData.get(position).getBio()+" "+ (userData.get(position).getDistanceFromUser().intValue()+"km away"));
+        ((TextView) v.findViewById(R.id.UserBioTextView)).setText(userData.get(position).getBio()+"\n" + userData.get(position).getLocation()+"\n"+userData.get(position).getDistanceFromUser().intValue()+" km away");
         ((TextView) v.findViewById(R.id.userInterest1)).setText(userData.get(position).getInterests().get(0));
         ((TextView) v.findViewById(R.id.userInterest2)).setText(userData.get(position).getInterests().get(1));
         ((TextView) v.findViewById(R.id.userInterest3)).setText(userData.get(position).getInterests().get(2));

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -30,7 +32,8 @@ import okhttp3.HttpUrl;
 public class HomeView extends AppCompatActivity {
     ImageView imageView;
     TextView nameAge, location;
-    ImageButton cross;
+    ImageButton cross, search;
+    EditText searchText;
     ArrayList<User> users = new ArrayList<>();
     String lat;
     int index = 0;
@@ -47,7 +50,8 @@ public class HomeView extends AppCompatActivity {
         //location = (TextView) findViewById(R.id.home_location_text);
         cross = findViewById(R.id.cross);
         imageView = findViewById(R.id.picture);
-
+        search = findViewById(R.id.feed_search_Button);
+        searchText = findViewById(R.id.feed_search_EditText);
         // Instructions
      /*   String instructions = "Swipe Left for No" + "\n" + "Swipe Right for Yes" + "\n" + "\n" + "Information Displayed:" + "\n" + " • Name" + "\n" + " • Interest" + "\n" + " • Bio";
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeView.this);
@@ -80,7 +84,30 @@ public class HomeView extends AppCompatActivity {
 
         // on below line we are setting adapter to our card stack.
         cardStack.setAdapter((Adapter) adapter);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<User> newAl = new ArrayList<>();
+                //newAl = al;
 
+                //newAl.removeIf(s -> !s.contains(searchText.getText().toString()));
+                if(!searchText.getText().toString().equals("")) {
+                    for (int i = 0; i < users.size(); i++) {
+
+                        if (users.get(i).getInterests().contains(searchText.getText().toString())) {
+                            newAl.add(users.get(i));
+                        }
+                    }
+
+                    //al.add("second");
+                    final HomeViewCardAdapter adapter = new HomeViewCardAdapter(newAl, HomeView.this);
+                    cardStack.setAdapter((Adapter) adapter);
+                }else {
+                    final HomeViewCardAdapter adapter = new HomeViewCardAdapter(users, HomeView.this);
+                    cardStack.setAdapter((Adapter) adapter);
+                }
+            }
+        });
         // on below line we are setting event callback to our card stack.
         cardStack.setEventCallback(new SwipeDeck.SwipeEventCallback() {
             @Override
@@ -254,11 +281,22 @@ public class HomeView extends AppCompatActivity {
 
             newUser.setDistanceFromUser(mylat,tlat,mylong,tlong);
             newUser.setImageUrl(userCredentials.getString("Profile_Picture"));
-            interests.add(userCredentials.getString("Interest_1"));
-            interests.add(userCredentials.getString("Interest_2"));
-            interests.add(userCredentials.getString("Interest_3"));
-            interests.add(userCredentials.getString("Interest_4"));
-            interests.add(userCredentials.getString("Interest_5"));
+            String locationName="";
+            for (int j=2; j < splittedTheirs.length; j ++){
+
+                if(j==2){
+                    locationName = locationName + splittedTheirs[j];
+                }
+                else {
+                    locationName = locationName + " " + splittedTheirs[j];
+                }
+            }
+            newUser.setLocation(locationName);
+            interests.add(userCredentials.getString("Interest_1").toLowerCase());
+            interests.add(userCredentials.getString("Interest_2").toLowerCase());
+            interests.add(userCredentials.getString("Interest_3").toLowerCase());
+            interests.add(userCredentials.getString("Interest_4").toLowerCase());
+            interests.add(userCredentials.getString("Interest_5").toLowerCase());
             newUser.setInterests(interests);
             users.add(newUser);
 
