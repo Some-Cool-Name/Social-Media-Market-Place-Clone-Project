@@ -24,8 +24,6 @@ mysql> DESC User_Accounts;
 +-----------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 
-mysql> DESC User_Description;
-ERROR 1146 (42S02): Table 'd1851427.User_Description' doesn't exist
 mysql> DESC Description;
 +--------+--------------+------+-----+---------+-------+
 | Field  | Type         | Null | Key | Default | Extra |
@@ -81,7 +79,7 @@ mysql> DESC Account_Link;
 +----------------+--------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
 
-mysql> show tables;
+mysql> SHOW tables;
 +--------------------+
 | Tables_in_d1851427 |
 +--------------------+
@@ -89,21 +87,12 @@ mysql> show tables;
 | Description        |
 | Images             |
 | Interest           |
-| Likes              |
+| Likes2             |
 | Location           |
 | Matches            |
 | User_Accounts      |
 +--------------------+
-8 rows in set (0.01 sec)
-
-mysql> DESC Likes;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| liker | varchar(50) | NO   | PRI | NULL    |       |
-| likee | varchar(50) | YES  | MUL | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-2 rows in set (0.00 sec)
+8 rows in set (0.00 sec)
 
 mysql> DESC Matches;
 +---------+-------------+------+-----+---------+-------+
@@ -113,5 +102,18 @@ mysql> DESC Matches;
 | E_mail2 | varchar(50) | YES  | MUL | NULL    |       |
 +---------+-------------+------+-----+---------+-------+
 2 rows in set (0.00 sec)
+
+mysql> DESC Likes2;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| UserEmail       | varchar(50) | NO   | PRI | NULL    |       |
+| RejectedByUser  | text        | YES  |     | NULL    |       |
+| LikedByUser     | text        | YES  |     | NULL    |       |
+| LikedUser       | text        | YES  |     | NULL    |       |
+| MatchedWithUser | text        | YES  |     | NULL    |       |
+| RejectedUser    | text        | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
 
 mysql> notee
