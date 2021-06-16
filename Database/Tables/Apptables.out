@@ -19,7 +19,7 @@ mysql> DESC User_Accounts;
 | Full_Name | varchar(50) | NO   |     | NULL    |       |
 | Birthday  | varchar(20) | NO   |     | NULL    |       |
 | Gender    | varchar(6)  | NO   |     | NULL    |       |
-| Password  | text        | NO   |     | NULL    |       |
+| Password  | char(12)    | NO   |     | NULL    |       |
 | Sexuality | varchar(25) | NO   |     | NULL    |       |
 +-----------+-------------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
@@ -78,5 +78,42 @@ mysql> DESC Account_Link;
 | Twitter_Link   | varchar(100) | YES  |     | NULL    |       |
 +----------------+--------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
+
+mysql> SHOW tables;
++--------------------+
+| Tables_in_d1851427 |
++--------------------+
+| Account_Link       |
+| Description        |
+| Images             |
+| Interest           |
+| Likes2             |
+| Location           |
+| Matches            |
+| User_Accounts      |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> DESC Matches;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| E_mail1 | varchar(50) | NO   | PRI | NULL    |       |
+| E_mail2 | varchar(50) | YES  | MUL | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC Likes2;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| UserEmail       | varchar(50) | NO   | PRI | NULL    |       |
+| RejectedByUser  | text        | YES  |     | NULL    |       |
+| LikedByUser     | text        | YES  |     | NULL    |       |
+| LikedUser       | text        | YES  |     | NULL    |       |
+| MatchedWithUser | text        | YES  |     | NULL    |       |
+| RejectedUser    | text        | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
 
 mysql> notee
